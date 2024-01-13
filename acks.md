@@ -10,7 +10,7 @@ markdown: kramdown
 # Course Acknowledgments
 {:.no_toc}
 
-The content and structure of Data 101 have been designed and developed over the years thanks to many dedicated faculty and instructors at UC Berkeley.
+The content and structure of Data Engineering have been designed and developed over the years thanks to many dedicated faculty and instructors at UC Berkeley.
 
 Valuable and essential instructional contributors (alphabetical order):
 Joe Hellerstein,
@@ -21,7 +21,7 @@ Lisa Yan.
 
 ## Syllabus
 Academic Honesty policy and closing words adapted from [Data 140](https://prob140.org). Course Culture inspired and adapted with permission from 
-Grace O'Connell, the Asssociate Dean for Inclusive Excellence, and the [Fall 2023 CS 39 Syllabus](https://schasins.com/cs39-technology-society-power/) by Lisa Yan and Sarah Chasins
+Grace O'Connell, the Asssociate Dean for Inclusive Excellence, and the [Fall 2023 CS 39 Syllabus](https://schasins.com/cs39-technology-society-power/) by Lisa Yan and Sarah Chasins.
 ~
 
 
