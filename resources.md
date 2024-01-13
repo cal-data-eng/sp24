@@ -20,7 +20,7 @@ The [Data 100 textbook](http://textbook.ds100.org/), the [CS 61B curriculum](htt
 
 ## Course Notes
 
-The Data 101 course notes (found on the [main page](/)) are a work in progress and are meant to be a resource for you to refer to as you complete assignments. However, they are not a perfect substitute for lectures, as they are a passive resource---meaning you may read something but not understand it the first time. Lectures will have participation and engagement activities to help you practice the material. Please attend!
+The Data Engineering course notes (found on the [main page](/)) are a work in progress and are meant to be a resource for you to refer to as you complete assignments. However, they are not a perfect substitute for lectures, as they are a passive resource---meaning you may read something but not understand it the first time. Lectures will have engagement activities to help you practice the material. Please attend!
 
 ## SQL
 
@@ -37,22 +37,20 @@ See [**Assignment Tips**](/resources/assignment-tips/).
 
 ## Exam Resources
 
-There has been exactly one final exam for this course so far, and it was a compressed version due to the UAW 2865 ASE strike in Fall 2022. 
-
-**(updated 12/4/23)** 
+There has been only two final exams for this course so far, and the first one in Fall 2022 was a compressed version due to the UAW 2865 ASE strike. 
 
 |Semester|Final|
 |---|---|
 |Fall 2022|[Exam](/resources/assets/exams/fa22/fa22_final.pdf) [(Solutions)](/resources/assets/exams/fa22/fa22_final_sol.pdf)|
+|Fall 2023|[Exam](TBDLink) [(Solutions)](TBDLink)|
 
-Final Reference Sheet: [PDF](/resources/assets/exams/fa23/fa23_final_reference_sheet.pdf) Note that this is newly created as of Fall 2023 and will be provided with the paper exam; you should not need to print your own copy. Topics that are not on this reference sheet are still in scope for the final exam. Please post to Ed if you find typos. Thanks!
-* **(updated 12/12)** Fixed mongoDB `$group` syntax.
+Final Reference Sheet (created in Fall 2023): [PDF](/resources/assets/exams/fa23/fa23_final_reference_sheet.pdf) Note this will be provided with the paper exam; you should not need to print your own copy. Topics that are not on this reference sheet are still in scope for the final exam. Please post to Ed if you find typos. Thanks!
 
 The best way to get a sense for what is needed for our written exam is to attend discussion throughout the semester and work on discussion handouts.
 
 ## Wellness Resources
 
-Your well-being matters, and we hope that Data 100 is *never* a barrier to taking care of your mental and physical health. Below are some campus resources that may be helpful.
+Your well-being matters, and we hope that Data Engineering is *never* a barrier to taking care of your mental and physical health. Below are some campus resources that may be helpful.
 
 ### COVID-19 Resources and Support
 {:.no_toc}
