@@ -3,7 +3,7 @@ layout: page
 title: Home / Schedule
 nav_order: 1
 description: A week-to-week description of the content covered in the course.
-currWeekNumber: "15"
+currWeekNumber: "1"
 ---
 
 # {{site.title}}: {{site.description}}
@@ -12,6 +12,7 @@ currWeekNumber: "15"
 UC Berkeley, {{site.course.semester}}
 {: .mb-0 .fs-6 .text-grey-dk-000 }
 
+[FAQ]({{site.course.faq}}){:target="\_blank" .btn .btn-red .mr-1 }
 [Ed]({{site.course.edstem}}){:target="\_blank" .btn .btn-ed .mr-1 }
 [Datahub]({{site.course.datahub}}){:target="\_blank" .btn .btn-datahub .mr-1 }
 [Lecture Recordings]({{site.course.videos}}){:target="\_blank" .btn .btn-bcourses .mr-1 }
