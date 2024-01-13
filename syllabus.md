@@ -18,13 +18,13 @@ Jump to:
 
 <a name = 'about'></a>
 
-## About Data 101
+## About Data Engineering (Data 101 / Info 258)
 
 This course will cover the principles and practices of managing data at scale, with a focus on use cases in data analysis and machine learning. We will cover the entire life cycle of data management and science, ranging from data preparation to exploration, visualization and analysis, to machine learning and collaboration.
 
 The class will balance foundational concerns with exposure to practical languages, tools, and real-world concerns. We will study the foundations of prevalent data models in use today, including relations, tensors, and dataframes, and mappings between them. We will study SQL as a means to query and manipulate data at scale, including analytical challenges like sampling, aggregation and windowing, and performance concerns like views and indexes, data models, query processing and optimization, and transactions, all from a user perspective. We will study the foundations and realities of data preparation, including hands-on work with real-world data using standard Python and SQL frameworks. We will explore data exploration modalities for non-programmers, including the fundamentals behind spreadsheet systems and interactive visual analytics packages. We will look at approaches for managing the lifecycle of data science, including the establishment, monitoring, and maintenance of data pipelines for both analytics and machine learning. Time permitting, we will look at the specifics of ML pipelines including data validation, training, prediction serving and feedback loops, as well as technologies for representing, moving, sharing, and caching data including event streaming systems, key-value/document stores, in-memory and on-disk representation formats, log analytics, and search engines.
 
-**Textbook**: There is no official textbook for Data 101 this semester; we will provide course notes that will be released with the respective lectures.
+**Textbook**: There is no official textbook for data engineering this semester; we will provide course notes for some lectures  that will be released with the respective lectures.
 
 ### Prerequisites
 COMPSCI C100/DATA C100/STAT C100 or COMPSCI 189 or INFO 251 or DATA 144/INFO 254 or equivalent upper-division course in data science. COMPSCI 61B or INFO 206B or equivalent courses in programming. This class will not assume deep experience with databases or big data solutions.
@@ -34,12 +34,12 @@ See our [FAQ page]({{site.course.faq}}).
 
 ### Communications
 * **Ed** is our primary method of communication and making announcements, and you are responsible for checking it frequently. We will also make assignment "megathreads" where you can public ask questions about the course assignments.
-* **bCourses** will only have lecture webcasts, if any.
+* **bCourses** will only have lecture webcasts, and links to Ed.
 * **Gradescope** is where all assignments are submitted. 
-* **[{{site.course.email}}](mailto:{{site.course.email}})** is the course staff email and is for private logistical student support and DSP accommodations. This email monitored by both the instructor and a core set of staff to ensure fastest response. Please only contact the course instructor directly for matters that require strict privacy and/or their personal attention.
+* **[{{site.course.email}}](mailto:{{site.course.email}})** is the course staff email and is for private logistical student support and DSP accommodations. This email monitored by both the instructor and staff to ensure fastest response. Please only contact the course instructor directly for matters that require strict privacy and/or their personal attention. 
 
 ## Course Culture
-Students taking Data C101 come from a wide range of backgrounds. We hope to foster an inclusive and safe learning environment based on curiosity rather than competition. All members of the course community — the instructors, students, and course staff — are expected to treat each other with courtesy and respect. Some of the responsibility for that lies with the staff, but a lot of it ultimately rests with you, the students.
+Students taking data engineering come from a wide range of backgrounds. We hope to foster an inclusive and safe learning environment based on curiosity rather than competition. All members of the course community — the instructors, students, and course staff — are expected to treat each other with courtesy and respect. Some of the responsibility for that lies with the staff, but a lot of it ultimately rests with you, the students.
 
 
 ### Be Aware of Your Actions
@@ -56,7 +56,7 @@ Your reaction to this topic might be to laugh it off, or to make or think snide 
 
 ### Issues with Course Staff
 
-From the Data Science Department: [Data Science Undergraduate Studies](https://data.berkeley.edu/academics/undergraduate-programs){:target="_blank"} faculty and staff are committed to creating a community where every person feels [respected, included, and supported](https://data.berkeley.edu/equity-inclusion){:target="_blank"}. We recognize that incidents may happen, sometimes unintentionally, that run counter to this goal. There are many things we can do to try to improve the climate for students, but we need to understand where the challenges lie. **If you experience a remark, or disrespectful treatment, or if you feel you are being ignored, excluded or marginalized in a course or program-related activity**, please speak up. Consider talking to your instructor, but you are also welcome to contact Executive Director Christina Teller at [cpteller@berkeley.edu](mailto:cpteller@berkeley.edu) or report an incident anonymously through this [online form](https://docs.google.com/forms/d/e/1FAIpQLSfBwaUe7VMQz6VzkYFvf4KYwNSTve9iJlBSQyAmsXoSE0LnWw/viewform){:target="_blank"}.
+<!--From the Data Science Department: [Data Science Undergraduate Studies](https://data.berkeley.edu/academics/undergraduate-programs){:target="_blank"} faculty and staff are committed to creating a community where every person feels [respected, included, and supported](https://data.berkeley.edu/equity-inclusion){:target="_blank"}. We recognize that incidents may happen, sometimes unintentionally, that run counter to this goal. There are many things we can do to try to improve the climate for students, but we need to understand where the challenges lie. **If you experience a remark, or disrespectful treatment, or if you feel you are being ignored, excluded or marginalized in a course or program-related activity**, please speak up. Consider talking to your instructor, but you are also welcome to contact Executive Director Christina Teller at [cpteller@berkeley.edu](mailto:cpteller@berkeley.edu) or report an incident anonymously through this [online form](https://docs.google.com/forms/d/e/1FAIpQLSfBwaUe7VMQz6VzkYFvf4KYwNSTve9iJlBSQyAmsXoSE0LnWw/viewform){:target="_blank"}.-->
 
 As course staff, we are committed to creating a learning environment welcoming of all students that supports a diversity of thoughts, perspectives and experiences and respects your identities and backgrounds (including race, ethnicity, nationality, gender identity, socioeconomic class, sexual orientation, language, religion, ability, and more.) To help accomplish this:
 
@@ -64,6 +64,7 @@ As course staff, we are committed to creating a learning environment welcoming o
 - If you feel like your performance in the class is being affected by your experiences outside of class (e.g., family matters, current events), please don’t hesitate to come and talk with us. We want to be resources for you.
 - We (like many people) are still in the process of learning about diverse perspectives and identities. If something was said in class (by anyone) that made you feel uncomfortable, please talk to us about it.
 - While the course staff understands that improving diversity, equity, and inclusion (DEI) are not enough to overcome systemic issues in academia such as racism, queerphobia, and other forms of discrimination and hatred, we also recognize the importance of DEI work.
+    - The I School has resources available at [https://www.ischool.berkeley.edu/about/diversity/resources](https://www.ischool.berkeley.edu/about/diversity/resources){:target="_blank"}.
     - The Data Science Department has some resources available at [https://data.berkeley.edu/about/diversity-equity-and-inclusion](https://data.berkeley.edu/about/diversity-equity-and-inclusion){:target="_blank"}.
     - There’s also a great set of resources available at [https://eecs.berkeley.edu/resources/students/grievances](https://eecs.berkeley.edu/resources/students/grievances){:target="_blank"}.
 - If there are other resources you think we should list here, let us know!
@@ -75,33 +76,33 @@ If individuals are disrespectful to students, course staff, or others via course
 
 ## Course Components
 
-**Lecture**: There are two 80-minute lectures per week. You can attend in-person or online (see Ed post), or watch the recording. The class [schedule](/) will contain links to video recordings posted within 24 hours after the corresponding class.
+**Lecture**: There are two 80-minute lectures per week. You can attend in-person or watch the recording. The lecture hall only accommodates 50 students in a first-come-first-served manner, so if we end up exceed capacity for any given lecture, we may ask you to instead watch the recording. We may also have a live Zoom option, but this will be disclosed in due course of time. The class [schedule](/) will contain links to video recordings posted within 24 hours after the corresponding class.
 
-**Lecture check-ins**: Every lecture will have a short series of questions to help check your understanding of the material. You will have one week to complete each check-in; no late submissions will be accepted. Each check-in is worth 1 point and is graded on completeness as follows:
+<!--**Lecture check-ins**: Every lecture will have a short series of questions to help check your understanding of the material. You will have one week to complete each check-in; no late submissions will be accepted. Each check-in is worth 1 point and is graded on completeness as follows:
 * Synchronous (during lecture) complete at least one question.
 * Asynchronous (after lecture, within 1 week) complete all questions.
-In both cases, navigate to [slido.com](https://www.slido.com/)
+In both cases, navigate to [slido.com](https://www.slido.com/)-->
 
-**Discussion**: This course also includes one weekly 50-minute discussion section held on Mondays. This section will help you synthesize materials via worksheets and activities and is good practice for the final exam. Handouts wil be posted on the class [Schedule](/). Section attendance is not required, but you are strongly encouraged to practice the material on your own time.
+**Discussion**: This course also includes one weekly optional 50-minute discussion section held on Thursdays from 10-11. This section will help you synthesize materials via worksheets and activities and is good practice for the final exam. Handouts wil be posted on the class [Schedule](/). Section attendance is not required, but you are strongly encouraged to practice the material on your own time.
 
-**Projects**: There will be four (4) programming assignments released throughout the semester (see the [Schedule](/)). Generally, you will have about two weeks to complete each project. Projects are graded on accuracy and are equally weighted. Project deadlines are **Thursday 5pm**.
+**Projects**: There will be four (4) programming assignments released throughout the semester (see the [Schedule](/)). Generally, you will have about two weeks to complete each project. Projects are graded on accuracy and are equally weighted. Project deadlines are **Wednesday 5pm**.
 
-**Multivitamins**: There will be five (5) multivitamins released on Gradescope throughout the semester. You will have about two weeks to complete short written assignments that consist of multiple choice questions covering material that is not covered in the projects. Multivitamins are graded on accuracy and are equally weighted. Multivitamin deadlines are **Thursday 5pm**.
+**Multivitamins**: There will be five (5) multivitamins released on Gradescope throughout the semester. You will have about two weeks to complete short written assignments that consist of multiple choice questions covering material that is not covered in the projects. Multivitamins are graded on accuracy and are equally weighted. Multivitamin deadlines are **Wednesday 5pm**.
 
 **Final Exam**: The final exam will be held on Friday, December 15th, from 8:00am - 11:00am. **The final exam is offered in-person only (location TBD), and we will not offer alternate exams.** It is your responsibility to ensure that you are not enrolled in another class that conflicts with our exam time.
 
-Office hours are a great place to get help from course staff and to find study partners for this course. You can find a list of all office hours on the [Calendar]({{site.base_url}}calendar) page, of which there are three categories:
+Office hours are a great place to get help from course staff and to find study partners for this course. You can find a list of all office hours on the [Calendar]({{site.base_url}}calendar) page.
+<!--, of which there are three categories:
 * **Regular office hours**, held weekly in **Warren 101B**. Attend to get help with multivitamins, projects, or any other content-related questions. 
 * **Project Parties** are work sessions with extra staff support and are more sporadic. These are held in Warren 101B the Wednesday evening before a project deadline. Times TBD.
-* **Tea Hours** are a separate set of instructor hours for general course questions, data science advising, or perspectives on academia/industry. These are not intended for homework questions. Held in Soda 783 (instructor office). Feel free to bring tea/coffee and/or a reusable mug.
+* **Tea Hours** are a separate set of instructor hours for general course questions, data science advising, or perspectives on academia/industry. These are not intended for homework questions. Held in Soda 783 (instructor office). Feel free to bring tea/coffee and/or a reusable mug.-->
 
 ## Grading
 Letter grades for the course will be based on your overall score in the class, calculated using the following weights:
 
 | Component | Weight | Details |
 | ---- | --- | --- |
-| Lecture Check-Ins | 8% | Drop 3 lowest scores. Skip Lecture 01. |
-| Projects | 52% | No drops; see [Late Policy](#late-policy) |
+| Projects | 60% | No drops; see [Late Policy](#late-policy) |
 | Multivitamins | 25% | No drops; see [Late Policy](#late-policy) |
 | Final Exam | 15% |
 
@@ -118,7 +119,7 @@ Everyone has 9 slip days, which can be applied to late submissions of projects a
   * [Updated 11/6 for clarity] After 3 slip days (i.e., late days), you can no longer receive credit for the submission.
 * Lecture check-ins are not eligible for slip days.
 
-### Extenuating Circumstances
+<!--### Extenuating Circumstances
 We recognize that life can be unexpected. If you encounter extenuating circumstances at any time in the semester, please don't hesitate to let us know. The sooner we are made aware, the more options we have available to us to help you.
 
 The [Extenuating Circumstances form]({{site.course.extenuating_circumstances}}){:target="\_blank"} is for addressing any circumstances that cannot be resolved via the slip day policy above. This form is designed to lower the barrier to reaching out to us, as well as build your independence in managing your academic career long-term. Within one business day of filling out the form, a course staff will reach out to you and, as needed, provide a space for conversation and arrange course accommodations as necessary. When making extension requests, if possible:
@@ -127,6 +128,7 @@ The [Extenuating Circumstances form]({{site.course.extenuating_circumstances}}){
 * [update 11/9] If your extension request is granted, then the extension is to the original on-time deadline.
 
 You are responsible for reasonable communication with course staff. If you make a request close to the deadline, we can not guarantee that you will receive a response before the deadline. Additionally, simply submitting a request does not guarantee you will receive an extension. Even if your work is incomplete, please submit before the deadline so you can receive credit for the work you did complete.
+-->
 
 ## DSP Accommodations
 If you are registered with the Disabled Students’ Program (DSP) you can expect to receive an email from us during the first week of classes. Otherwise, email our [course email]({{site.course.email}}). DSP students can submit assignment extension requests via the [Extenuating Circumstances Form (link TBD)]({{site.course.extenuating_circumstances}}).
