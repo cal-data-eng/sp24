@@ -30,7 +30,7 @@ UC Berkeley, {{site.course.semester}}
 </div>
 
 {% assign announcement = site.announcements | last %}
-{% if announcement.week != page.currWeekNumber %}
+{% if announcement.week == page.currWeekNumber %}
   {{ announcement }}
 {% endif %}
 
