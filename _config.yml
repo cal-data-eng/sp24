@@ -13,11 +13,11 @@
 # you will see them accessed via {{ site.title }}, {{ site.github_repo }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Data 101
+title: Data 101/Info 258
 description: Data Engineering
-author: Lisa Yan
+author: Aditya Parameswaran 
 baseurl: '/' # the subpath of your site, e.g. /blog
-url: 'https://fa23.data101.org' # the base hostname & protocol for your site, e.g. http://example.com
+url: 'https://data101.org/sp24' # the base hostname & protocol for your site, e.g. http://example.com
 # logo: 'resources/assets/favicon/panda-logo.png'
 
 # Theme settings
@@ -27,18 +27,16 @@ search_enabled: true
 permalink: pretty
 
 course:
-    faq: https://data101.org/fa23faq
+    faq: https://data101.org/sp24faq
     datahub: http://data101.datahub.berkeley.edu/
-    edstem: https://edstem.org/us/courses/43068/discussion/
-    faq: https://data101.org/fa23faq
-    gradescope: https://www.gradescope.com/courses/576229
-    extenuating_circumstances: https://docs.google.com/forms/d/e/1FAIpQLSfcGLfXOnsGD3OifO10vgvOdIkS9CfiF-j6fdwO1VV3pBO7Cg/viewform?usp=sf_link
-    regrades: https://forms.gle/6ri2dYeqZoHLvFLXA
-    semester: Fall 2023
-    faq: https://data101.org/fa23faq
-    bcourses: "https://bcourses.berkeley.edu/courses/1528038"
-    videos: "https://bcourses.berkeley.edu/courses/1528038/external_tools/78985"
-    instructors: Lisa Yan
+    edstem: https://edstem.org/us/courses/53274/discussion/
+    gradescope: https://www.gradescope.com/courses/707300/
+    extenuating_circumstances: TBDLink
+    regrades: TBDLink
+    semester: Spring 2024
+    bcourses: "https://bcourses.berkeley.edu/courses/1532753"
+    videos: TBDLink
+    instructors: Aditya Parameswaran
     head_ta_1:
     head_1_email:
     head_ta_2:
@@ -50,7 +48,7 @@ course:
 # External navigation links
 nav_external_links:
   - title: Course FAQ
-    url: https://data101.org/fa23faq
+    url: https://data101.org/sp24faq
     hide_icon: true
 
 footer: >-
