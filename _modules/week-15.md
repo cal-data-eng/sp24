@@ -8,7 +8,8 @@ Mon 4/22
 
 Wed 4/24
 : **Lecture 24**{: .label .label-lecture } Security and Privacy
-: **Project 5**{: .label .label-proj-due } Due, 5pm
+: **Project 4**{: .label .label-proj-due } Due, 5pm
+
 
 Thu 4/25
 : **Discussion**{: .label .label-disc } Pipelines, Sampling, Sketching

@@ -8,9 +8,8 @@ Mon 3/18
 
 Wed 3/20
 : **Lecture 16**{: .label .label-lecture } Normalization and ER
-: **Project 3**{: .label .label-proj-due } Due, 5pm
 
-Thu 3/7
+Thu 3/21
 : **Discussion**{: .label .label-disc } Normalization and ER
 : **Project 4**{: .label .label-hw } Project 4 Release
   : Checkpoint Due Wed 4/3, 5pm

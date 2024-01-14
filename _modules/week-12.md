@@ -8,8 +8,10 @@ Mon 4/1
 
 Wed 4/3
 : **Lecture 18**{: .label .label-lecture } MongoDB I
-: **Project 4**{: .label .label-proj-due } Checkpoint Due, 5pm
+: **Multivitamin 4**{: .label .label-proj-due } Due, 5pm
 
 Thu 4/4
 : **Discussion**{: .label .label-disc } MongoDB
+: **Project 5**{: .label .label-proj } Project 5 Released
+  : Due Wed 4/24, 5pm
 
