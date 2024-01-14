@@ -11,4 +11,4 @@ Wed 1/24
 : **Lecture 2**{: .label .label-lecture } SQL Review
 
 Thu 1/25
-: **Discussion 1**{: .label .label-disc } SQL Review
+: **Discussion**{: .label .label-disc } SQL Review

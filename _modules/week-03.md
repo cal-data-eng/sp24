@@ -11,6 +11,6 @@ Wed 1/31
 : **Lecture 4**{: .label .label-lecture } Subqueries, Aggregation
 
 Thu 2/1
-: **Discussion 2**{: .label .label-disc } Relational Algebra and Views
+: **Discussion**{: .label .label-disc } Relational Algebra and Views
 : **Project 1**{: .label .label-proj } SQL
   : Due Thu 2/14, 5pm

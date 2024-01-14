@@ -1,10 +1,10 @@
 ---
 title: RRR Week
-date: 2023-12-4
+date: 2024-04-29
 ---
 
-Tue 12/5
+Mon 4/29
 : RRR Week (no class)
 
-Thu 12/7
+Wed 5/1
 : RRR Week (no class)

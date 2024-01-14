@@ -1,7 +1,7 @@
 ---
 title: Finals Week
-date: 2023-12-11
+date: 2024-05-06
 ---
 
-Fri 12/15
-: **Final Exam**{: .label .label-exam } Final Exam (8-11am)
+Tue 5/7
+: **Final Exam**{: .label .label-exam } Cumulative Final Exam (11.30am-2.30pm)
