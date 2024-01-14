@@ -11,7 +11,7 @@ Wed 3/6
 
 Thu 3/7
 : **Discussion**{: .label .label-disc } Window functions, OLAP, Spreadsheets
-: **Project 3**{: .label .label-hw } Project 3 Release
-  : Due Wed 3/20, 5pm
+: **Project 3**{: .label .label-proj } Project 3 Release
+  : Due Wed 3/27, 5pm
 
 
