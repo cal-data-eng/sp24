@@ -4,7 +4,7 @@ date: 2024-02-19
 ---
 
 Mon 2/19
-: **No Class** President's Day
+: **No Class (President's Day)** 
   
 Wed 2/21
 : **Lecture 9**{: .label .label-lecture } Data Models: Relations, Tensors, Dataframes
