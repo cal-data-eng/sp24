@@ -4,10 +4,10 @@ date: 2024-03-25
 ---
 
 Mon 3/25
-: **No Class (Spring Break)**{: .label } 
+: **No Class (Spring Break)**
 
 Wed 3/27
-: **No Class (Spring Break)**{: .label } 
+: **No Class (Spring Break)** 
 : **Project 3**{: .label .label-proj-due } Due, 5pm
 
 

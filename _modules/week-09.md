@@ -7,7 +7,7 @@ Mon 3/11
 
 Wed 3/13
 : **Lecture 14**{: .label .label-lecture } Data Cleaning I
-: **Multivitamin 3**{: .label .label-proj-due } Due, 5pm
+: **Multivitamin 3**{: .label .label-hw-due } Due, 5pm
 
 Thu 3/14
 : **Discussion**{: .label .label-disc } Data Preparation and Cleaning

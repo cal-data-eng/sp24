@@ -8,7 +8,7 @@ Mon 4/1
 
 Wed 4/3
 : **Lecture 18**{: .label .label-lecture } MongoDB I
-: **Multivitamin 4**{: .label .label-proj-due } Due, 5pm
+: **Multivitamin 4**{: .label .label-hw-due } Due, 5pm
 
 Thu 4/4
 : **Discussion**{: .label .label-disc } MongoDB
