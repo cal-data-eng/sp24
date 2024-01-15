@@ -42,7 +42,7 @@ There has been only two final exams for this course so far, and the first one in
 |Semester|Final|
 |---|---|
 |Fall 2022|[Exam](/resources/assets/exams/fa22/fa22_final.pdf) [(Solutions)](/resources/assets/exams/fa22/fa22_final_sol.pdf)|
-|Fall 2023|[Exam](TBDLink) [(Solutions)](TBDLink)|
+|Fall 2023|[Exam](/resources/assets/exams/fa23/fa23_final.pdf) [(Solutions)](/resources/assets/exams/fa23/fa23_final_sol.pdf)|
 
 Final Reference Sheet (created in Fall 2023): [PDF](/resources/assets/exams/fa23/fa23_final_reference_sheet.pdf) Note this will be provided with the paper exam; you should not need to print your own copy. Topics that are not on this reference sheet are still in scope for the final exam. Please post to Ed if you find typos. Thanks!
 
