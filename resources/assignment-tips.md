@@ -217,7 +217,7 @@ Then, you may have *run out of disk or memory space* on your DataHub server. Her
 
 1. **Restart your DataHub server.** To do so, go to File -> Hub Control Panel -> Stop My Server. Then, refresh the page or navigate back to [https://data101.datahub.berkeley.edu](https://data101.datahub.berkeley.edu/){:target="\_blank"}.
 
-1. If none of the above work, please post on [Ed](site.course.edstem/){:target="\_blank"} with the following information:
+1. If none of the above work, please post on [Ed]({{site.course.edstem}}){:target="\_blank"} with the following information:
   * Your DataHub username (your @berkeley.edu name)
   * The project you are working on
   * The output of the following commands:
