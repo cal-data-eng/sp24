@@ -217,7 +217,7 @@ Then, you may have *run out of disk or memory space* on your DataHub server. Her
 
 1. **Restart your DataHub server.** To do so, go to File -> Hub Control Panel -> Stop My Server. Then, refresh the page or navigate back to [https://data101.datahub.berkeley.edu](https://data101.datahub.berkeley.edu/){:target="\_blank"}.
 
-1. If none of the above work, please post on [Ed](https://edstem.org/us/courses/43068/discussion/){:target="\_blank"} with the following information:
+1. If none of the above work, please post on [Ed](site.course.edstem/){:target="\_blank"} with the following information:
   * Your DataHub username (your @berkeley.edu name)
   * The project you are working on
   * The output of the following commands:
@@ -229,7 +229,7 @@ Then, you may have *run out of disk or memory space* on your DataHub server. Her
 
 **Want to splitscreen your JupyterHub?** Simply drag a tab over to a different side of your JupyterHub. We recommend splitting your screen with your Jupyter notebook in one window, and a psql terminal in another window, like so (note these are two separate connections to the database!):
 
-<img src="/resources/assets/images/splitscreen.png"
+<img src="https://raw.githubusercontent.com/cal-data-eng/sp24/main/resources/assets/images/splitscreen.png"
      alt="Split Screen of DataHub"
      style="float: center; margin-right: 10px; width: 800px" />
 
