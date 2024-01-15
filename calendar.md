@@ -7,7 +7,7 @@ description: Calendars with times for all course events.
 
 # Calendar
 
-_Note_: If you are having trouble viewing the calendars below and are using Safari, we suggest switching to an alternate browser (like Chrome). Alternatively, you can go to Safari settings and switch "Prevent cross-site tracking" off, or you can see the calendar [here](TBDLink){:target="\_blank"}.
+_Note_: If you are having trouble viewing the calendars below and are using Safari, we suggest switching to an alternate browser (like Chrome). Alternatively, you can go to Safari settings and switch "Prevent cross-site tracking" off, or you can see the calendar [here](https://calendar.google.com/calendar/embed?src=data101%40berkeley.edu&ctz=America%2FLos_Angeles){:target="\_blank"}.
 
 
 The below calendar shows times for lecture, discussion, office hours, and exams/extra review sessions.
@@ -16,4 +16,4 @@ The below calendar shows times for lecture, discussion, office hours, and exams/
 **Note: Office hours for course staff will be held in-person in TBD; Prof. Parameswaran's office hours will be held
 in person in South Hall 212.**
 
-<iframe src="TBDLink" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+<iframe src="https://calendar.google.com/calendar/embed?src=data101%40berkeley.edu&ctz=America%2FLos_Angeles" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
