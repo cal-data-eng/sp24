@@ -11,4 +11,4 @@ Wed 1/24
 : **Lecture 2**{: .label .label-lecture } SQL Review
 
 Thu 1/25
-: **Discussion**{: .label .label-disc } SQL Review
+: **Discussion 1**{: .label .label-disc } [SQL Review](https://drive.google.com/file/d/1AQgvJuX1J1fFYFtRnSwTuVqzqA61dbcn/view?usp=sharing){:target="\_blank"}
