@@ -13,3 +13,4 @@ Wed 1/24
 
 Thu 1/25
 : **Discussion 1**{: .label .label-disc } [SQL Review](https://drive.google.com/file/d/1AQgvJuX1J1fFYFtRnSwTuVqzqA61dbcn/view?usp=sharing){:target="\_blank"}
+  : [Solution](https://drive.google.com/file/d/1M9VsTZUr8Oe46jRgtNarOV0hYyHtOhjb/view?usp=drivesdk){:target="_blank"}
