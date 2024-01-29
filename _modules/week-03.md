@@ -13,4 +13,4 @@ Wed 1/31
 Thu 2/1
 : **Discussion**{: .label .label-disc } Relational Algebra and Views
 : **Project 1**{: .label .label-proj } SQL
-  : Due Thu 2/14, 5pm
+  : Due Wed 2/14, 5pm

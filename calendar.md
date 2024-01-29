@@ -13,7 +13,5 @@ _Note_: If you are having trouble viewing the calendars below and are using Safa
 The below calendar shows times for lecture, discussion, office hours, and exams/extra review sessions.
 <!--In-person office hours are in <span style="color:blue">**blue**</span>, click on each event to see which GSI and/or reader is running each office hour time. --> You should come to these with questions about anything – projects, multivitamins, concepts, etc. 
 
-**Note: Office hours for course staff will be held in-person in TBD; Prof. Parameswaran's office hours will be held
-in person in South Hall 212.**
 
 <iframe src="https://calendar.google.com/calendar/embed?src=data101%40berkeley.edu&ctz=America%2FLos_Angeles" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
