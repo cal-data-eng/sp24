@@ -9,7 +9,7 @@ Mon 1/29
 
 Wed 1/31
 : **Lecture 4**{: .label .label-lecture } [Relational Model and Algebra II](https://docs.google.com/presentation/d/1tbShn0AWi9LyeUZXGsACpo0vXZ-sk0Dt40Xt6_5JX-4/edit#slide=id.g240c89794b3_0_987) [Subqueries, Aggregation](https://docs.google.com/presentation/d/1oio2MHKmTHax-RcpWnAmZcv8qHKVH0ilKo2IBPL2RLk/edit#slide=id.g24229eb25b9_0_472)
-	: [Code](https://data101.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fcal-data-eng%2Fsp24-materials&urlpath=lab%2Ftree%2Fsp24-materials%2Flecture%2Flec04%2Flec04.ipynb&branch=master) [Code HTML]()
+	: [Code](https://data101.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fcal-data-eng%2Fsp24-materials&urlpath=lab%2Ftree%2Fsp24-materials%2Flecture%2Flec04%2Flec04.ipynb&branch=master) [Code HTML](https://www.data101.org/sp24/resources/assets/lectures/lec04/lec04.html)
 
 Thu 2/1
 : **Discussion**{: .label .label-disc } Relational Algebra and Views
