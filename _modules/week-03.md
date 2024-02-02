@@ -13,5 +13,6 @@ Wed 1/31
 
 Thu 2/1
 : **Discussion**{: .label .label-disc } [Relational Algebra and Views](https://drive.google.com/file/d/1ZktgypK5iaK94Wo8jT3_3URxFyGEz2NP/view?usp=sharing){:target="\_blank"}
-: **Project 1**{: .label .label-proj } SQL
+  : [Solution](https://drive.google.com/file/d/1WG8hK5o_swIUuWzwfFvyfe-iCIb9pnH8/view?usp=sharing){:target="_blank"}
+: **Project 1**{: .label .label-proj } [SQL](https://data101.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fcal-data-eng%2Fsp24-materials.git&urlpath=lab%2Ftree%2Fsp24-materials.git%2Fproj%2Fproj1&branch=main){:target="\_blank"}
   : Due Wed 2/14, 5pm
