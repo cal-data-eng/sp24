@@ -4,10 +4,12 @@ date: 2024-02-05
 ---
 
 Mon 2/5
-: **Lecture 5**{: .label .label-lecture } DML, DDL, Constraints
+: **Lecture 5**{: .label .label-lecture } [SQL: Subqueries and Aggregation](https://docs.google.com/presentation/d/1bT3UPAuXSo9rYGGjjzWBAggHCFoLWKU1Z2xs6VhsfMI/edit#slide=id.g24229eb25b9_0_139){:target="\_blank"}
+[Strings and Sampling](https://docs.google.com/presentation/d/10MesC_5MxO-IfXsQbgyEerLpEtkpZc2iXzp0zBIInoQ/edit#slide=id.g2766bdd51c1_0_170){:target="\_blank"}
+	: [Code](https://data101.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fcal-data-eng%2Fsp24-materials.git&urlpath=lab%2Ftree%2Fsp24-materials.git%2Flecture%2Flec05%2Flec05-subq-agg.ipynb&branch=main) [Code HTML](https://www.data101.org/sp24/resources/assets/lectures/lec05/lec05-subq-agg.html){:target="\_blank"}
 
 Wed 2/7
-: **Lecture 6**{: .label .label-lecture } Foreign Keys, Index Selection
+: **Lecture 6**{: .label .label-lecture } DML, DDL, Constraints, Foreign Keys, Index Selection
 
 Thu 2/8 
 : **Discussion**{: .label .label-disc } DDL, Constraints
