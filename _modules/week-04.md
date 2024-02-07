@@ -10,7 +10,7 @@ Mon 2/5
 
 Wed 2/7
 : **Lecture 6**{: .label .label-lecture } [DML, DDL, Constraints, Foreign Keys](https://docs.google.com/presentation/d/1zbMFyd6BMSsQB0nqjp6J2KPc1RnI9z3UiDBCGIBqlmo/edit?usp=sharing){:target="\_blank"}
-	: [DML/DDL Code](https://data101.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fcal-data-eng%2Fsp24-materials.git&urlpath=lab%2Ftree%2Fsp24-materials.git%2Flecture%2Flec06%2Flec06.ipynb&branch=main) [+HTML][https://www.data101.org/sp24/resources/assets/lectures/lec06/lec06.html){:target="\_blank"}
+	: [DML/DDL Code](https://data101.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fcal-data-eng%2Fsp24-materials.git&urlpath=lab%2Ftree%2Fsp24-materials.git%2Flecture%2Flec06%2Flec06.ipynb&branch=main) [+HTML](https://www.data101.org/sp24/resources/assets/lectures/lec06/lec06.html){:target="\_blank"}
 
 Thu 2/8 
 : **Discussion**{: .label .label-disc } DDL, Constraints
