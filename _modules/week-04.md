@@ -10,6 +10,6 @@ Wed 2/7
 : **Lecture 6**{: .label .label-lecture } Foreign Keys, Index Selection
 
 Thu 2/8 
-: **Discussion**{: .label .label-disc } DDL, Constraints
+: **Discussion**{: .label .label-disc } [Subqueries, DDL, DML, and String Manipulation](https://drive.google.com/file/d/1AU7AwuZy_pzOLIghAhzlptQml8T8U4_w/view?usp=sharing){:target="_blank"}
 : **MultiVitamin 1**{: .label .label-hw } Multivitamin 1
-  : Due Thu 2/21, 5pm
+  : Due Wed 2/21, 5pm
