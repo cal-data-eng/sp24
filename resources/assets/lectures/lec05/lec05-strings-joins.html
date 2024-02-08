@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>lec12</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>lec05-strings-joins</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -15213,26 +15213,27 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 
-<div id="cell-id=7782e12c-f08a-4c94-a144-81a0baeb83e2" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=31f40da4-66a9-4260-a6d6-5bc9e3e8e0f7" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Lecture-12:-Data-Preparation-I">Lecture 12: Data Preparation I<a class="anchor-link" href="#Lecture-12:-Data-Preparation-I">&#182;</a></h1>
+<h1 id="Lecture-05:-Advanced-SQL">Lecture 05: Advanced SQL<a class="anchor-link" href="#Lecture-05:-Advanced-SQL">&#182;</a></h1>
 </div>
 </div>
 </div>
-</div><div id="cell-id=1896c152-4b51-499f-9f9f-a019052ad150" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div id="cell-id=505aa8d0-4915-4205-b054-69278c6b6bbe" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># to save space, do a symbolic link to previous lecture&#39;s data</span>
-<span class="o">!</span>ln<span class="w"> </span>-sf<span class="w"> </span>../lec11/data<span class="w"> </span>.
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Run this cell to set up imports</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </pre></div>
 
      </div>
@@ -15241,23 +15242,18 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 
 </div>
-<div id="cell-id=b8f3ca1a-de88-4928-bdfe-2c14deb6ff43" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=fde86b0c" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="%5Breview%5D-Structural-Transformation:-From-Relations-to-Matrices-and-Back">[review] Structural Transformation: From Relations to Matrices and Back<a class="anchor-link" href="#%5Breview%5D-Structural-Transformation:-From-Relations-to-Matrices-and-Back">&#182;</a></h2><ul>
-<li>Matrix $\rightarrow$ Relational works.</li>
-<li>Relational $\rightarrow$ Matrix sometimes works!</li>
-<li>But how?</li>
-</ul>
-<p>To start, let's take our matrix in <code>mm.txt</code>, and load it into Pandas.</p>
+<p>If you haven't yet, load in the <code>imdb_lecture</code> database.</p>
 
 </div>
 </div>
 </div>
-</div><div id="cell-id=89df7e25-e979-4147-9c7b-1d685b6d03f0" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div id="cell-id=9416184e-ff18-41c8-ad99-7e7ecdaa639a" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15265,7 +15261,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>cp<span class="w"> </span>-v<span class="w"> </span>-r<span class="w"> </span>../lec02/data<span class="w"> </span>.
 </pre></div>
 
      </div>
@@ -15273,7 +15269,45 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 </div>
 
-</div><div id="cell-id=6a7571ed-20ca-4751-8f6a-6c91b20336a8" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>&#39;../lec02/data/imdb_lecture.sql&#39; -&gt; &#39;./data/imdb_lecture.sql&#39;
+&#39;../lec02/data/imdb_lecture_local.sql&#39; -&gt; &#39;./data/imdb_lecture_local.sql&#39;
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div id="cell-id=60cda598-6186-47f0-8ff0-e94272e3cce7" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> sql
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div id="cell-id=fb6a488c-cb8e-430f-abe3-f2bbf059a3ce" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15281,8 +15315,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mm</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/mm.txt&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">mm</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>psql<span class="w"> </span>-h<span class="w"> </span>localhost<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;DROP DATABASE IF EXISTS imdb_lecture&#39;</span>
+<span class="o">!</span>psql<span class="w"> </span>-h<span class="w"> </span>localhost<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;CREATE DATABASE imdb_lecture&#39;</span><span class="w"> </span>
+<span class="o">!</span>psql<span class="w"> </span>-h<span class="w"> </span>localhost<span class="w"> </span>-d<span class="w"> </span>imdb_lecture<span class="w"> </span>-f<span class="w"> </span>data/imdb_lecture.sql
 </pre></div>
 
      </div>
@@ -15296,353 +15331,49 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputArea-child">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>DROP DATABASE
+CREATE DATABASE
+SET
+SET
+SET
+SET
+SET
+ set_config 
+------------
+ 
+(1 row)
 
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Year</th>
-      <th>OCT</th>
-      <th>NOV</th>
-      <th>DEC</th>
-      <th>JAN</th>
-      <th>FEB</th>
-      <th>MAR</th>
-      <th>APR</th>
-      <th>MAY</th>
-      <th>JUN</th>
-      <th>JUL</th>
-      <th>AUG</th>
-      <th>SEP</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2002</td>
-      <td>545.92</td>
-      <td>3115.08</td>
-      <td>3996.76</td>
-      <td>1815.74</td>
-      <td>1204.14</td>
-      <td>1644.02</td>
-      <td>795.92</td>
-      <td>540.24</td>
-      <td>112.62</td>
-      <td>79.52</td>
-      <td>22.20</td>
-      <td>171.70</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2003</td>
-      <td>55.41</td>
-      <td>1242.23</td>
-      <td>2976.94</td>
-      <td>797.72</td>
-      <td>836.01</td>
-      <td>1026.11</td>
-      <td>1571.27</td>
-      <td>468.59</td>
-      <td>24.93</td>
-      <td>98.33</td>
-      <td>267.40</td>
-      <td>99.20</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2004</td>
-      <td>55.90</td>
-      <td>834.40</td>
-      <td>2311.72</td>
-      <td>942.75</td>
-      <td>2019.22</td>
-      <td>399.52</td>
-      <td>339.18</td>
-      <td>251.64</td>
-      <td>72.38</td>
-      <td>55.57</td>
-      <td>116.74</td>
-      <td>97.48</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2006</td>
-      <td>347.22</td>
-      <td>908.44</td>
-      <td>2981.16</td>
-      <td>1793.97</td>
-      <td>995.27</td>
-      <td>2031.19</td>
-      <td>1602.55</td>
-      <td>287.21</td>
-      <td>102.44</td>
-      <td>90.31</td>
-      <td>18.75</td>
-      <td>33.76</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2005</td>
-      <td>1449.23</td>
-      <td>619.77</td>
-      <td>1789.93</td>
-      <td>1777.23</td>
-      <td>1055.41</td>
-      <td>1472.91</td>
-      <td>743.11</td>
-      <td>1113.26</td>
-      <td>309.19</td>
-      <td>46.61</td>
-      <td>86.51</td>
-      <td>93.98</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>2007</td>
-      <td>178.81</td>
-      <td>942.89</td>
-      <td>1279.33</td>
-      <td>320.66</td>
-      <td>1615.47</td>
-      <td>317.77</td>
-      <td>519.85</td>
-      <td>150.15</td>
-      <td>85.32</td>
-      <td>102.60</td>
-      <td>62.74</td>
-      <td>164.02</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>2008</td>
-      <td>612.92</td>
-      <td>329.64</td>
-      <td>1189.43</td>
-      <td>2153.17</td>
-      <td>1007.57</td>
-      <td>316.55</td>
-      <td>153.53</td>
-      <td>255.80</td>
-      <td>42.45</td>
-      <td>41.73</td>
-      <td>36.83</td>
-      <td>12.59</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>2009</td>
-      <td>272.27</td>
-      <td>777.81</td>
-      <td>1102.87</td>
-      <td>533.64</td>
-      <td>1479.80</td>
-      <td>881.30</td>
-      <td>297.80</td>
-      <td>580.28</td>
-      <td>320.84</td>
-      <td>35.95</td>
-      <td>53.25</td>
-      <td>42.99</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>2010</td>
-      <td>722.61</td>
-      <td>379.36</td>
-      <td>1029.03</td>
-      <td>1780.54</td>
-      <td>1136.93</td>
-      <td>814.83</td>
-      <td>1225.52</td>
-      <td>487.75</td>
-      <td>146.90</td>
-      <td>38.05</td>
-      <td>46.77</td>
-      <td>88.72</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>2011</td>
-      <td>1059.68</td>
-      <td>1016.81</td>
-      <td>2555.51</td>
-      <td>463.27</td>
-      <td>1059.94</td>
-      <td>2173.84</td>
-      <td>465.80</td>
-      <td>552.36</td>
-      <td>350.04</td>
-      <td>84.51</td>
-      <td>21.59</td>
-      <td>76.77</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>2020</td>
-      <td>56.21</td>
-      <td>311.24</td>
-      <td>1202.38</td>
-      <td>578.53</td>
-      <td>70.34</td>
-      <td>789.14</td>
-      <td>509.50</td>
-      <td>375.76</td>
-      <td>70.86</td>
-      <td>17.71</td>
-      <td>25.99</td>
-      <td>21.65</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>2012</td>
-      <td>527.67</td>
-      <td>523.53</td>
-      <td>156.69</td>
-      <td>1066.21</td>
-      <td>421.75</td>
-      <td>1643.46</td>
-      <td>828.51</td>
-      <td>115.19</td>
-      <td>164.73</td>
-      <td>98.85</td>
-      <td>92.70</td>
-      <td>45.65</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>2014</td>
-      <td>119.18</td>
-      <td>281.26</td>
-      <td>178.54</td>
-      <td>233.12</td>
-      <td>1314.08</td>
-      <td>978.52</td>
-      <td>376.71</td>
-      <td>179.59</td>
-      <td>42.21</td>
-      <td>96.86</td>
-      <td>163.17</td>
-      <td>244.05</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>2013</td>
-      <td>376.65</td>
-      <td>1131.15</td>
-      <td>1759.84</td>
-      <td>338.40</td>
-      <td>189.12</td>
-      <td>391.51</td>
-      <td>259.37</td>
-      <td>254.56</td>
-      <td>142.22</td>
-      <td>72.63</td>
-      <td>96.91</td>
-      <td>343.69</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>2015</td>
-      <td>342.81</td>
-      <td>551.60</td>
-      <td>1654.38</td>
-      <td>149.87</td>
-      <td>860.72</td>
-      <td>243.26</td>
-      <td>343.53</td>
-      <td>338.50</td>
-      <td>109.07</td>
-      <td>201.23</td>
-      <td>49.52</td>
-      <td>84.94</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>2016</td>
-      <td>305.11</td>
-      <td>635.79</td>
-      <td>1530.09</td>
-      <td>1754.74</td>
-      <td>367.08</td>
-      <td>1395.37</td>
-      <td>427.64</td>
-      <td>245.77</td>
-      <td>110.11</td>
-      <td>37.56</td>
-      <td>28.19</td>
-      <td>52.88</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>2017</td>
-      <td>1175.34</td>
-      <td>581.67</td>
-      <td>1155.19</td>
-      <td>2628.17</td>
-      <td>2110.15</td>
-      <td>751.90</td>
-      <td>825.07</td>
-      <td>153.14</td>
-      <td>118.32</td>
-      <td>53.72</td>
-      <td>72.88</td>
-      <td>156.63</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>2018</td>
-      <td>130.64</td>
-      <td>967.23</td>
-      <td>118.69</td>
-      <td>847.21</td>
-      <td>201.54</td>
-      <td>1540.98</td>
-      <td>578.42</td>
-      <td>201.33</td>
-      <td>43.35</td>
-      <td>68.03</td>
-      <td>22.84</td>
-      <td>14.06</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>2019</td>
-      <td>199.39</td>
-      <td>754.07</td>
-      <td>585.14</td>
-      <td>1282.06</td>
-      <td>2261.94</td>
-      <td>1090.67</td>
-      <td>442.48</td>
-      <td>743.01</td>
-      <td>48.86</td>
-      <td>25.14</td>
-      <td>48.34</td>
-      <td>208.95</td>
-    </tr>
-  </tbody>
-</table>
+SET
+SET
+SET
+SET
+SET
+SET
+CREATE TABLE
+ALTER TABLE
+CREATE TABLE
+ALTER TABLE
+CREATE TABLE
+ALTER TABLE
+CREATE TABLE
+ALTER TABLE
+CREATE TABLE
+ALTER TABLE
+CREATE TABLE
+ALTER TABLE
+COPY 8405
+COPY 4043
+COPY 4923
+COPY 1223
+COPY 820
+COPY 2420
+</pre>
 </div>
 </div>
 
@@ -15650,20 +15381,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 </div>
 
-</div>
-
-</div>
-<div id="cell-id=e3202db1-aae7-48a5-9835-594af348a1f8" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="%5BReview%5D-What-does-an-unpivot-look-like-(Matrix--%3E-Relational)?">[Review] What does an unpivot look like (Matrix -&gt; Relational)?<a class="anchor-link" href="#%5BReview%5D-What-does-an-unpivot-look-like-(Matrix--%3E-Relational)?">&#182;</a></h2>
-</div>
-</div>
-</div>
-</div><div id="cell-id=82bfc658-47f3-42c5-8c63-51bcbff928cf" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=05125479-89c3-4795-bbb3-87b5a4140bc9" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15671,151 +15389,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mm_melted</span> <span class="o">=</span> <span class="n">mm</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">id_vars</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">])</span>
-<span class="n">mm_melted</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Year</th>
-      <th>variable</th>
-      <th>value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2002</td>
-      <td>OCT</td>
-      <td>545.92</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2003</td>
-      <td>OCT</td>
-      <td>55.41</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2004</td>
-      <td>OCT</td>
-      <td>55.90</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2006</td>
-      <td>OCT</td>
-      <td>347.22</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2005</td>
-      <td>OCT</td>
-      <td>1449.23</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>223</th>
-      <td>2015</td>
-      <td>SEP</td>
-      <td>84.94</td>
-    </tr>
-    <tr>
-      <th>224</th>
-      <td>2016</td>
-      <td>SEP</td>
-      <td>52.88</td>
-    </tr>
-    <tr>
-      <th>225</th>
-      <td>2017</td>
-      <td>SEP</td>
-      <td>156.63</td>
-    </tr>
-    <tr>
-      <th>226</th>
-      <td>2018</td>
-      <td>SEP</td>
-      <td>14.06</td>
-    </tr>
-    <tr>
-      <th>227</th>
-      <td>2019</td>
-      <td>SEP</td>
-      <td>208.95</td>
-    </tr>
-  </tbody>
-</table>
-<p>228 rows × 3 columns</p>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div id="cell-id=d004248d-3972-48bc-8dab-d1f8cd4d4c31" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Thanks to the <code>id_var</code> parameter, the <code>Year</code> column is named and repeated for all other (variable=column name, value=value) elements in the row.</p>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=304401ce-65fc-408c-92cc-217cc682aee6" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mm_melted</span><span class="p">[</span><span class="n">mm_melted</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2002</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">sql</span> postgresql://127.0.0.1:5432/imdb_lecture
 </pre></div>
 
      </div>
@@ -15824,17 +15398,17 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 
 </div>
-<div id="cell-id=eac5444a-9a2c-4d1a-98d7-1bb0ef23da57" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=150395bf-a7a3-475b-be2f-472ed6414fa5" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="PIVOT(UNPIVOT)-=-??">PIVOT(UNPIVOT) = ??<a class="anchor-link" href="#PIVOT(UNPIVOT)-=-??">&#182;</a></h2>
+<h1 id="Exercise-%231:-String-manipulation">Exercise #1: String manipulation<a class="anchor-link" href="#Exercise-%231:-String-manipulation">&#182;</a></h1>
 </div>
 </div>
 </div>
-</div><div id="cell-id=0aa6b449-e5bb-4868-b398-6a285537473c" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=95d55f07-3af4-49f9-b20c-b6bf813dd6ed" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15842,9 +15416,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># how do we get back to something that resembles the original matrix?</span>
-<span class="c1"># mm_melted.pivot(index=&#39;variable&#39;, columns=&#39;Year&#39;) # A</span>
-<span class="n">mm_melted</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s1">&#39;variable&#39;</span><span class="p">)</span><span class="c1">#.reset_index() #B</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="s1">&#39;Hello&#39;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s1">&#39;World&#39;</span><span class="p">,</span>
+<span class="w">       </span><span class="n">STRPOS</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;el&#39;</span><span class="p">),</span>
+<span class="w">       </span><span class="k">SUBSTRING</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span>
 </pre></div>
 
      </div>
@@ -15858,6 +15433,28 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<span style="None">Running query in &#x27;postgresql://127.0.0.1:5432/imdb_lecture&#x27;</span>
+</div>
+
+</div>
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<span style="color: green">1 rows affected.</span>
+</div>
+
+</div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
@@ -15865,919 +15462,31 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead tr th {
-        text-align: left;
-    }
-
-    .dataframe thead tr:last-of-type th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr>
-      <th></th>
-      <th colspan="12" halign="left">value</th>
-    </tr>
-    <tr>
-      <th>variable</th>
-      <th>APR</th>
-      <th>AUG</th>
-      <th>DEC</th>
-      <th>FEB</th>
-      <th>JAN</th>
-      <th>JUL</th>
-      <th>JUN</th>
-      <th>MAR</th>
-      <th>MAY</th>
-      <th>NOV</th>
-      <th>OCT</th>
-      <th>SEP</th>
-    </tr>
-    <tr>
-      <th>Year</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2002</th>
-      <td>795.92</td>
-      <td>22.20</td>
-      <td>3996.76</td>
-      <td>1204.14</td>
-      <td>1815.74</td>
-      <td>79.52</td>
-      <td>112.62</td>
-      <td>1644.02</td>
-      <td>540.24</td>
-      <td>3115.08</td>
-      <td>545.92</td>
-      <td>171.70</td>
-    </tr>
-    <tr>
-      <th>2003</th>
-      <td>1571.27</td>
-      <td>267.40</td>
-      <td>2976.94</td>
-      <td>836.01</td>
-      <td>797.72</td>
-      <td>98.33</td>
-      <td>24.93</td>
-      <td>1026.11</td>
-      <td>468.59</td>
-      <td>1242.23</td>
-      <td>55.41</td>
-      <td>99.20</td>
-    </tr>
-    <tr>
-      <th>2004</th>
-      <td>339.18</td>
-      <td>116.74</td>
-      <td>2311.72</td>
-      <td>2019.22</td>
-      <td>942.75</td>
-      <td>55.57</td>
-      <td>72.38</td>
-      <td>399.52</td>
-      <td>251.64</td>
-      <td>834.40</td>
-      <td>55.90</td>
-      <td>97.48</td>
-    </tr>
-    <tr>
-      <th>2005</th>
-      <td>743.11</td>
-      <td>86.51</td>
-      <td>1789.93</td>
-      <td>1055.41</td>
-      <td>1777.23</td>
-      <td>46.61</td>
-      <td>309.19</td>
-      <td>1472.91</td>
-      <td>1113.26</td>
-      <td>619.77</td>
-      <td>1449.23</td>
-      <td>93.98</td>
-    </tr>
-    <tr>
-      <th>2006</th>
-      <td>1602.55</td>
-      <td>18.75</td>
-      <td>2981.16</td>
-      <td>995.27</td>
-      <td>1793.97</td>
-      <td>90.31</td>
-      <td>102.44</td>
-      <td>2031.19</td>
-      <td>287.21</td>
-      <td>908.44</td>
-      <td>347.22</td>
-      <td>33.76</td>
-    </tr>
-    <tr>
-      <th>2007</th>
-      <td>519.85</td>
-      <td>62.74</td>
-      <td>1279.33</td>
-      <td>1615.47</td>
-      <td>320.66</td>
-      <td>102.60</td>
-      <td>85.32</td>
-      <td>317.77</td>
-      <td>150.15</td>
-      <td>942.89</td>
-      <td>178.81</td>
-      <td>164.02</td>
-    </tr>
-    <tr>
-      <th>2008</th>
-      <td>153.53</td>
-      <td>36.83</td>
-      <td>1189.43</td>
-      <td>1007.57</td>
-      <td>2153.17</td>
-      <td>41.73</td>
-      <td>42.45</td>
-      <td>316.55</td>
-      <td>255.80</td>
-      <td>329.64</td>
-      <td>612.92</td>
-      <td>12.59</td>
-    </tr>
-    <tr>
-      <th>2009</th>
-      <td>297.80</td>
-      <td>53.25</td>
-      <td>1102.87</td>
-      <td>1479.80</td>
-      <td>533.64</td>
-      <td>35.95</td>
-      <td>320.84</td>
-      <td>881.30</td>
-      <td>580.28</td>
-      <td>777.81</td>
-      <td>272.27</td>
-      <td>42.99</td>
-    </tr>
-    <tr>
-      <th>2010</th>
-      <td>1225.52</td>
-      <td>46.77</td>
-      <td>1029.03</td>
-      <td>1136.93</td>
-      <td>1780.54</td>
-      <td>38.05</td>
-      <td>146.90</td>
-      <td>814.83</td>
-      <td>487.75</td>
-      <td>379.36</td>
-      <td>722.61</td>
-      <td>88.72</td>
-    </tr>
-    <tr>
-      <th>2011</th>
-      <td>465.80</td>
-      <td>21.59</td>
-      <td>2555.51</td>
-      <td>1059.94</td>
-      <td>463.27</td>
-      <td>84.51</td>
-      <td>350.04</td>
-      <td>2173.84</td>
-      <td>552.36</td>
-      <td>1016.81</td>
-      <td>1059.68</td>
-      <td>76.77</td>
-    </tr>
-    <tr>
-      <th>2012</th>
-      <td>828.51</td>
-      <td>92.70</td>
-      <td>156.69</td>
-      <td>421.75</td>
-      <td>1066.21</td>
-      <td>98.85</td>
-      <td>164.73</td>
-      <td>1643.46</td>
-      <td>115.19</td>
-      <td>523.53</td>
-      <td>527.67</td>
-      <td>45.65</td>
-    </tr>
-    <tr>
-      <th>2013</th>
-      <td>259.37</td>
-      <td>96.91</td>
-      <td>1759.84</td>
-      <td>189.12</td>
-      <td>338.40</td>
-      <td>72.63</td>
-      <td>142.22</td>
-      <td>391.51</td>
-      <td>254.56</td>
-      <td>1131.15</td>
-      <td>376.65</td>
-      <td>343.69</td>
-    </tr>
-    <tr>
-      <th>2014</th>
-      <td>376.71</td>
-      <td>163.17</td>
-      <td>178.54</td>
-      <td>1314.08</td>
-      <td>233.12</td>
-      <td>96.86</td>
-      <td>42.21</td>
-      <td>978.52</td>
-      <td>179.59</td>
-      <td>281.26</td>
-      <td>119.18</td>
-      <td>244.05</td>
-    </tr>
-    <tr>
-      <th>2015</th>
-      <td>343.53</td>
-      <td>49.52</td>
-      <td>1654.38</td>
-      <td>860.72</td>
-      <td>149.87</td>
-      <td>201.23</td>
-      <td>109.07</td>
-      <td>243.26</td>
-      <td>338.50</td>
-      <td>551.60</td>
-      <td>342.81</td>
-      <td>84.94</td>
-    </tr>
-    <tr>
-      <th>2016</th>
-      <td>427.64</td>
-      <td>28.19</td>
-      <td>1530.09</td>
-      <td>367.08</td>
-      <td>1754.74</td>
-      <td>37.56</td>
-      <td>110.11</td>
-      <td>1395.37</td>
-      <td>245.77</td>
-      <td>635.79</td>
-      <td>305.11</td>
-      <td>52.88</td>
-    </tr>
-    <tr>
-      <th>2017</th>
-      <td>825.07</td>
-      <td>72.88</td>
-      <td>1155.19</td>
-      <td>2110.15</td>
-      <td>2628.17</td>
-      <td>53.72</td>
-      <td>118.32</td>
-      <td>751.90</td>
-      <td>153.14</td>
-      <td>581.67</td>
-      <td>1175.34</td>
-      <td>156.63</td>
-    </tr>
-    <tr>
-      <th>2018</th>
-      <td>578.42</td>
-      <td>22.84</td>
-      <td>118.69</td>
-      <td>201.54</td>
-      <td>847.21</td>
-      <td>68.03</td>
-      <td>43.35</td>
-      <td>1540.98</td>
-      <td>201.33</td>
-      <td>967.23</td>
-      <td>130.64</td>
-      <td>14.06</td>
-    </tr>
-    <tr>
-      <th>2019</th>
-      <td>442.48</td>
-      <td>48.34</td>
-      <td>585.14</td>
-      <td>2261.94</td>
-      <td>1282.06</td>
-      <td>25.14</td>
-      <td>48.86</td>
-      <td>1090.67</td>
-      <td>743.01</td>
-      <td>754.07</td>
-      <td>199.39</td>
-      <td>208.95</td>
-    </tr>
-    <tr>
-      <th>2020</th>
-      <td>509.50</td>
-      <td>25.99</td>
-      <td>1202.38</td>
-      <td>70.34</td>
-      <td>578.53</td>
-      <td>17.71</td>
-      <td>70.86</td>
-      <td>789.14</td>
-      <td>375.76</td>
-      <td>311.24</td>
-      <td>56.21</td>
-      <td>21.65</td>
-    </tr>
-  </tbody>
+<table>
+    <thead>
+        <tr>
+            <th>?column?</th>
+            <th>strpos</th>
+            <th>substring</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>HelloWorld</td>
+            <td>2</td>
+            <td>ell</td>
+        </tr>
+    </tbody>
 </table>
 </div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div id="cell-id=cb83c341-8bbb-484f-9232-85f317329cb2" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Data-Unboxing,-Part-I">Data Unboxing, Part I<a class="anchor-link" href="#Data-Unboxing,-Part-I">&#182;</a></h1>
-</div>
-</div>
-</div>
-</div><div id="cell-id=c5c1a629-1d30-4a33-ab4c-64a34e805f09" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>du<span class="w"> </span>-h<span class="w"> </span>data/*
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>1.4M	data/jc1.txt
-51M	data/jq2.txt
-696K	data/mmp.txt
-4.1M	data/mmr.txt
-4.0K	data/mm.txt
-824K	data/mpf.txt
-4.0K	data/requirements.txt
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div id="cell-id=eaf375c2-be80-4892-a3e1-052e01cdadae" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>ls<span class="w"> </span>-lh<span class="w"> </span>data/*
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>-rw-r--r-- 1 jovyan jovyan 1.4M Sep 28 19:24 data/jc1.txt
--rw-r--r-- 1 jovyan jovyan  51M Sep 28 19:24 data/jq2.txt
--rw-r--r-- 1 jovyan jovyan 695K Sep 28 19:24 data/mmp.txt
--rw-r--r-- 1 jovyan jovyan 4.1M Sep 28 19:24 data/mmr.txt
--rw-r--r-- 1 jovyan jovyan 1.3K Sep 28 19:24 data/mm.txt
--rw-r--r-- 1 jovyan jovyan 822K Sep 28 19:24 data/mpf.txt
--rw-r--r-- 1 jovyan jovyan 2.1K Sep 28 19:24 data/requirements.txt
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div id="cell-id=42c951af-fd6d-4b62-a35e-f98212605f49" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>What category of data is the file below? Any observations about the data?</p>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=87c97d22-703a-4d50-9296-4d84e92705b8" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>head<span class="w"> </span>-c<span class="w"> </span><span class="m">1024</span><span class="w"> </span>data/jc1.txt
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>﻿_input,_num,_widgetName,_source,_resultNumber,_pageUrl,game_number,bio1,bio2,bio3,contestant1_name,contestant1_score,contestant2_name,contestant2_score,contestant3_name,contestant3_score
-,1,Jeopardy_Winners,Jeopardy_Winners,1,http://www.j-archive.com/showgame.php?game_id=3350,Show #5883 - Wednesday March 24 2010,Derek Honoré an attorney from Inglewood California,Tatiana Walton a graphic designer from Cutler Bay Florida,Regina Robbins an arts teacher from New York New York (whose 1-day cash winnings total $38500),Regina,$19401,Tatiana,$7100,Derek,$11900
-,2,Jeopardy_Winners,Jeopardy_Winners,2,http://www.j-archive.com/showgame.php?game_id=4400,Show #6756 - Monday January 20 2014,Jon McGuire a software-development manager from Matthews North Carolina,Blake Perkins an environmental scientist from Baton Rouge Louisiana,Sarah McNitt a study abroad adviser originally from Ann Arbor Michigan (whose 4-day cash winnings total $69199),Sarah,$20199,Blake,$0,Jon,$8380
-,3,Jeopardy_Winners,Jeopardy_Winners,3,http://www.j</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div id="cell-id=98fe53da-692c-4fa7-b638-98d24c4594b0" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>Exercise</strong>: What do you see this time? Category? Interesting features of the data?</p>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=071800dc-0b9d-4aa9-831b-8612e5660012" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>head<span class="w"> </span>-c<span class="w"> </span><span class="m">1024</span><span class="w"> </span>data/jq2.txt
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>{&#34;category&#34;:&#34;HISTORY&#34;,&#34;air_date&#34;:&#34;2004-12-31&#34;,&#34;question&#34;:&#34;&#39;For the last 8 years of his life, Galileo was under house arrest for espousing this man&#39;s theory&#39;&#34;,&#34;value&#34;:&#34;$200&#34;,&#34;answer&#34;:&#34;Copernicus&#34;,&#34;round&#34;:&#34;Jeopardy!&#34;,&#34;show_number&#34;:&#34;4680&#34;}
-{&#34;category&#34;:&#34;ESPN&#39;s TOP 10 ALL-TIME ATHLETES&#34;,&#34;air_date&#34;:&#34;2004-12-31&#34;,&#34;question&#34;:&#34;&#39;No. 2: 1912 Olympian; football star at Carlisle Indian School; 6 MLB seasons with the Reds, Giants &amp; Braves&#39;&#34;,&#34;value&#34;:&#34;$200&#34;,&#34;answer&#34;:&#34;Jim Thorpe&#34;,&#34;round&#34;:&#34;Jeopardy!&#34;,&#34;show_number&#34;:&#34;4680&#34;}
-{&#34;category&#34;:&#34;EVERYBODY TALKS ABOUT IT...&#34;,&#34;air_date&#34;:&#34;2004-12-31&#34;,&#34;question&#34;:&#34;&#39;The city of Yuma in this state has a record average of 4,055 hours of sunshine each year&#39;&#34;,&#34;value&#34;:&#34;$200&#34;,&#34;answer&#34;:&#34;Arizona&#34;,&#34;round&#34;:&#34;Jeopardy!&#34;,&#34;show_number&#34;:&#34;4680&#34;}
-{&#34;category&#34;:&#34;THE COMPANY LINE&#34;,&#34;air_date&#34;:&#34;2004-12-31&#34;,&#34;question&#34;:&#34;&#39;In 1963, live on \&#34;The Art Linkletter Show\&#34;, this company served its billionth burger&#39;&#34;,&#34;value&#34;:&#34;$200&#34;,&#34;answer&#34;:&#34;McDonald\\&#39;s&#34;,&#34;round&#34;:&#34;Jeopardy!&#34;,&#34;show_number&#34;:&#34;4680&#34;}
-{&#34;category&#34;:&#34;EPITAPHS &amp; TRIBUTE</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div id="cell-id=b7204251-2e8e-43ab-9897-c60227b066a3" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Data-Unboxing,-Part-II">Data Unboxing, Part II<a class="anchor-link" href="#Data-Unboxing,-Part-II">&#182;</a></h2>
-</div>
-</div>
-</div>
-</div>
-<div id="cell-id=59d22ae0-148f-41ba-95ee-0c6410b53a59" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Let's explore the first file here:</p>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=c92be082-84da-4774-b914-7f219d61eb86" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>head<span class="w"> </span>-c<span class="w"> </span><span class="m">1024</span><span class="w"> </span>data/jc1.txt
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div id="cell-id=44f3de6e-96dd-4c3c-8fa0-275416b37005" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">warnings</span>
-<span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">FutureWarning</span><span class="p">)</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-<span class="n">jc1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/jc1.txt&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
-<span class="n">jc1</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-</pre></div>
 
-     </div>
 </div>
-</div>
-</div>
-
-</div>
-<div id="cell-id=bcba815c-59db-46d5-867f-b728f769fa65" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>What data types are each column?</p>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=7b5031c0-b6c5-403b-86c3-c4594586f541" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">jc1</span><span class="o">.</span><span class="n">dtypes</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div>
-<div id="cell-id=a597fb73-9c3d-47d0-a978-2c70bb87db7b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Currently, we're working with objects, because of how pandas read in the dtypes. Let's try to modify some scores here for contestants to make them numbers</p>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=770424b6-bb75-4202-abdf-ef81e6547df2" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">jc1</span><span class="o">.</span><span class="n">columns</span>
-<span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">jc1</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
-    <span class="k">if</span> <span class="s1">&#39;_score&#39;</span> <span class="ow">in</span> <span class="n">col</span><span class="p">:</span>
-        <span class="n">jc1</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">jc1</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;$&#39;</span><span class="p">))</span> <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div>
-<div id="cell-id=b80d57d3-0f5c-4d7e-81ca-522c9a083818" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>What are our dtypes now?</p>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=690b3851-0d1c-4f2f-be87-48744d7669c6" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">jc1</span><span class="o">.</span><span class="n">dtypes</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div>
-<div id="cell-id=9dcee6e6-67dc-4e26-a0b6-670363d6af17" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Can we visualize our contestant winnings?</p>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=15df92c1-05bf-4c99-935e-e3cbd355fd13" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">jc1</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;contestant1_score&#39;</span><span class="p">)</span>
-<span class="n">jc1</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;contestant2_score&#39;</span><span class="p">)</span>
-<span class="n">jc1</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;contestant3_score&#39;</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div>
-<div id="cell-id=0a08d070-8741-4e21-aba4-66a81cedf661" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="CNRFC-NOAA-Rainfall-Dataset">CNRFC-NOAA Rainfall Dataset<a class="anchor-link" href="#CNRFC-NOAA-Rainfall-Dataset">&#182;</a></h1>
-</div>
-</div>
-</div>
-</div>
-<div id="cell-id=3a3462a9-e95d-46ac-89fd-063c5b5d9a0b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ul>
-<li>There are four data files tied to the scrape of rainfall data from the NOAA (National Oceanic and Atmospheric Administration) <a href="https://www.cnrfc.noaa.gov/monthly_precip_2020.php">link</a>.</li>
-<li>This was compiled by visiting each annual website of monthly precipitation by regions in the California Nevada River Forecast Center (CNRFC) area.</li>
-<li>For more details on how to make this dataset yourself, check out the <code>rainfallscrape</code> folder. You may need to install additional Python packages via <code>pip -r rainfallscrape/requirements.txt</code>.</li>
-</ul>
-<p>Let's unbox this data too:</p>
 
 </div>
-</div>
-</div>
-</div><div id="cell-id=06fb451e-f285-481c-a0da-9a83a0cec29c" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>ls<span class="w"> </span>-lh<span class="w"> </span>data/m*
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>-rw-r--r-- 1 jovyan jovyan 695K Sep 28 19:24 data/mmp.txt
--rw-r--r-- 1 jovyan jovyan 4.1M Sep 28 19:24 data/mmr.txt
--rw-r--r-- 1 jovyan jovyan 1.3K Sep 28 19:24 data/mm.txt
--rw-r--r-- 1 jovyan jovyan 822K Sep 28 19:24 data/mpf.txt
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div id="cell-id=04228afe-75cb-4ebb-abd1-04e036fc380d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>All of these files <em>look</em> rectangular. <strong>What data model does each follow, structurally?</strong></p>
-<p>Analyze the first few lines of each file in order below. Remember to adjust <code>-n</code> number of lines as needed.</p>
-<ol>
-<li><code>mm.txt</code></li>
-<li><code>mmp.txt</code></li>
-<li><code>mmr.txt</code></li>
-<li><code>mpf.txt</code> - may need to look at first 20 lines here</li>
-</ol>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=1deaa829-dd84-4cf2-a993-8d6bca09c873" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">20</span><span class="w"> </span>data/mpf.txt
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>2002, &#39;SOUTHERN OREGON COASTAL&#39;
-2002, &#39;ID&#39;, &#39;Location&#39;, &#39;OCT&#39;, &#39;NOV&#39;, &#39;DEC&#39;, &#39;JAN&#39;, &#39;FEB&#39;, &#39;MAR&#39;, &#39;APR&#39;, &#39;MAY&#39;, &#39;JUN&#39;, &#39;JUL&#39;, &#39;AUG&#39;, &#39;SEP&#39;, &#39;WY to Date&#39;, &#39;Pct Avg to Date&#39;, &#39;Pct Tot WY&#39;
-2002, &#39;ASHO3&#39;, &#39;ASHLAND&#39;, &#39;0.86&#39;, &#39;0.49&#39;, &#39;2.12&#39;, &#39;3.42&#39;, &#39;1.38&#39;, &#39;1.00&#39;, &#39;0.36&#39;, &#39;2.30&#39;, &#39;1.54&#39;, &#39;0.00&#39;, &#39;0.00&#39;, &#39;0.16&#39;, &#39;13.63&#39;, &#39;68&#39;, &#39;68&#39;
-2002, &#39;CVJO3&#39;, &#39;CAVE JUNCTION&#39;, &#39;M&#39;, &#39;M&#39;, &#39;M&#39;, &#39;M&#39;, &#39;M&#39;, &#39;M&#39;, &#39;M&#39;, &#39;M&#39;, &#39;M&#39;, &#39;M&#39;, &#39;M&#39;, &#39;M&#39;, &#39;M&#39;
-2002, &#39;GOLO3&#39;, &#39;GOLD BEACH&#39;, &#39;M&#39;, &#39;M&#39;, &#39;M&#39;, &#39;M&#39;, &#39;M&#39;, &#39;M&#39;, &#39;M&#39;, &#39;M&#39;, &#39;M&#39;, &#39;M&#39;, &#39;M&#39;, &#39;M&#39;, &#39;M&#39;
-2002, &#39;GPSO3&#39;, &#39;GRANTS PASS KAJO&#39;, &#39;0.61&#39;, &#39;1.21&#39;, &#39;4.19&#39;, &#39;6.31&#39;, &#39;0.24&#39;, &#39;0.77&#39;, &#39;0.58&#39;, &#39;2.02&#39;, &#39;0.87&#39;, &#39;0.00&#39;, &#39;0.00&#39;, &#39;0.20&#39;, &#39;17.00&#39;, &#39;55&#39;, &#39;55&#39;
-2002, &#39;GSPO3&#39;, &#39;GREEN SPRINGS PP&#39;, &#39;0.35&#39;, &#39;0.75&#39;, &#39;2.44&#39;, &#39;4.14&#39;, &#39;0.66&#39;, &#39;M&#39;, &#39;0.26&#39;, &#39;2.59&#39;, &#39;M&#39;, &#39;M&#39;, &#39;0.00&#39;, &#39;0.20&#39;, &#39;M&#39;
-2002, &#39;LEMO3&#39;, &#39;LEMOLO LAKE&#39;, &#39;3.68&#39;, &#39;1.81&#39;, &#39;5.59&#39;, &#39;18.19&#39;, &#39;4.34&#39;, &#39;4.32&#39;, &#39;3.37&#39;, &#39;4.05&#39;, &#39;2.52&#39;, &#39;0.00&#39;, &#39;0.02&#39;, &#39;2.33&#39;, &#39;50.22&#39;, &#39;76&#39;, &#39;76&#39;
-2002, &#39;MFR&#39;, &#39;MEDFORD&#39;, &#39;0.65&#39;, &#39;0.24&#39;, &#39;2.86&#39;, &#39;3.43&#39;, &#39;0.51&#39;, &#39;0.74&#39;, &#39;0.46&#39;, &#39;2.50&#39;, &#39;1.20&#39;, &#39;0.00&#39;, &#39;0.00&#39;, &#39;0.05&#39;, &#39;12.64&#39;, &#39;69&#39;, &#39;69&#39;
-2002, &#39;OTH&#39;, &#39;NORTH BEND&#39;, &#39;2.43&#39;, &#39;2.10&#39;, &#39;9.16&#39;, &#39;7.73&#39;, &#39;2.85&#39;, &#39;3.71&#39;, &#39;2.71&#39;, &#39;4.66&#39;, &#39;2.00&#39;, &#39;0.04&#39;, &#39;0.07&#39;, &#39;1.37&#39;, &#39;38.83&#39;, &#39;60&#39;, &#39;60&#39;
-2002, &#39;PRSO3&#39;, &#39;PROSPECT 2SW&#39;, &#39;2.22&#39;, &#39;1.95&#39;, &#39;4.12&#39;, &#39;9.19&#39;, &#39;2.08&#39;, &#39;3.27&#39;, &#39;1.43&#39;, &#39;4.06&#39;, &#39;1.80&#39;, &#39;0.00&#39;, &#39;0.00&#39;, &#39;0.77&#39;, &#39;30.89&#39;, &#39;74&#39;, &#39;74&#39;
-2002, &#39;RIDO3&#39;, &#39;RIDDLE&#39;, &#39;0.88&#39;, &#39;1.73&#39;, &#39;4.20&#39;, &#39;7.34&#39;, &#39;1.35&#39;, &#39;1.74&#39;, &#39;1.34&#39;, &#39;2.16&#39;, &#39;0.81&#39;, &#39;0.00&#39;, &#39;0.00&#39;, &#39;0.72&#39;, &#39;22.27&#39;, &#39;71&#39;, &#39;71&#39;
-2002, &#39;ROGO3&#39;, &#39;ROSEBURG&#39;, &#39;M&#39;, &#39;M&#39;, &#39;M&#39;, &#39;M&#39;, &#39;M&#39;, &#39;M&#39;, &#39;M&#39;, &#39;M&#39;, &#39;M&#39;, &#39;M&#39;, &#39;M&#39;, &#39;M&#39;, &#39;M&#39;
-2002, &#39;SXT&#39;, &#39;SEXTON SUMMIT&#39;, &#39;M&#39;, &#39;0.42&#39;, &#39;5.34&#39;, &#39;7.06&#39;, &#39;0.73&#39;, &#39;2.15&#39;, &#39;0.78&#39;, &#39;4.16&#39;, &#39;0.92&#39;, &#39;0.00&#39;, &#39;0.05&#39;, &#39;0.80&#39;, &#39;M&#39;
-2002, &#39;TKFO3&#39;, &#39;TOKETEE FALLS&#39;, &#39;2.70&#39;, &#39;1.54&#39;, &#39;3.55&#39;, &#39;10.37&#39;, &#39;3.16&#39;, &#39;4.31&#39;, &#39;2.39&#39;, &#39;4.26&#39;, &#39;2.41&#39;, &#39;0.00&#39;, &#39;0.01&#39;, &#39;1.54&#39;, &#39;36.24&#39;, &#39;75&#39;, &#39;75&#39;
-2002, &#39;WINO3&#39;, &#39;WINCHESTER DAM&#39;, &#39;1.28&#39;, &#39;1.77&#39;, &#39;4.14&#39;, &#39;8.24&#39;, &#39;1.60&#39;, &#39;2.63&#39;, &#39;1.69&#39;, &#39;2.75&#39;, &#39;1.33&#39;, &#39;0.00&#39;, &#39;0.00&#39;, &#39;1.10&#39;, &#39;26.53&#39;, &#39;73&#39;, &#39;73&#39;
-2002, &#39;WLMO3&#39;, &#39;WILLIAMS&#39;, &#39;0.65&#39;, &#39;0.85&#39;, &#39;4.52&#39;, &#39;7.00&#39;, &#39;0.27&#39;, &#39;1.40&#39;, &#39;0.31&#39;, &#39;2.70&#39;, &#39;0.79&#39;, &#39;0.00&#39;, &#39;0.01&#39;, &#39;0.08&#39;, &#39;18.58&#39;, &#39;57&#39;, &#39;57&#39;
-2002, &#39;OREGON CLOSED BASINS&#39;
-2002, &#39;ID&#39;, &#39;Location&#39;, &#39;OCT&#39;, &#39;NOV&#39;, &#39;DEC&#39;, &#39;JAN&#39;, &#39;FEB&#39;, &#39;MAR&#39;, &#39;APR&#39;, &#39;MAY&#39;, &#39;JUN&#39;, &#39;JUL&#39;, &#39;AUG&#39;, &#39;SEP&#39;, &#39;WY to Date&#39;, &#39;Pct Avg to Date&#39;, &#39;Pct Tot WY&#39;
-2002, &#39;HMRO3&#39;, &#39;HART MOUNTAIN REF&#39;, &#39;0.00&#39;, &#39;0.00&#39;, &#39;M&#39;, &#39;2.60&#39;, &#39;0.08&#39;, &#39;1.63&#39;, &#39;0.69&#39;, &#39;0.97&#39;, &#39;2.59&#39;, &#39;0.03&#39;, &#39;0.02&#39;, &#39;0.00&#39;, &#39;M&#39;
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
 
-</div>
-<div id="cell-id=9f2bc202-6827-4490-b46a-ae79d336d24b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Fulfilling-Structural-Transformation-Requests">Fulfilling Structural Transformation Requests<a class="anchor-link" href="#Fulfilling-Structural-Transformation-Requests">&#182;</a></h2>
-</div>
-</div>
-</div>
-</div>
-<div id="cell-id=525d64e0-2ae3-4302-a606-92251e5f0c1b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Let's start from the long (tidy, relational) file:</p>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=e17b156a-5289-46de-b0fd-a61d5cce8260" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.min_rows&#39;</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span> <span class="c1"># changes truncated view in pandas</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
 </div>
 
-</div><div id="cell-id=e5b0cbe9-05c0-4f25-8311-2c02c3dc1edb" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=8de739c3-d91f-48f8-99bf-4c3e9c995148" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16785,8 +15494,12 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mmr</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/mmr.txt&#39;</span><span class="p">)</span>
-<span class="n">mmr</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">REGEXP_REPLACE</span><span class="p">(</span><span class="s1">&#39;Hannah Montana&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;(.*)&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;\1&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">ex1</span><span class="p">,</span>
+<span class="w">       </span><span class="n">REGEXP_REPLACE</span><span class="p">(</span><span class="s1">&#39;Hannah Montana&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;(.*) (.*)&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;\2, \1&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">ex2</span><span class="p">,</span>
+<span class="w">       </span><span class="n">REGEXP_REPLACE</span><span class="p">(</span><span class="s1">&#39;Phone Number 510 642 3214&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;[a-zA-Z ]&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">ex3</span><span class="p">,</span>
+<span class="w">       </span><span class="n">REGEXP_REPLACE</span><span class="p">(</span><span class="s1">&#39;Phone Number 510 642 3214&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;[a-zA-Z ]&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;g&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">ex4</span>
+<span class="p">;</span>
 </pre></div>
 
      </div>
@@ -16800,6 +15513,28 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<span style="None">Running query in &#x27;postgresql://127.0.0.1:5432/imdb_lecture&#x27;</span>
+</div>
+
+</div>
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<span style="color: green">1 rows affected.</span>
+</div>
+
+</div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
@@ -16807,663 +15542,21 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Year</th>
-      <th>ID</th>
-      <th>Location</th>
-      <th>Station</th>
-      <th>Month</th>
-      <th>Inches of Precipitation</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2002</td>
-      <td>4BK</td>
-      <td>BROOKINGS</td>
-      <td>SOUTHERN OREGON COASTAL</td>
-      <td>OCT</td>
-      <td>6.43</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2002</td>
-      <td>4BK</td>
-      <td>BROOKINGS</td>
-      <td>SOUTHERN OREGON COASTAL</td>
-      <td>NOV</td>
-      <td>14.53</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2002</td>
-      <td>4BK</td>
-      <td>BROOKINGS</td>
-      <td>SOUTHERN OREGON COASTAL</td>
-      <td>DEC</td>
-      <td>17.32</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2002</td>
-      <td>4BK</td>
-      <td>BROOKINGS</td>
-      <td>SOUTHERN OREGON COASTAL</td>
-      <td>JAN</td>
-      <td>17.32</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2002</td>
-      <td>4BK</td>
-      <td>BROOKINGS</td>
-      <td>SOUTHERN OREGON COASTAL</td>
-      <td>FEB</td>
-      <td>9.10</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>78751</th>
-      <td>2020</td>
-      <td>EMRU1</td>
-      <td>ENTERPRISE</td>
-      <td>ESCALANTE DESERT</td>
-      <td>MAY</td>
-      <td>0.07</td>
-    </tr>
-    <tr>
-      <th>78752</th>
-      <td>2020</td>
-      <td>EMRU1</td>
-      <td>ENTERPRISE</td>
-      <td>ESCALANTE DESERT</td>
-      <td>JUN</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>78753</th>
-      <td>2020</td>
-      <td>EMRU1</td>
-      <td>ENTERPRISE</td>
-      <td>ESCALANTE DESERT</td>
-      <td>JUL</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>78754</th>
-      <td>2020</td>
-      <td>EMRU1</td>
-      <td>ENTERPRISE</td>
-      <td>ESCALANTE DESERT</td>
-      <td>AUG</td>
-      <td>0.11</td>
-    </tr>
-    <tr>
-      <th>78755</th>
-      <td>2020</td>
-      <td>EMRU1</td>
-      <td>ENTERPRISE</td>
-      <td>ESCALANTE DESERT</td>
-      <td>SEP</td>
-      <td>0.00</td>
-    </tr>
-  </tbody>
-</table>
-<p>78756 rows × 6 columns</p>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div id="cell-id=2c54043a-cb58-4159-8f83-bcdb30bbd6e6" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>A data analyst asks for just the precipitation grouped by year and month, with no location data. <strong>How do we do this?</strong></p>
-<ul>
-<li>What are they asking for? This isn't intuitive, because we have location data as well. What do we do?</li>
-<li>How do we pivot the data into year x month form?</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=86f4368e-fc96-411b-bb6b-8bada6e0f534" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">mmr</span>
- <span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;Month&#39;</span><span class="p">])</span>
- <span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s1">&#39;Inches of Precipitation&#39;</span><span class="p">)</span>
- <span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
- <span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s1">&#39;Month&#39;</span><span class="p">)</span>
-<span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead tr th {
-        text-align: left;
-    }
-
-    .dataframe thead tr:last-of-type th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr>
-      <th></th>
-      <th colspan="12" halign="left">Inches of Precipitation</th>
-    </tr>
-    <tr>
-      <th>Month</th>
-      <th>APR</th>
-      <th>AUG</th>
-      <th>DEC</th>
-      <th>FEB</th>
-      <th>JAN</th>
-      <th>JUL</th>
-      <th>JUN</th>
-      <th>MAR</th>
-      <th>MAY</th>
-      <th>NOV</th>
-      <th>OCT</th>
-      <th>SEP</th>
-    </tr>
-    <tr>
-      <th>Year</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2002</th>
-      <td>1.137029</td>
-      <td>0.031988</td>
-      <td>5.759020</td>
-      <td>1.715299</td>
-      <td>2.593914</td>
-      <td>0.113276</td>
-      <td>0.164169</td>
-      <td>2.341909</td>
-      <td>0.778444</td>
-      <td>4.450114</td>
-      <td>0.779886</td>
-      <td>0.245989</td>
-    </tr>
-    <tr>
-      <th>2003</th>
-      <td>4.328567</td>
-      <td>0.749020</td>
-      <td>8.223591</td>
-      <td>2.309420</td>
-      <td>2.203646</td>
-      <td>0.273139</td>
-      <td>0.069637</td>
-      <td>2.834558</td>
-      <td>1.287335</td>
-      <td>3.441080</td>
-      <td>0.152645</td>
-      <td>0.274792</td>
-    </tr>
-    <tr>
-      <th>2004</th>
-      <td>0.952753</td>
-      <td>0.348478</td>
-      <td>6.403657</td>
-      <td>5.577956</td>
-      <td>2.604282</td>
-      <td>0.167885</td>
-      <td>0.209191</td>
-      <td>1.106704</td>
-      <td>0.710847</td>
-      <td>2.330726</td>
-      <td>0.153994</td>
-      <td>0.303676</td>
-    </tr>
-    <tr>
-      <th>2005</th>
-      <td>2.147717</td>
-      <td>0.269502</td>
-      <td>5.158300</td>
-      <td>3.068052</td>
-      <td>5.242566</td>
-      <td>0.147035</td>
-      <td>0.954290</td>
-      <td>4.220372</td>
-      <td>3.293669</td>
-      <td>1.786081</td>
-      <td>4.117131</td>
-      <td>0.339278</td>
-    </tr>
-    <tr>
-      <th>2006</th>
-      <td>4.769494</td>
-      <td>0.063776</td>
-      <td>8.898985</td>
-      <td>2.988799</td>
-      <td>5.387297</td>
-      <td>0.286698</td>
-      <td>0.317152</td>
-      <td>6.027270</td>
-      <td>0.891957</td>
-      <td>2.744532</td>
-      <td>1.036478</td>
-      <td>0.108553</td>
-    </tr>
-    <tr>
-      <th>2007</th>
-      <td>1.589755</td>
-      <td>0.220915</td>
-      <td>3.888541</td>
-      <td>4.986019</td>
-      <td>0.974650</td>
-      <td>0.337500</td>
-      <td>0.272588</td>
-      <td>0.989938</td>
-      <td>0.464861</td>
-      <td>2.874665</td>
-      <td>0.546820</td>
-      <td>0.598613</td>
-    </tr>
-    <tr>
-      <th>2008</th>
-      <td>0.498474</td>
-      <td>0.128776</td>
-      <td>3.812276</td>
-      <td>3.281987</td>
-      <td>6.945710</td>
-      <td>0.144394</td>
-      <td>0.147396</td>
-      <td>1.021129</td>
-      <td>0.825161</td>
-      <td>1.039874</td>
-      <td>1.939620</td>
-      <td>0.048238</td>
-    </tr>
-    <tr>
-      <th>2009</th>
-      <td>0.954487</td>
-      <td>0.192935</td>
-      <td>3.569159</td>
-      <td>4.758199</td>
-      <td>1.710385</td>
-      <td>0.125699</td>
-      <td>1.091293</td>
-      <td>2.833762</td>
-      <td>1.842159</td>
-      <td>2.618889</td>
-      <td>0.895625</td>
-      <td>0.155199</td>
-    </tr>
-    <tr>
-      <th>2010</th>
-      <td>3.991922</td>
-      <td>0.175827</td>
-      <td>3.418704</td>
-      <td>3.679385</td>
-      <td>5.818758</td>
-      <td>0.137862</td>
-      <td>0.488040</td>
-      <td>2.636990</td>
-      <td>1.583604</td>
-      <td>1.223742</td>
-      <td>2.369213</td>
-      <td>0.342548</td>
-    </tr>
-    <tr>
-      <th>2011</th>
-      <td>1.589761</td>
-      <td>0.078509</td>
-      <td>8.518367</td>
-      <td>3.521395</td>
-      <td>1.544233</td>
-      <td>0.320114</td>
-      <td>1.291661</td>
-      <td>7.198146</td>
-      <td>2.008582</td>
-      <td>3.378106</td>
-      <td>3.544080</td>
-      <td>0.290795</td>
-    </tr>
-    <tr>
-      <th>2012</th>
-      <td>2.770936</td>
-      <td>0.337091</td>
-      <td>0.534778</td>
-      <td>1.429661</td>
-      <td>3.638942</td>
-      <td>0.350532</td>
-      <td>0.571979</td>
-      <td>5.496522</td>
-      <td>0.389155</td>
-      <td>1.792911</td>
-      <td>1.813299</td>
-      <td>0.172264</td>
-    </tr>
-    <tr>
-      <th>2013</th>
-      <td>0.936354</td>
-      <td>0.372731</td>
-      <td>6.666061</td>
-      <td>0.675429</td>
-      <td>1.230545</td>
-      <td>0.269000</td>
-      <td>0.509749</td>
-      <td>1.403262</td>
-      <td>0.922319</td>
-      <td>4.098370</td>
-      <td>1.359747</td>
-      <td>1.249782</td>
-    </tr>
-    <tr>
-      <th>2014</th>
-      <td>1.400409</td>
-      <td>0.608843</td>
-      <td>0.637643</td>
-      <td>4.676441</td>
-      <td>0.838561</td>
-      <td>0.365509</td>
-      <td>0.157500</td>
-      <td>3.519856</td>
-      <td>0.653055</td>
-      <td>1.026496</td>
-      <td>0.419648</td>
-      <td>0.924432</td>
-    </tr>
-    <tr>
-      <th>2015</th>
-      <td>1.281828</td>
-      <td>0.194196</td>
-      <td>6.060000</td>
-      <td>3.118551</td>
-      <td>0.546971</td>
-      <td>0.828107</td>
-      <td>0.432817</td>
-      <td>0.875036</td>
-      <td>1.398760</td>
-      <td>2.105344</td>
-      <td>1.251131</td>
-      <td>0.359915</td>
-    </tr>
-    <tr>
-      <th>2016</th>
-      <td>1.696984</td>
-      <td>0.120987</td>
-      <td>5.709291</td>
-      <td>1.450909</td>
-      <td>6.572060</td>
-      <td>0.155851</td>
-      <td>0.460711</td>
-      <td>5.603896</td>
-      <td>1.054807</td>
-      <td>2.399208</td>
-      <td>1.191836</td>
-      <td>0.216721</td>
-    </tr>
-    <tr>
-      <th>2017</th>
-      <td>3.496059</td>
-      <td>0.290359</td>
-      <td>4.936709</td>
-      <td>8.755809</td>
-      <td>10.512680</td>
-      <td>0.206615</td>
-      <td>0.475181</td>
-      <td>3.186017</td>
-      <td>0.595875</td>
-      <td>2.540044</td>
-      <td>4.917741</td>
-      <td>0.611836</td>
-    </tr>
-    <tr>
-      <th>2018</th>
-      <td>2.370574</td>
-      <td>0.098026</td>
-      <td>0.474760</td>
-      <td>0.790353</td>
-      <td>3.361944</td>
-      <td>0.276545</td>
-      <td>0.173400</td>
-      <td>6.066850</td>
-      <td>0.821755</td>
-      <td>3.838214</td>
-      <td>0.518413</td>
-      <td>0.056466</td>
-    </tr>
-    <tr>
-      <th>2019</th>
-      <td>1.762869</td>
-      <td>0.198930</td>
-      <td>2.589115</td>
-      <td>9.120726</td>
-      <td>5.341917</td>
-      <td>0.103884</td>
-      <td>0.191608</td>
-      <td>4.260430</td>
-      <td>3.057654</td>
-      <td>3.168361</td>
-      <td>0.830792</td>
-      <td>0.949773</td>
-    </tr>
-    <tr>
-      <th>2020</th>
-      <td>2.079592</td>
-      <td>0.103135</td>
-      <td>4.790359</td>
-      <td>0.278024</td>
-      <td>2.332782</td>
-      <td>0.071124</td>
-      <td>0.291605</td>
-      <td>3.194899</td>
-      <td>1.521296</td>
-      <td>1.383289</td>
-      <td>0.233237</td>
-      <td>0.087298</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div id="cell-id=c31164e8-bd2c-4fed-a7ef-bafed4718f13" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<h1 id="Scalar-Functions-and-Query-Plans">Scalar Functions and Query Plans<a class="anchor-link" href="#Scalar-Functions-and-Query-Plans">&#182;</a></h1>
-</div>
-</div>
-</div>
-</div><div id="cell-id=50555b0a-b8f6-4210-88d7-d23b9a156f4a" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## we&#39;ll use the Lahman baseball database in our examples today.</span>
-<span class="c1">## replace the database connection with a database of your own!</span>
-<span class="o">%</span><span class="k">reload_ext</span> sql
-<span class="o">%</span><span class="k">sql</span> postgresql://localhost:5432/baseball
-<span class="o">%</span><span class="k">config</span> SqlMagic.displaylimit = 30
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div id="cell-id=f50f4a8f-ee66-4c31-bf14-73cc686aaacf" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
-<span class="k">WITH</span><span class="w"> </span><span class="n">yearnum</span><span class="w"> </span><span class="k">AS</span>
-<span class="w">  </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">yearid</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">yearid</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="k">year</span>
-<span class="w">     </span><span class="k">FROM</span><span class="w"> </span><span class="n">batting</span>
-<span class="w">  </span><span class="p">)</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="n">yearid</span><span class="p">,</span><span class="w"> </span><span class="n">CONCAT</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">LPAD</span><span class="p">(</span><span class="k">year</span><span class="p">::</span><span class="nb">text</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;0&#39;</span><span class="p">))</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="k">year</span>
-<span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">yearnum</span>
-<span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<span style="None">Running query in &#x27;postgresql://localhost:5432/baseball&#x27;</span>
-</div>
-
-</div>
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<span style="color: green">5 rows affected.</span>
-</div>
-
-</div>
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
 <table>
     <thead>
         <tr>
-            <th>yearid</th>
-            <th>year</th>
+            <th>ex1</th>
+            <th>ex2</th>
+            <th>ex3</th>
+            <th>ex4</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>2004</td>
-            <td>'04</td>
-        </tr>
-        <tr>
-            <td>2007</td>
-            <td>'07</td>
-        </tr>
-        <tr>
-            <td>2009</td>
-            <td>'09</td>
-        </tr>
-        <tr>
-            <td>2010</td>
-            <td>'10</td>
-        </tr>
-        <tr>
-            <td>2012</td>
-            <td>'12</td>
+            <td>Hannah Montana</td>
+            <td>Montana, Hannah</td>
+            <td>hone Number 510 642 3214</td>
+            <td>5106423214</td>
         </tr>
     </tbody>
 </table>
@@ -17476,30 +15569,55 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 
 </div>
-<div id="cell-id=2333a67a-d66f-4cb6-a61d-03e0a73b53b3" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=66f8315f-b683-4a89-97b4-64005d5138f2" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Let's analyze the below query (we've flattened it for convenience):</p>
-
+<h1 id="Exercise-2">Exercise 2<a class="anchor-link" href="#Exercise-2">&#182;</a></h1>
 </div>
 </div>
 </div>
-</div><div id="cell-id=fb17df72-4ed0-4ca4-8317-f27bf8d4efaf" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div>
+<div id="cell-id=eb771785-8eda-4421-89c6-8791a4f825db" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Choice-A">Choice A<a class="anchor-link" href="#Choice-A">&#182;</a></h2>
+</div>
+</div>
+</div>
+</div><div id="cell-id=c67d48a8-0a4d-4169-8e9b-a4e0731a5409" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">sql</span> postgresql://127.0.0.1:5432/imdb_lecture
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div id="cell-id=6345bad3-0451-4933-89b1-b24f9e05078f" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
-<span class="k">EXPLAIN</span><span class="w"> </span><span class="p">(</span><span class="k">VERBOSE</span><span class="w"> </span><span class="k">true</span><span class="p">)</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="n">yearid</span><span class="p">,</span>
-<span class="w">       </span><span class="n">CONCAT</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">LPAD</span><span class="p">((</span><span class="n">yearid</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">100</span><span class="p">)::</span><span class="nb">text</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;0&#39;</span><span class="p">))</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="k">year</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">batting</span><span class="p">;</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">REGEXP_REPLACE</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;(.*) (.*)&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;\2&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">lastname</span><span class="p">,</span>
+<span class="w">       </span><span class="n">REGEXP_REPLACE</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;(.*) (.*)&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;\1&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">firstname</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">people</span><span class="p">;</span>
 </pre></div>
 
      </div>
@@ -17520,7 +15638,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<span style="None">Running query in &#x27;postgresql://localhost:5432/baseball&#x27;</span>
+<span style="None">Running query in &#x27;postgresql://127.0.0.1:5432/imdb_lecture&#x27;</span>
 </div>
 
 </div>
@@ -17531,7 +15649,424 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<span style="color: green">2 rows affected.</span>
+<span style="color: green">1223 rows affected.</span>
+</div>
+
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<table>
+    <thead>
+        <tr>
+            <th>lastname</th>
+            <th>firstname</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Hill</td>
+            <td>Dwayne</td>
+        </tr>
+        <tr>
+            <td>Hardman</td>
+            <td>Dave</td>
+        </tr>
+        <tr>
+            <td>Pryce-Jones</td>
+            <td>Rich</td>
+        </tr>
+        <tr>
+            <td>Sadler</td>
+            <td>William</td>
+        </tr>
+        <tr>
+            <td>Laurentiis</td>
+            <td>Giada De</td>
+        </tr>
+        <tr>
+            <td>Hartmann</td>
+            <td>Janine</td>
+        </tr>
+        <tr>
+            <td>Taliánová</td>
+            <td>Tereza</td>
+        </tr>
+        <tr>
+            <td>Heywood</td>
+            <td>Chris</td>
+        </tr>
+        <tr>
+            <td>Zhou</td>
+            <td>Chengao</td>
+        </tr>
+        <tr>
+            <td>Langley</td>
+            <td>Mark</td>
+        </tr>
+    </tbody>
+</table>
+<span style="font-style:italic;text-align:center;">Truncated to <a href="https://jupysql.ploomber.io/en/latest/api/configuration.html#displaylimit">displaylimit</a> of 10.</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div id="cell-id=010fe0f6-9679-484e-90e6-f4e7ad6b6c68" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Choice-B">Choice B<a class="anchor-link" href="#Choice-B">&#182;</a></h2>
+</div>
+</div>
+</div>
+</div><div id="cell-id=1dc2b621-e6dc-4f99-b27f-92edd7fc1177" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">REGEXP_REPLACE</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;(.*) (.*)&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;\1&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">firstname</span><span class="p">,</span>
+<span class="w">       </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">countname</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">people</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">firstname</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">countname</span><span class="w"> </span><span class="k">desc</span><span class="p">;</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<span style="None">Running query in &#x27;postgresql://127.0.0.1:5432/imdb_lecture&#x27;</span>
+</div>
+
+</div>
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<span style="color: green">871 rows affected.</span>
+</div>
+
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<table>
+    <thead>
+        <tr>
+            <th>firstname</th>
+            <th>countname</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Chris</td>
+            <td>79</td>
+        </tr>
+        <tr>
+            <td>David</td>
+            <td>18</td>
+        </tr>
+        <tr>
+            <td>Michael</td>
+            <td>16</td>
+        </tr>
+        <tr>
+            <td>Steve</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>Peter</td>
+            <td>9</td>
+        </tr>
+        <tr>
+            <td>John</td>
+            <td>9</td>
+        </tr>
+        <tr>
+            <td>Tom</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>Mark</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>Dan</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>Paul</td>
+            <td>6</td>
+        </tr>
+    </tbody>
+</table>
+<span style="font-style:italic;text-align:center;">Truncated to <a href="https://jupysql.ploomber.io/en/latest/api/configuration.html#displaylimit">displaylimit</a> of 10.</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div id="cell-id=b597ad4e-69e1-4616-a42c-26caa5580f20" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Choice-C">Choice C<a class="anchor-link" href="#Choice-C">&#182;</a></h2>
+</div>
+</div>
+</div>
+</div><div id="cell-id=6e80d22b-53e6-4927-b0ff-062c2f390db3" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">WITH</span><span class="w"> </span><span class="n">firstnames</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">REGEXP_REPLACE</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;(.*) (.*)&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;\1&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">firstname</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">people</span><span class="w"> </span><span class="p">)</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="k">LENGTH</span><span class="p">(</span><span class="n">firstname</span><span class="p">))</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">firstnames</span><span class="p">;</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<span style="None">Running query in &#x27;postgresql://127.0.0.1:5432/imdb_lecture&#x27;</span>
+</div>
+
+</div>
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<span style="color: green">1 rows affected.</span>
+</div>
+
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<table>
+    <thead>
+        <tr>
+            <th>max</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>20</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div id="cell-id=dd9bc9cc-2708-46e9-ad95-490dd4ac7d6a" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>What is this first name? Why doesn't the below query work?</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=49626069-e432-423f-a687-d4479aae9da4" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">WITH</span><span class="w"> </span><span class="n">firstnames</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">REGEXP_REPLACE</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;(.*) (.*)&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;\1&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">firstname</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">people</span><span class="w"> </span><span class="p">)</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="k">LENGTH</span><span class="p">(</span><span class="n">firstname</span><span class="p">)),</span><span class="w"> </span><span class="n">firstname</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">firstnames</span><span class="p">;</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<span style="None">Running query in &#x27;postgresql://127.0.0.1:5432/imdb_lecture&#x27;</span>
+</div>
+
+</div>
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>RuntimeError: (psycopg2.errors.GroupingError) column &#34;firstnames.firstname&#34; must appear in the GROUP BY clause or be used in an aggregate function
+LINE 4: SELECT MAX(LENGTH(firstname)), firstname
+                                       ^
+
+[SQL: WITH firstnames AS (
+    SELECT REGEXP_REPLACE(name, &#39;(.*) (.*)&#39;, &#39;\1&#39;) as firstname
+    FROM people )
+SELECT MAX(LENGTH(firstname)), firstname
+FROM firstnames;]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+If you need help solving this issue, send us a message: https://ploomber.io/community
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div id="cell-id=fc2e740e-0189-49d1-a629-4deaf7ccaa5c" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Solution:</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=ee907269-d530-49c6-91b1-4a1fabe486c7" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">WITH</span><span class="w"> </span><span class="n">firstnames</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">REGEXP_REPLACE</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;(.*) (.*)&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;\1&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">firstname</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">people</span><span class="w"> </span><span class="p">)</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="k">LENGTH</span><span class="p">(</span><span class="n">firstname</span><span class="p">)),</span><span class="w"> </span><span class="n">firstname</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">firstnames</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">firstname</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="k">max</span><span class="w"> </span><span class="k">DESC</span><span class="p">;</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<span style="None">Running query in &#x27;postgresql://127.0.0.1:5432/imdb_lecture&#x27;</span>
+</div>
+
+</div>
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<span style="color: green">871 rows affected.</span>
 </div>
 
 </div>
@@ -17545,18 +16080,54 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <table>
     <thead>
         <tr>
-            <th>QUERY PLAN</th>
+            <th>max</th>
+            <th>firstname</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>Seq Scan on public.batting  (cost=0.00..3922.29 rows=104324 width=36)</td>
+            <td>20</td>
+            <td>Juan Francisco Pérez</td>
         </tr>
         <tr>
-            <td>&nbsp;&nbsp;Output: yearid, concat('''', lpad(((yearid % 100))::text, 2, '0'::text))</td>
+            <td>19</td>
+            <td>José María González</td>
+        </tr>
+        <tr>
+            <td>19</td>
+            <td>Margarida Mercês de</td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>Dadinha Monteiro</td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>Sreemoolanagaram</td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>Michelle van der</td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>Jonathan Taylor</td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>Deirdre Coleman</td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>Nam Hoi Sap-Sam</td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>Michael Richard</td>
         </tr>
     </tbody>
 </table>
+<span style="font-style:italic;text-align:center;">Truncated to <a href="https://jupysql.ploomber.io/en/latest/api/configuration.html#displaylimit">displaylimit</a> of 10.</span>
 </div>
 
 </div>
@@ -17565,25 +16136,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 </div>
 
-</div>
-<div id="cell-id=adecb922-2f1a-417e-a153-5a3a06d15e5d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>What if scalar functions mention multiple tables?</p>
-<p>The below query computes an arbitrary statistic for pitchers:</p>
-<ul>
-<li>1 point for every strikeout they throw as pitcher</li>
-<li>–1 for every point they themselves struck out as batter</li>
-</ul>
-<p>If the notebook-like output is hard to read, try out the query in <code>psql</code>. Note that notebooks don't preserve whitespace when displaying dataframes.</p>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=b22b2d8e-baf2-4c96-afbe-d82c492a77e0" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=8184519c-03de-4337-9c3c-fbe309d4b6a2" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17591,12 +16144,114 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
-<span class="k">EXPLAIN</span><span class="w"> </span><span class="p">(</span><span class="k">VERBOSE</span><span class="w"> </span><span class="k">true</span><span class="p">)</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">playerid</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">so</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">so</span>
-<span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">pitching</span><span class="w"> </span><span class="n">p</span>
-<span class="w">  </span><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">batting</span><span class="w"> </span><span class="n">b</span>
-<span class="w">  </span><span class="k">ON</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">playerid</span><span class="o">=</span><span class="n">b</span><span class="p">.</span><span class="n">playerid</span><span class="p">;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">sql</span> --close postgresql://127.0.0.1:5432/imdb_lecture
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div id="cell-id=74adb549-73be-4faa-8e6a-ae782b6c2f2f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Exercise-%233:-Grouping">Exercise #3: Grouping<a class="anchor-link" href="#Exercise-%233:-Grouping">&#182;</a></h1>
+</div>
+</div>
+</div>
+</div><div id="cell-id=a4646ea8-bd59-4560-95bb-69d67c093e32" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">reload_ext</span> sql
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div id="cell-id=2877770e-370f-44ed-ac81-0e92cf6605b5" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>psql<span class="w"> </span>-h<span class="w"> </span>localhost<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;DROP DATABASE IF EXISTS stops_lecture&#39;</span>
+<span class="o">!</span>psql<span class="w"> </span>-h<span class="w"> </span>localhost<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;CREATE DATABASE stops_lecture&#39;</span><span class="w"> </span>
+<span class="o">!</span>psql<span class="w"> </span>-h<span class="w"> </span>localhost<span class="w"> </span>-d<span class="w"> </span>stops_lecture<span class="w"> </span>-f<span class="w"> </span>data/stops_lecture.sql
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>DROP DATABASE
+CREATE DATABASE
+SET
+SET
+SET
+SET
+SET
+ set_config 
+------------
+ 
+(1 row)
+
+SET
+SET
+SET
+SET
+SET
+SET
+CREATE TABLE
+ALTER TABLE
+CREATE TABLE
+ALTER TABLE
+COPY 84779
+COPY 211
+CREATE INDEX
+CREATE INDEX
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div id="cell-id=9e044d01" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">sql</span> postgresql://127.0.0.1:5432/stops_lecture
 </pre></div>
 
      </div>
@@ -17617,7 +16272,47 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<span style="None">Running query in &#x27;postgresql://localhost:5432/baseball&#x27;</span>
+<span style="None">Connecting and switching to connection postgresql://127.0.0.1:5432/stops_lecture</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div id="cell-id=fc11b168-fc32-428f-b4f5-5a0bf6120024" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">stops</span><span class="p">;</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<span style="None">Running query in &#x27;postgresql://127.0.0.1:5432/stops_lecture&#x27;</span>
 </div>
 
 </div>
@@ -17628,13 +16323,13 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<span style="color: green">11 rows affected.</span>
+<span style="color: green">1 rows affected.</span>
 </div>
 
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[14]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
 
 
 
@@ -17642,42 +16337,12 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <table>
     <thead>
         <tr>
-            <th>QUERY PLAN</th>
+            <th>count</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>Nested Loop  (cost=0.43..13004.27 rows=339358 width=13)</td>
-        </tr>
-        <tr>
-            <td>&nbsp;&nbsp;Output: p.playerid, (p.so - b.so)</td>
-        </tr>
-        <tr>
-            <td>&nbsp;&nbsp;->  Seq Scan on public.pitching p  (cost=0.00..1374.06 rows=45806 width=13)</td>
-        </tr>
-        <tr>
-            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Output: p.playerid, p.yearid, p.stint, p.teamid, p.lgid, p.w, p.l, p.g, p.gs, p.cg, p.sho, p.sv, p.ipouts, p.h, p.er, p.hr, p.bb, p.so, p.baopp, p.era, p.ibb, p.wp, p.hbp, p.bk, p.bfp, p.gf, p.r, p.sh, p.sf, p.gidp</td>
-        </tr>
-        <tr>
-            <td>&nbsp;&nbsp;->  Memoize  (cost=0.43..0.73 rows=7 width=13)</td>
-        </tr>
-        <tr>
-            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Output: b.so, b.playerid</td>
-        </tr>
-        <tr>
-            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cache Key: p.playerid</td>
-        </tr>
-        <tr>
-            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cache Mode: logical</td>
-        </tr>
-        <tr>
-            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;->  Index Scan using batting_pkey on public.batting b  (cost=0.42..0.72 rows=7 width=13)</td>
-        </tr>
-        <tr>
-            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Output: b.so, b.playerid</td>
-        </tr>
-        <tr>
-            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Index Cond: ((b.playerid)::text = (p.playerid)::text)</td>
+            <td>84779</td>
         </tr>
     </tbody>
 </table>
@@ -17689,42 +16354,17 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 </div>
 
-</div>
-<div id="cell-id=83dd3bf1-5408-427a-85ea-5e64430dac4e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="%5BExtra%5D-Recreating-the-CNRFC-NOAA-data">[Extra] Recreating the CNRFC-NOAA data<a class="anchor-link" href="#%5BExtra%5D-Recreating-the-CNRFC-NOAA-data">&#182;</a></h2>
-</div>
-</div>
-</div>
-</div>
-<div id="cell-id=3729d242-d265-419e-b8c7-266e5dd8b04e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ul>
-<li>There are four data files tied to the scrape of rainfall data from the NOAA (National Oceanic and Atmospheric Administration) <a href="https://www.cnrfc.noaa.gov/monthly_precip_2020.php">link</a>.</li>
-<li>This was compiled by visiting each annual website of monthly precipitation by regions in the California Nevada River Forecast Center (CNRFC) area.</li>
-<li>For more details on how to make this dataset yourself, check out the <code>rainfallscrape</code> folder. You may need to install additional Python packages via <code>pip -r rainfallscrape/requirements.txt</code>. We'll assume you've already run <code>simple_scrape.py</code>.</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=19948782-74df-4fab-9cbe-20811973db8f" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div id="cell-id=0b14d923-e725-4875-ac3a-e93e8eb996e4" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>head<span class="w"> </span>-c<span class="w"> </span><span class="m">4096</span><span class="w"> </span>data/mpf.txt
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Zips</span><span class="p">;</span>
 </pre></div>
 
      </div>
@@ -17732,37 +16372,74 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-<div id="cell-id=c1efc905-fd55-4881-9112-e901e1794830" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<span style="None">Running query in &#x27;postgresql://127.0.0.1:5432/stops_lecture&#x27;</span>
 </div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Messy! You can play in bash or pandas if you like. Let's clean this up a bit. Firstly, we note that the structure of the file is a bit off. It's hard to read multiple dataframes from a single CSV like this...so let's try to write multiple files and concatenate a df.</p>
-<ul>
-<li>Going to iterate through the lines in this files...</li>
-<li>Identify the files with names of locations</li>
-<li>print the filenames transformed to see what it's like.</li>
-</ul>
 
 </div>
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<span style="color: green">1 rows affected.</span>
 </div>
+
 </div>
-</div><div id="cell-id=e51c8cfa-aab9-41b0-95a8-7be7615a5e35" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<table>
+    <thead>
+        <tr>
+            <th>count</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>211</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div id="cell-id=d3202a4f-a6b3-4cb5-bb2d-78f943c83b53" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">curr_file</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data/mpf.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">():</span>
-        <span class="n">splits</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">splits</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">splits</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Stops</span>
+<span class="w">    </span><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">Zips</span>
+<span class="w">    </span><span class="k">ON</span><span class="w"> </span><span class="n">Stops</span><span class="p">.</span><span class="k">location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Zips</span><span class="p">.</span><span class="k">location</span><span class="p">;</span>
 </pre></div>
 
      </div>
@@ -17770,37 +16447,74 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-<div id="cell-id=cf56d62b-36f3-4656-8637-8c50b85dc327" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<span style="None">Running query in &#x27;postgresql://127.0.0.1:5432/stops_lecture&#x27;</span>
 </div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Okay, first, let's create some files; one for each segment. And let's rename them into something more conventional.</p>
-<ul>
-<li>Going to iterate through the lines in this files...</li>
-<li>Identify the files with names of locations</li>
-<li>print the filenames transformed to see what it's like.</li>
-</ul>
 
 </div>
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<span style="color: green">1 rows affected.</span>
 </div>
+
 </div>
-</div><div id="cell-id=5ddb7072-011c-4107-8616-2fda9749796f" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<table>
+    <thead>
+        <tr>
+            <th>count</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>15743</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div id="cell-id=4321f273-a3eb-4e21-a541-b0587987d84e" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">curr_file</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;lec12_data/mpf.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">num</span><span class="p">,</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()):</span>
-        <span class="n">splits</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">splits</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">splits</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot; &#39;</span><span class="se">\n</span><span class="s2"> &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;...&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;_&#39;</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Stops</span>
+<span class="w">    </span><span class="k">FULL</span><span class="w"> </span><span class="k">OUTER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">Zips</span>
+<span class="w">    </span><span class="k">ON</span><span class="w"> </span><span class="n">Stops</span><span class="p">.</span><span class="k">location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Zips</span><span class="p">.</span><span class="k">location</span><span class="p">;</span>
 </pre></div>
 
      </div>
@@ -17808,39 +16522,74 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-<div id="cell-id=14f1d86d-9331-46e9-8a66-3a506ec0811e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<span style="None">Running query in &#x27;postgresql://127.0.0.1:5432/stops_lecture&#x27;</span>
 </div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>That's probably more of what we want! Now, let's actually write our new files...</p>
 
 </div>
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<span style="color: green">1 rows affected.</span>
 </div>
+
 </div>
-</div><div id="cell-id=c41498a4-02d0-4c0a-a551-ae9a652d8571" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<table>
+    <thead>
+        <tr>
+            <th>count</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>87291</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div id="cell-id=04c009dc-bb93-4502-a083-a10da2c77d18" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">curr_file</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data/mpf.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">master_file</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">master_file</span><span class="o">.</span><span class="n">readlines</span><span class="p">():</span>
-        <span class="n">splits</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">splits</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">curr_file</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-                <span class="n">curr_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-            <span class="n">filename</span> <span class="o">=</span> <span class="n">splits</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;_&#39;</span> <span class="o">+</span> <span class="n">splits</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot; &#39;</span><span class="se">\n</span><span class="s2"> &quot;</span><span class="p">)</span>
-            <span class="n">filename</span> <span class="o">=</span> <span class="n">filename</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;...&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
-            <span class="n">filename</span> <span class="o">=</span> <span class="n">filename</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;_&#39;</span><span class="p">)</span>
-            <span class="n">curr_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data/subfiles/&#39;</span> <span class="o">+</span> <span class="n">filename</span> <span class="o">+</span> <span class="s1">&#39;.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
-        <span class="n">curr_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
-<span class="n">curr_file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Stops</span>
+<span class="w">    </span><span class="k">LEFT</span><span class="w"> </span><span class="k">OUTER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">Zips</span>
+<span class="w">    </span><span class="k">ON</span><span class="w"> </span><span class="n">Stops</span><span class="p">.</span><span class="k">location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Zips</span><span class="p">.</span><span class="k">location</span><span class="p">;</span>
 </pre></div>
 
      </div>
@@ -17848,38 +16597,74 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-<div id="cell-id=6ea06230-c141-4810-897a-3cca1d9ed6ae" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<span style="None">Running query in &#x27;postgresql://127.0.0.1:5432/stops_lecture&#x27;</span>
 </div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Now, let's read these files into a dataframe...and we'll need to do a lot of preprocessing!</p>
 
 </div>
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<span style="color: green">1 rows affected.</span>
 </div>
+
 </div>
-</div><div id="cell-id=8b447eba-23fd-4f0a-86d6-2e296deef85e" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[22]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<table>
+    <thead>
+        <tr>
+            <th>count</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>87115</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div id="cell-id=eb6891ec-edb2-49bb-84d0-652fd40a788d" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="n">mpf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
-<span class="n">parent_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;/data/subfiles/&#39;</span>
-<span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">parent_dir</span><span class="p">):</span>
-    <span class="c1"># read from the first header. not the second!</span>
-    <span class="n">region_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">parent_dir</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="n">filename</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-    <span class="c1"># BE CAREFUL! Let&#39;s rename our schema...because right now, this is problematic.</span>
-    <span class="c1"># The first column is just labeled as the year itself (e.g. 2007). Not &#39;Year&#39;.</span>
-    <span class="n">region_df</span> <span class="o">=</span> <span class="n">region_df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="n">filename</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]:</span> <span class="s1">&#39;Year&#39;</span><span class="p">})</span>
-    <span class="n">mpf</span> <span class="o">=</span> <span class="n">mpf</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">region_df</span><span class="p">)</span>
-<span class="n">mpf</span> <span class="o">=</span> <span class="n">mpf</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)</span>
-<span class="n">mpf</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Stops</span>
+<span class="w">    </span><span class="k">RIGHT</span><span class="w"> </span><span class="k">OUTER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">Zips</span>
+<span class="w">    </span><span class="k">ON</span><span class="w"> </span><span class="n">Stops</span><span class="p">.</span><span class="k">location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Zips</span><span class="p">.</span><span class="k">location</span><span class="p">;</span>
 </pre></div>
 
      </div>
@@ -17887,112 +16672,70 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 </div>
 
-</div>
-<div id="cell-id=a741ac40-9802-46b3-973b-58824423552b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Now, let's figure out what our data looks like in Pandas.</p>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=66faef70-78cf-4733-a504-25c24461e19b" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mpf</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 
-</div><div id="cell-id=1bc04f2b-dcd4-408f-823a-660f6c4ae0a0" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mpf</span><span class="o">.</span><span class="n">dtypes</span>
-</pre></div>
 
-     </div>
-</div>
-</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<span style="None">Running query in &#x27;postgresql://127.0.0.1:5432/stops_lecture&#x27;</span>
 </div>
 
 </div>
-<div id="cell-id=fa97d943-ae65-4d8e-8909-a40515f3ef98" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<span style="color: green">1 rows affected.</span>
 </div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Let's rename our columns!</p>
 
 </div>
-</div>
-</div>
-</div><div id="cell-id=c679b2f3-e149-4d00-9e17-cac5cb801d05" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">col_set</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">mpf</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">column</span> <span class="o">!=</span> <span class="s1">&#39;Year&#39;</span><span class="p">:</span>
-        <span class="n">col_set</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">column</span><span class="p">:</span> <span class="n">column</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot; &#39;&quot;</span><span class="p">)})</span>
-<span class="n">mpf</span> <span class="o">=</span> <span class="n">mpf</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">col_set</span><span class="p">)</span>
-<span class="n">mpf</span>
-</pre></div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[23]:</div>
 
-     </div>
-</div>
-</div>
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<table>
+    <thead>
+        <tr>
+            <th>count</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>15919</td>
+        </tr>
+    </tbody>
+</table>
 </div>
 
-</div><div id="cell-id=8cf10685-9271-4461-8838-414ae2a00e93" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div>
+
+</div>
+
+</div>
+
+</div><div id="cell-id=0e03e30a-6194-414a-9a0e-82a7bf014af9" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Let&#39;s remove the Ms and replace them with NaNs, and strip the quotes</span>
-<span class="kn">import</span> <span class="nn">math</span>
-<span class="k">def</span> <span class="nf">_process_data</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="nb">float</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">x</span>
-    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">str</span> <span class="ow">and</span> <span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;&#39; &quot;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="s1">&#39;M&#39;</span> <span class="ow">or</span> <span class="n">x</span> <span class="o">==</span> <span class="s1">&#39;NA&#39;</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="n">mpf</span> <span class="o">=</span> <span class="n">mpf</span><span class="p">[</span><span class="n">mpf</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2002</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">mpf</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">col</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">,</span> <span class="s2">&quot;Location&quot;</span><span class="p">]:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
-        <span class="n">mpf</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">mpf</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">))</span>
-    <span class="k">elif</span> <span class="n">col</span> <span class="o">!=</span> <span class="s1">&#39;Year&#39;</span><span class="p">:</span>
-        <span class="n">mpf</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">mpf</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">_process_data</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-<span class="n">mpf</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">sql</span> --close postgresql://127.0.0.1:5432/stops_lecture
 </pre></div>
 
      </div>
