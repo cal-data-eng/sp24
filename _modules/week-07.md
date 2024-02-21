@@ -4,7 +4,7 @@ date: 2024-02-26
 ---
 
 Mon 2/26
-: **Lecture 10**{: .label .label-lecture } Spreadsheets 
+: **Lecture 10**{: .label .label-lecture } Data Models: Relations, Tensors, Dataframes, Spreadsheets 
 
 Wed 2/28
 : **Lecture 11**{: .label .label-lecture } OLAP, Summarization 
