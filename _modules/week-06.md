@@ -13,8 +13,9 @@ Wed 2/21
 
 Thu 2/22
 : **Discussion**{: .label .label-disc } [Query Optimization](https://drive.google.com/file/d/1SvSlfZ8t8xGmuUO9qTS9T7ZrwY_WBHjm/view?usp=sharing){:target="\_blank"}
+	: [Solution](https://drive.google.com/file/d/1i4vu6ppVh23e42gJmZURA7g2X7zJncFS/view?usp=sharing){:target="_blank"}
 : **Multivitamin 2**{: .label .label-hw } Multivitamin 2 Release
-  : Due Wed 3/6, 5pm
+	: Due Wed 3/6, 5pm
   
 Fri 2/23
 : **MultiVitamin 1**{: .label .label-hw-due } Due, 5pm (Extended)
