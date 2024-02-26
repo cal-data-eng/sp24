@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>lec08</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>lec10</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -15213,41 +15213,19 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 
-<div id="cell-id=0c213f7c-0187-4ccc-a9a6-0064ed88d1ab" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=578e897a-1aed-42c2-b908-2f375a809ba9" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Lecture-08:-Query-Optimization-I">Lecture 08: Query Optimization I<a class="anchor-link" href="#Lecture-08:-Query-Optimization-I">&#182;</a></h1>
-</div>
-</div>
-</div>
-</div>
-<div id="cell-id=b6dc1dc3-4dae-4348-b118-da4fbb4911e7" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="New-IMDB-Performance-database">New IMDB Performance database<a class="anchor-link" href="#New-IMDB-Performance-database">&#182;</a></h2><p>This is a variation of the IMDB database with keys defined. Note that this is a pretty big database! So if you run the below lines, please also remember to delete the <code>imdb_perf_lecture</code> afterwards to save space on your limited postgreSQL server.</p>
-
-</div>
-</div>
-</div>
-</div>
-<div id="cell-id=ed756181-efad-4017-acef-84388f72b9aa" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Lecture-10:-Query-Optimization-II">Lecture 10: Query Optimization II<a class="anchor-link" href="#Lecture-10:-Query-Optimization-II">&#182;</a></h2><h3 id="New-IMDB-Performance-database">New IMDB Performance database<a class="anchor-link" href="#New-IMDB-Performance-database">&#182;</a></h3><p>This is a variation of the IMDB database with keys defined. Note that this is a pretty big database! So if you run the below lines, please also remember to delete the <code>imdb_perf_lecture</code> afterwards to save space on your limited postgreSQL server.</p>
 <p>If you didn't load it in with a previous lecture, load in the <code>imdb_perf_lecture</code> database.</p>
 
 </div>
 </div>
 </div>
-</div><div id="cell-id=8ea61b1d-de1e-455e-b294-31945f9bf983" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=52aa3a84-2dee-4a58-afcc-0a143ae468fe" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15284,12 +15262,12 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 </div>
 
-</div><div id="cell-id=1e5a3e6e-5460-4605-9396-c1436b2825a8" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=5fb42a4e-18db-45bf-a554-659a13e7203f" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>psql<span class="w"> </span>-h<span class="w"> </span>localhost<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;DROP DATABASE IF EXISTS imdb_perf_lecture&#39;</span>
@@ -15353,12 +15331,12 @@ ALTER TABLE
 
 </div>
 
-</div><div id="cell-id=e990b213-85e8-43b8-84a9-d7b151bdf108" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=23f851a9-da8a-45e9-b1ce-731d7d690bf2" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">reload_ext</span> sql
@@ -15369,1002 +15347,12 @@ ALTER TABLE
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>There&#39;s a new jupysql version available (0.10.10), you&#39;re running 0.10.0. To upgrade: pip install jupysql --upgrade
-Deploy FastAPI apps for free on Ploomber Cloud! Learn more: https://ploomber.io/s/signup
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div id="cell-id=6ae32dbd-026d-4924-b937-949855608eac" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div id="cell-id=5537d104-2efd-454c-8be4-6e392a1af0ad" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">sql</span> postgresql://127.0.0.1:5432/imdb_perf_lecture
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div>
-<div id="cell-id=d82fe065-92ec-4d30-a742-faee0ca7534b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Demo">Demo<a class="anchor-link" href="#Demo">&#182;</a></h1>
-</div>
-</div>
-</div>
-</div>
-<div id="cell-id=f64d5a04-3344-4f83-b2a1-344b45bfe29b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<p>Example 1</p>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=325bad7b-63b9-4b54-9b8d-2488625edad9" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">sql</span> EXPLAIN ANALYZE SELECT * FROM Actor;
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<span style="None">Running query in &#x27;postgresql://127.0.0.1:5432/imdb_perf_lecture&#x27;</span>
-</div>
-
-</div>
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<span style="color: green">3 rows affected.</span>
-</div>
-
-</div>
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<table>
-    <thead>
-        <tr>
-            <th>QUERY PLAN</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Seq Scan on actor  (cost=0.00..13684.88 rows=845888 width=18) (actual time=0.038..54.412 rows=845888 loops=1)</td>
-        </tr>
-        <tr>
-            <td>Planning Time: 0.041 ms</td>
-        </tr>
-        <tr>
-            <td>Execution Time: 78.266 ms</td>
-        </tr>
-    </tbody>
-</table>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div id="cell-id=efc3c4b2-8925-4aaf-9d84-1da8944225a4" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Notice <code>ANALYZE</code>:</p>
-<ul>
-<li>start time and end time for operator, rows processed</li>
-<li>loops = number of times the operator is executed</li>
-</ul>
-<p>Notice <code>EXPLAIN</code>:</p>
-<ul>
-<li>width = size (in bytes) of output tuples from that operator</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div>
-<div id="cell-id=94114441-3998-48fa-8fa1-b910f7db36d7" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<p>Example 2: just planning (no execution)</p>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=62e594db-c2c5-4f3f-b8c4-112a787a20df" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">sql</span> EXPLAIN SELECT * FROM Actor;
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<span style="None">Running query in &#x27;postgresql://127.0.0.1:5432/imdb_perf_lecture&#x27;</span>
-</div>
-
-</div>
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<span style="color: green">1 rows affected.</span>
-</div>
-
-</div>
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<table>
-    <thead>
-        <tr>
-            <th>QUERY PLAN</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Seq Scan on actor  (cost=0.00..13684.88 rows=845888 width=18)</td>
-        </tr>
-    </tbody>
-</table>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div id="cell-id=037e0e5b-0582-4eae-9825-8d2c9cd5da04" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<p>Example 3</p>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=09b26502-3e1e-488b-8174-c717cc2fd14e" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">sql</span> EXPLAIN ANALYZE SELECT id FROM Actor;
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<span style="None">Running query in &#x27;postgresql://127.0.0.1:5432/imdb_perf_lecture&#x27;</span>
-</div>
-
-</div>
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<span style="color: green">3 rows affected.</span>
-</div>
-
-</div>
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<table>
-    <thead>
-        <tr>
-            <th>QUERY PLAN</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Seq Scan on actor  (cost=0.00..13684.88 rows=845888 width=4) (actual time=0.041..74.812 rows=845888 loops=1)</td>
-        </tr>
-        <tr>
-            <td>Planning Time: 0.040 ms</td>
-        </tr>
-        <tr>
-            <td>Execution Time: 98.669 ms</td>
-        </tr>
-    </tbody>
-</table>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div id="cell-id=e32d0522-14cb-4918-bac6-93eef6e8b1f8" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Notice:</p>
-<ul>
-<li>width from 18 down to 4!</li>
-<li>still 845k output tuples</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div>
-<div id="cell-id=e527ab32-f3a6-4cee-b85d-f4244faf548a" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<p>Example 4:</p>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=26d17d1d-d2ec-4eb5-a963-0a87fd52e810" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">sql</span> EXPLAIN ANALYZE SELECT id FROM Actor WHERE id &gt; 4000000;
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<span style="None">Running query in &#x27;postgresql://127.0.0.1:5432/imdb_perf_lecture&#x27;</span>
-</div>
-
-</div>
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<span style="color: green">5 rows affected.</span>
-</div>
-
-</div>
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<table>
-    <thead>
-        <tr>
-            <th>QUERY PLAN</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Index Only Scan using actor_pkey on actor  (cost=0.42..12630.93 rows=443343 width=4) (actual time=0.067..53.516 rows=444781 loops=1)</td>
-        </tr>
-        <tr>
-            <td>&nbsp;&nbsp;Index Cond: (id > 4000000)</td>
-        </tr>
-        <tr>
-            <td>&nbsp;&nbsp;Heap Fetches: 0</td>
-        </tr>
-        <tr>
-            <td>Planning Time: 0.104 ms</td>
-        </tr>
-        <tr>
-            <td>Execution Time: 66.626 ms</td>
-        </tr>
-    </tbody>
-</table>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div id="cell-id=ad89538d-601a-42c5-904e-2be29d6fc48e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Notice:</p>
-<ul>
-<li>output tuples now reduced to 444k</li>
-<li>planning has imperfect estimate</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div>
-<div id="cell-id=9f523710-e83d-4fe9-9bc1-1402b6a58d3d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<p>Example 5:</p>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=d38282dc-28a5-4e63-bdc8-a65153183c48" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">sql</span> EXPLAIN ANALYZE SELECT id, name FROM Actor WHERE id &gt; 4000000;
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<span style="None">Running query in &#x27;postgresql://127.0.0.1:5432/imdb_perf_lecture&#x27;</span>
-</div>
-
-</div>
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<span style="color: green">5 rows affected.</span>
-</div>
-
-</div>
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<table>
-    <thead>
-        <tr>
-            <th>QUERY PLAN</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Seq Scan on actor  (cost=0.00..15799.60 rows=443343 width=18) (actual time=0.252..62.556 rows=444781 loops=1)</td>
-        </tr>
-        <tr>
-            <td>&nbsp;&nbsp;Filter: (id > 4000000)</td>
-        </tr>
-        <tr>
-            <td>&nbsp;&nbsp;Rows Removed by Filter: 401107</td>
-        </tr>
-        <tr>
-            <td>Planning Time: 0.064 ms</td>
-        </tr>
-        <tr>
-            <td>Execution Time: 75.123 ms</td>
-        </tr>
-    </tbody>
-</table>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div id="cell-id=5d50894f-72b0-42aa-ba5f-020a8395d894" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Notice:</p>
-<ul>
-<li>width back up a bit to 18 (because of name)</li>
-<li>index-only scan moving to sequential scan</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div>
-<div id="cell-id=6e9ce237-11f0-424c-a7ae-0dea0fbc6c25" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Moar-queries-if-time-permits!">Moar queries if time permits!<a class="anchor-link" href="#Moar-queries-if-time-permits!">&#182;</a></h1>
-</div>
-</div>
-</div>
-</div><div id="cell-id=5abdd685-d0fc-4a82-984f-9e4a065cf548" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
-<span class="k">EXPLAIN</span><span class="w"> </span><span class="k">ANALYZE</span><span class="w"> </span><span class="c1">-- 1</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="n">id</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">Actor</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">4000000</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Tom Hanks&#39;</span><span class="p">;</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<span style="None">Running query in &#x27;postgresql://127.0.0.1:5432/imdb_perf_lecture&#x27;</span>
-</div>
-
-</div>
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<span style="color: green">8 rows affected.</span>
-</div>
-
-</div>
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<table>
-    <thead>
-        <tr>
-            <th>QUERY PLAN</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Gather  (cost=1000.00..11512.90 rows=1 width=4) (actual time=23.507..25.321 rows=0 loops=1)</td>
-        </tr>
-        <tr>
-            <td>&nbsp;&nbsp;Workers Planned: 2</td>
-        </tr>
-        <tr>
-            <td>&nbsp;&nbsp;Workers Launched: 2</td>
-        </tr>
-        <tr>
-            <td>&nbsp;&nbsp;->  Parallel Seq Scan on actor  (cost=0.00..10512.80 rows=1 width=4) (actual time=20.963..20.964 rows=0 loops=3)</td>
-        </tr>
-        <tr>
-            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Filter: ((id > 4000000) AND (name = 'Tom Hanks'::text))</td>
-        </tr>
-        <tr>
-            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rows Removed by Filter: 281963</td>
-        </tr>
-        <tr>
-            <td>Planning Time: 0.093 ms</td>
-        </tr>
-        <tr>
-            <td>Execution Time: 25.337 ms</td>
-        </tr>
-    </tbody>
-</table>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div id="cell-id=240b805d-915e-405e-8003-4138eed8d942" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Query 1: Compared to previous query where there was no name condition in WHERE clause, this query uses a parallel sequential scan: likely because the predicate is a bit more expensive to check, and so parallelism in processing the tuples is helpful.</p>
-<p>Note also just one output tuple predicted, but actually no output tuples produced!</p>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=b47e5764-52c2-44c6-ada8-1beb769de700" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
-<span class="k">EXPLAIN</span><span class="w"> </span><span class="k">ANALYZE</span><span class="w"> </span><span class="c1">-- 2</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="n">id</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">Actor</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">4000000</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Tom Hanks&#39;</span><span class="p">;</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<span style="None">Running query in &#x27;postgresql://127.0.0.1:5432/imdb_perf_lecture&#x27;</span>
-</div>
-
-</div>
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<span style="color: green">8 rows affected.</span>
-</div>
-
-</div>
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<table>
-    <thead>
-        <tr>
-            <th>QUERY PLAN</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Gather  (cost=1000.00..11512.90 rows=1 width=4) (actual time=0.304..25.344 rows=1 loops=1)</td>
-        </tr>
-        <tr>
-            <td>&nbsp;&nbsp;Workers Planned: 2</td>
-        </tr>
-        <tr>
-            <td>&nbsp;&nbsp;Workers Launched: 2</td>
-        </tr>
-        <tr>
-            <td>&nbsp;&nbsp;->  Parallel Seq Scan on actor  (cost=0.00..10512.80 rows=1 width=4) (actual time=13.499..21.214 rows=0 loops=3)</td>
-        </tr>
-        <tr>
-            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Filter: ((id < 4000000) AND (name = 'Tom Hanks'::text))</td>
-        </tr>
-        <tr>
-            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rows Removed by Filter: 281962</td>
-        </tr>
-        <tr>
-            <td>Planning Time: 0.081 ms</td>
-        </tr>
-        <tr>
-            <td>Execution Time: 25.366 ms</td>
-        </tr>
-    </tbody>
-</table>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div id="cell-id=54005562-e665-48ed-8c84-937e218e1be2" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Query 2: Compared to previous, we flipped the id condition, and now we've found a match for Tom Hanks! Otherwise quite similar. Note that we still need to go through all the tuples.</p>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=66588a7a-50d8-4f69-870d-e0d4d499d169" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
-<span class="k">EXPLAIN</span><span class="w"> </span><span class="k">ANALYZE</span><span class="w"> </span><span class="c1">-- 3</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="n">id</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">Actor</span><span class="p">;</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<span style="None">Running query in &#x27;postgresql://127.0.0.1:5432/imdb_perf_lecture&#x27;</span>
-</div>
-
-</div>
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<span style="color: green">3 rows affected.</span>
-</div>
-
-</div>
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<table>
-    <thead>
-        <tr>
-            <th>QUERY PLAN</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Seq Scan on actor  (cost=0.00..13684.88 rows=845888 width=4) (actual time=0.043..72.572 rows=845888 loops=1)</td>
-        </tr>
-        <tr>
-            <td>Planning Time: 0.039 ms</td>
-        </tr>
-        <tr>
-            <td>Execution Time: 96.430 ms</td>
-        </tr>
-    </tbody>
-</table>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div id="cell-id=1cc7b6da-0fac-460c-a054-b700b7c4cfbe" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Query 3: Resetting to an old query for a second without conditions...</p>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=70b6b801-9e85-444b-b3f7-8d7846a06fa8" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
-<span class="k">EXPLAIN</span><span class="w"> </span><span class="k">ANALYZE</span><span class="w"> </span><span class="c1">-- 4</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="n">id</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">Actor</span>
-<span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<span style="None">Running query in &#x27;postgresql://127.0.0.1:5432/imdb_perf_lecture&#x27;</span>
-</div>
-
-</div>
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<span style="color: green">4 rows affected.</span>
-</div>
-
-</div>
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<table>
-    <thead>
-        <tr>
-            <th>QUERY PLAN</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Limit  (cost=0.00..0.16 rows=10 width=4) (actual time=0.042..0.045 rows=10 loops=1)</td>
-        </tr>
-        <tr>
-            <td>&nbsp;&nbsp;->  Seq Scan on actor  (cost=0.00..13684.88 rows=845888 width=4) (actual time=0.041..0.042 rows=10 loops=1)</td>
-        </tr>
-        <tr>
-            <td>Planning Time: 0.073 ms</td>
-        </tr>
-        <tr>
-            <td>Execution Time: 0.059 ms</td>
-        </tr>
-    </tbody>
-</table>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div id="cell-id=3d61c229-fc2f-48a4-ab4f-7a4bff98854d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Query 4: by adding a LIMIT, see significantly reduced execution time! Also a limit node above the sequential scan node.</p>
-<p>Next, we just change a SQLmagic setting to allow for a longer query plan to be displayed...</p>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=7ca021b9-5f31-477c-9bf2-6a00a044c271" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">config</span> SqlMagic.displaylimit = None
@@ -16397,20 +15385,46 @@ Deploy FastAPI apps for free on Ploomber Cloud! Learn more: https://ploomber.io/
 
 </div>
 
-</div><div id="cell-id=c6dd1ebd-e49a-4b1e-8902-3bc4f39f980a" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=fceea89a-02c6-48fe-a12b-de6fc3da8c92" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">sql</span> postgresql://127.0.0.1:5432/imdb_perf_lecture
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div id="cell-id=240a41f9-78b1-4810-a5cb-7399f8622051" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Demo">Demo<a class="anchor-link" href="#Demo">&#182;</a></h3>
+</div>
+</div>
+</div>
+</div><div id="cell-id=f1da288d-24ec-420e-967c-1f11dc6e2983" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
-<span class="k">EXPLAIN</span><span class="w"> </span><span class="k">ANALYZE</span><span class="w"> </span><span class="c1">-- 5</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="n">id</span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">Actor</span>
-<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">name</span>
-<span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="k">explain</span><span class="w"> </span><span class="k">analyze</span>
+<span class="k">select</span><span class="w"> </span><span class="o">*</span>
+<span class="k">from</span><span class="w"> </span><span class="n">actor</span><span class="p">,</span><span class="w"> </span><span class="n">cast_info</span>
+<span class="k">where</span><span class="w"> </span><span class="n">actor</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cast_info</span><span class="p">.</span><span class="n">person_id</span><span class="p">;</span>
 </pre></div>
 
      </div>
@@ -16442,7 +15456,600 @@ Deploy FastAPI apps for free on Ploomber Cloud! Learn more: https://ploomber.io/
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<span style="color: green">12 rows affected.</span>
+<span style="color: green">8 rows affected.</span>
+</div>
+
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<table>
+    <thead>
+        <tr>
+            <th>QUERY PLAN</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Hash Join  (cost=30867.48..92474.12 rows=2212088 width=44) (actual time=188.708..1324.353 rows=2211936 loops=1)</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;Hash Cond: (cast_info.person_id = actor.id)</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;->  Seq Scan on cast_info  (cost=0.00..31908.88 rows=2212088 width=8) (actual time=0.032..162.140 rows=2211936 loops=1)</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;->  Hash  (cost=13684.88..13684.88 rows=845888 width=36) (actual time=188.530..188.531 rows=845888 loops=1)</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Buckets: 65536  Batches: 32  Memory Usage: 1810kB</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;->  Seq Scan on actor  (cost=0.00..13684.88 rows=845888 width=36) (actual time=0.012..71.312 rows=845888 loops=1)</td>
+        </tr>
+        <tr>
+            <td>Planning Time: 0.144 ms</td>
+        </tr>
+        <tr>
+            <td>Execution Time: 1411.625 ms</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div id="cell-id=eadff07c-64d5-4515-8a5a-2d212c120a5f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Note Hash Join being used</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=67516ae7-6749-4f10-9fda-b7826935c83e" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">explain</span><span class="w"> </span><span class="k">analyze</span>
+<span class="k">select</span><span class="w"> </span><span class="n">actor</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="n">movie_id</span>
+<span class="k">from</span><span class="w"> </span><span class="n">actor</span><span class="p">,</span><span class="w"> </span><span class="n">cast_info</span>
+<span class="k">where</span><span class="w"> </span><span class="n">actor</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cast_info</span><span class="p">.</span><span class="n">person_id</span>
+<span class="k">limit</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">;</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<span style="None">Running query in &#x27;postgresql://127.0.0.1:5432/imdb_perf_lecture&#x27;</span>
+</div>
+
+</div>
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<span style="color: green">11 rows affected.</span>
+</div>
+
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<table>
+    <thead>
+        <tr>
+            <th>QUERY PLAN</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Limit  (cost=0.43..4.45 rows=10 width=18) (actual time=0.040..0.319 rows=10 loops=1)</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;->  Nested Loop  (cost=0.43..887774.90 rows=2211936 width=18) (actual time=0.040..0.317 rows=10 loops=1)</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;->  Seq Scan on cast_info  (cost=0.00..31907.36 rows=2211936 width=8) (actual time=0.014..0.015 rows=10 loops=1)</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;->  Memoize  (cost=0.43..0.47 rows=1 width=18) (actual time=0.029..0.030 rows=1 loops=10)</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cache Key: cast_info.person_id</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cache Mode: logical</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hits: 2  Misses: 8  Evictions: 0  Overflows: 0  Memory Usage: 1kB</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;->  Index Scan using actor_pkey on actor  (cost=0.42..0.46 rows=1 width=18) (actual time=0.035..0.035 rows=1 loops=8)</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Index Cond: (id = cast_info.person_id)</td>
+        </tr>
+        <tr>
+            <td>Planning Time: 0.140 ms</td>
+        </tr>
+        <tr>
+            <td>Execution Time: 0.557 ms</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div id="cell-id=e59416a8-b0d3-472f-8630-855c0198be35" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>LIMIT considerably speeds things up by &gt;1000x!</p>
+<p>Now, back to the original query...</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=357be96e-96c1-4613-a8e0-93acfc19e9bd" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">explain</span><span class="w"> </span><span class="k">analyze</span>
+<span class="k">select</span><span class="w"> </span><span class="n">actor</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="n">movie_id</span>
+<span class="k">from</span><span class="w"> </span><span class="n">actor</span><span class="p">,</span><span class="w"> </span><span class="n">cast_info</span>
+<span class="k">where</span><span class="w"> </span><span class="n">actor</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cast_info</span><span class="p">.</span><span class="n">person_id</span><span class="p">;</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<span style="None">Running query in &#x27;postgresql://127.0.0.1:5432/imdb_perf_lecture&#x27;</span>
+</div>
+
+</div>
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<span style="color: green">8 rows affected.</span>
+</div>
+
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<table>
+    <thead>
+        <tr>
+            <th>QUERY PLAN</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Hash Join  (cost=29215.48..89168.21 rows=2211936 width=18) (actual time=228.786..1242.297 rows=2211936 loops=1)</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;Hash Cond: (cast_info.person_id = actor.id)</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;->  Seq Scan on cast_info  (cost=0.00..31907.36 rows=2211936 width=8) (actual time=0.008..206.976 rows=2211936 loops=1)</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;->  Hash  (cost=13684.88..13684.88 rows=845888 width=18) (actual time=228.625..228.626 rows=845888 loops=1)</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Buckets: 65536  Batches: 16  Memory Usage: 3191kB</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;->  Seq Scan on actor  (cost=0.00..13684.88 rows=845888 width=18) (actual time=0.048..84.107 rows=845888 loops=1)</td>
+        </tr>
+        <tr>
+            <td>Planning Time: 0.160 ms</td>
+        </tr>
+        <tr>
+            <td>Execution Time: 1331.759 ms</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div id="cell-id=f55230b4-db0d-46a3-aa63-bc7700b11312" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Let's add in a WHERE clause.</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=6ef17297-8f3d-41dd-b6dc-c319795b4983" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">explain</span><span class="w"> </span><span class="k">analyze</span>
+<span class="k">select</span><span class="w"> </span><span class="n">actor</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="n">movie_id</span>
+<span class="k">from</span><span class="w"> </span><span class="n">actor</span><span class="p">,</span><span class="w"> </span><span class="n">cast_info</span>
+<span class="k">where</span><span class="w"> </span><span class="n">actor</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cast_info</span><span class="p">.</span><span class="n">person_id</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">actor</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">4000000</span><span class="p">;</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<span style="None">Running query in &#x27;postgresql://127.0.0.1:5432/imdb_perf_lecture&#x27;</span>
+</div>
+
+</div>
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<span style="color: green">10 rows affected.</span>
+</div>
+
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<table>
+    <thead>
+        <tr>
+            <th>QUERY PLAN</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Hash Join  (cost=23966.84..81569.56 rows=1163170 width=18) (actual time=158.393..1003.409 rows=634763 loops=1)</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;Hash Cond: (cast_info.person_id = actor.id)</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;->  Seq Scan on cast_info  (cost=0.00..31907.36 rows=2211936 width=8) (actual time=0.008..205.828 rows=2211936 loops=1)</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;->  Hash  (cost=15799.60..15799.60 rows=444819 width=18) (actual time=157.922..157.924 rows=444781 loops=1)</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Buckets: 65536  Batches: 8  Memory Usage: 3335kB</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;->  Seq Scan on actor  (cost=0.00..15799.60 rows=444819 width=18) (actual time=0.209..80.203 rows=444781 loops=1)</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Filter: (id > 4000000)</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rows Removed by Filter: 401107</td>
+        </tr>
+        <tr>
+            <td>Planning Time: 0.159 ms</td>
+        </tr>
+        <tr>
+            <td>Execution Time: 1028.796 ms</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div id="cell-id=812f526c-dae9-4c51-b877-503354950e60" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Notice projection pushed down at source! Time reduced by a bit as a result. Otherwise cost would be at least as expensive as previous query.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=6a82919a-fb6c-4c49-844e-0c7d0cf4a251" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="More-Exercises-(Not-covered-in-class)">More Exercises (Not covered in class)<a class="anchor-link" href="#More-Exercises-(Not-covered-in-class)">&#182;</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=5a5a0e14-af35-4e14-8de7-c322a7d8d59e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Repeat previous LIMIT query</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=6210f819-44a5-44d6-812f-8f97c5278498" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="c1">-- repeat previous query</span>
+<span class="k">explain</span><span class="w"> </span><span class="k">analyze</span>
+<span class="k">select</span><span class="w"> </span><span class="n">actor</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="n">movie_id</span>
+<span class="k">from</span><span class="w"> </span><span class="n">actor</span><span class="p">,</span><span class="w"> </span><span class="n">cast_info</span>
+<span class="k">where</span><span class="w"> </span><span class="n">actor</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cast_info</span><span class="p">.</span><span class="n">person_id</span>
+<span class="k">limit</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">;</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<span style="None">Running query in &#x27;postgresql://127.0.0.1:5432/imdb_perf_lecture&#x27;</span>
+</div>
+
+</div>
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<span style="color: green">11 rows affected.</span>
+</div>
+
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[14]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<table>
+    <thead>
+        <tr>
+            <th>QUERY PLAN</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Limit  (cost=0.43..4.45 rows=10 width=18) (actual time=0.023..0.058 rows=10 loops=1)</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;->  Nested Loop  (cost=0.43..887774.90 rows=2211936 width=18) (actual time=0.022..0.056 rows=10 loops=1)</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;->  Seq Scan on cast_info  (cost=0.00..31907.36 rows=2211936 width=8) (actual time=0.008..0.009 rows=10 loops=1)</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;->  Memoize  (cost=0.43..0.47 rows=1 width=18) (actual time=0.004..0.004 rows=1 loops=10)</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cache Key: cast_info.person_id</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cache Mode: logical</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hits: 2  Misses: 8  Evictions: 0  Overflows: 0  Memory Usage: 1kB</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;->  Index Scan using actor_pkey on actor  (cost=0.42..0.46 rows=1 width=18) (actual time=0.004..0.004 rows=1 loops=8)</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Index Cond: (id = cast_info.person_id)</td>
+        </tr>
+        <tr>
+            <td>Planning Time: 0.166 ms</td>
+        </tr>
+        <tr>
+            <td>Execution Time: 0.313 ms</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div id="cell-id=52e1cba8-be3e-4555-bc3b-29994bdaa319" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Notice width of Index Scan on actor: 18. This is the size of the projected tuple.</p>
+<p>What if we add another actor attribute to SELECT? Would this change the width during Index Scan?</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=a79383d0-527d-4c8c-bb17-fe3e27161e4c" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">explain</span><span class="w"> </span><span class="k">analyze</span>
+<span class="k">select</span><span class="w"> </span><span class="n">actor</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="n">movie_id</span><span class="p">,</span><span class="n">actor</span><span class="p">.</span><span class="n">id</span>
+<span class="k">from</span><span class="w"> </span><span class="n">actor</span><span class="p">,</span><span class="w"> </span><span class="n">cast_info</span>
+<span class="k">where</span><span class="w"> </span><span class="n">actor</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cast_info</span><span class="p">.</span><span class="n">person_id</span>
+<span class="k">limit</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">;</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<span style="None">Running query in &#x27;postgresql://127.0.0.1:5432/imdb_perf_lecture&#x27;</span>
+</div>
+
+</div>
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<span style="color: green">11 rows affected.</span>
 </div>
 
 </div>
@@ -16461,40 +16068,37 @@ Deploy FastAPI apps for free on Ploomber Cloud! Learn more: https://ploomber.io/
     </thead>
     <tbody>
         <tr>
-            <td>Limit  (cost=17366.94..17368.11 rows=10 width=18) (actual time=66.592..68.584 rows=10 loops=1)</td>
+            <td>Limit  (cost=0.43..4.45 rows=10 width=22) (actual time=0.027..0.066 rows=10 loops=1)</td>
         </tr>
         <tr>
-            <td>&nbsp;&nbsp;->  Gather Merge  (cost=17366.94..99611.72 rows=704906 width=18) (actual time=66.591..68.581 rows=10 loops=1)</td>
+            <td>&nbsp;&nbsp;->  Nested Loop  (cost=0.43..887774.90 rows=2211936 width=22) (actual time=0.027..0.064 rows=10 loops=1)</td>
         </tr>
         <tr>
-            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Workers Planned: 2</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;->  Seq Scan on cast_info  (cost=0.00..31907.36 rows=2211936 width=8) (actual time=0.010..0.011 rows=10 loops=1)</td>
         </tr>
         <tr>
-            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Workers Launched: 2</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;->  Memoize  (cost=0.43..0.47 rows=1 width=18) (actual time=0.005..0.005 rows=1 loops=10)</td>
         </tr>
         <tr>
-            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;->  Sort  (cost=16366.92..17248.05 rows=352453 width=18) (actual time=64.110..64.112 rows=7 loops=3)</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cache Key: cast_info.person_id</td>
         </tr>
         <tr>
-            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sort Key: name</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cache Mode: logical</td>
         </tr>
         <tr>
-            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sort Method: top-N heapsort  Memory: 26kB</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hits: 2  Misses: 8  Evictions: 0  Overflows: 0  Memory Usage: 1kB</td>
         </tr>
         <tr>
-            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Worker 0:  Sort Method: top-N heapsort  Memory: 25kB</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;->  Index Scan using actor_pkey on actor  (cost=0.42..0.46 rows=1 width=18) (actual time=0.005..0.005 rows=1 loops=8)</td>
         </tr>
         <tr>
-            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Worker 1:  Sort Method: top-N heapsort  Memory: 25kB</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Index Cond: (id = cast_info.person_id)</td>
         </tr>
         <tr>
-            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;->  Parallel Seq Scan on actor  (cost=0.00..8750.53 rows=352453 width=18) (actual time=0.021..19.438 rows=281963 loops=3)</td>
+            <td>Planning Time: 0.152 ms</td>
         </tr>
         <tr>
-            <td>Planning Time: 0.081 ms</td>
-        </tr>
-        <tr>
-            <td>Execution Time: 68.617 ms</td>
+            <td>Execution Time: 0.370 ms</td>
         </tr>
     </tbody>
 </table>
@@ -16507,13 +16111,14 @@ Deploy FastAPI apps for free on Ploomber Cloud! Learn more: https://ploomber.io/
 </div>
 
 </div>
-<div id="cell-id=cc0c674f-b340-4c71-b53c-e07198a0f2c0" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=685b01c1-4319-4554-a692-12b7dd800762" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Query 5: Whoa! Sorts are expensive! Even though we had a LIMIT, the ORDER BY considerably increased costs.</p>
+<p>Width stays the same! This is because the newly added <code>actor.id</code> attribute in the <code>SELECT</code> is needed as part of the join condition, so it is already included (and not projected out).</p>
+<p>But note the final width after join is now 22 instead of 18.</p>
 
 </div>
 </div>
