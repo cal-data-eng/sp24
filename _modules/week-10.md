@@ -8,6 +8,8 @@ Mon 3/18
 
 Wed 3/20
 : **Lecture 16**{: .label .label-lecture } Normalization and ER
+: **Multivitamin 3**{: .label .label-hw-due } Due, 5pm
+
 
 Thu 3/21
 : **Discussion**{: .label .label-disc } Normalization and ER
