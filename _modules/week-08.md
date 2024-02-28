@@ -3,7 +3,7 @@ title: Week 08
 date: 2024-03-04
 ---
 Mon 3/4
-: **Lecture 12**{: .label .label-lecture } OLAP, Summarization, Window functions
+: **Lecture 12**{: .label .label-lecture } OLAP, Summarization, Window functions, Spreadsheets
 
 Wed 3/6
 : **Lecture 13**{: .label .label-lecture } Data Preparation 1
