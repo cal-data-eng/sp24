@@ -8,7 +8,6 @@ Mon 3/25
 
 Wed 3/27
 : **No Class (Spring Break)** 
-: **Project 3**{: .label .label-proj-due } Due, 5pm
 
 
 Thu 3/28

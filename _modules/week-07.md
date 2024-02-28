@@ -19,5 +19,4 @@ Thu 2/29
 : **MultiVitamin 3**{: .label .label-hw } Multivitamin 3 Release
   : Due Wed 3/13, 5pm
 
-Fri 3/1
-: **Project 2**{: .label .label-proj-due } Due, 5pm (Extended)
+

@@ -8,6 +8,7 @@ Mon 3/4
 Wed 3/6
 : **Lecture 13**{: .label .label-lecture } Data Preparation 1
 : **Multivitamin 2**{: .label .label-hw-due } Due, 5pm
+: **Project 2**{: .label .label-proj-due } Due, 5pm (Extended)
 
 Thu 3/7
 : **Discussion**{: .label .label-disc } Window functions, OLAP, Spreadsheets
