@@ -15,8 +15,7 @@ Wed 2/28
 
 
 Thu 2/29
-: **Discussion**{: .label .label-disc } PostgreSQL Exercises, Data Models
-: **MultiVitamin 3**{: .label .label-hw } Multivitamin 3 Release
-  : Due Wed 3/13, 5pm
+: **Discussion**{: .label .label-disc } [PostgreSQL Exercises](https://drive.google.com/file/d/1VFmBfVNeGz2NitH2k-UD7KE_4yar5aL_/view?usp=sharing){:target="\_blank"}
+: 
 
 
