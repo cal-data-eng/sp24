@@ -3,7 +3,7 @@ title: Week 08
 date: 2024-03-04
 ---
 Mon 3/4
-: **Lecture 12**{: .label .label-lecture } ; [Data Models: Relations, Tensors, Dataframes](https://docs.google.com/presentation/d/1Fx8lPncBCYcuKTccOMhCWi_guxuZ6XHS2AxoKknDJlk/edit?usp=sharing); [OLAP, Summarization, Window functions](https://docs.google.com/presentation/d/1JoBnMlw6hrQY8zIPYpAUZL1llRW1ka_GBjIXmIGB1hg/edit?usp=sharing)
+: **Lecture 12**{: .label .label-lecture } [Data Models: Relations, Tensors, Dataframes](https://docs.google.com/presentation/d/1Fx8lPncBCYcuKTccOMhCWi_guxuZ6XHS2AxoKknDJlk/edit?usp=sharing); [OLAP, Summarization, Window functions](https://docs.google.com/presentation/d/1JoBnMlw6hrQY8zIPYpAUZL1llRW1ka_GBjIXmIGB1hg/edit?usp=sharing)
 
 Wed 3/6
 : **Lecture 13**{: .label .label-lecture } Spreadsheets; Data Preparation 1
