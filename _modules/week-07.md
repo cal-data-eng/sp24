@@ -15,8 +15,7 @@ Wed 2/28
 
 
 Thu 2/29
-: **Discussion**{: .label .label-disc } PostgreSQL Exercises, Data Models
-: **MultiVitamin 3**{: .label .label-hw } Multivitamin 3 Release
-  : Due Wed 3/13, 5pm
+: **Discussion**{: .label .label-disc } [PostgreSQL Exercises](https://drive.google.com/file/d/1VFmBfVNeGz2NitH2k-UD7KE_4yar5aL_/view?usp=sharing){:target="\_blank"}
+	: [Solution](https://drive.google.com/file/d/1R8MvCnVcF4ierXp2RIDqNMV-_vKIN3jl/view?usp=sharing){:target="\_blank"}, [Code](https://data101.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fcal-data-eng%2Fsp24-materials.git&urlpath=lab%2Ftree%2Fsp24-materials.git%2Fdisc%2Fdisc06%2Fdisc06-blank.ipynb&branch=main){:target="\_blank"}, [Code Solution](https://data101.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fcal-data-eng%2Fsp24-materials.git&urlpath=lab%2Ftree%2Fsp24-materials.git%2Fdisc%2Fdisc06%2Fdisc06-sol.ipynb&branch=main){:target="\_blank"}
 
 
