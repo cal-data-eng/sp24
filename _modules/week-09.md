@@ -10,7 +10,7 @@ Wed 3/13
 
 Thu 3/14
 : **Discussion**{: .label .label-disc } Data Preparation and Cleaning
-: **Multivitamin 4**{: .label .label-hw } Multivitamin 4 Release
-  : Due Wed 4/3, 5pm
+: **MultiVitamin 3**{: .label .label-hw } Multivitamin 3 Release
+  : Due Wed 3/20, 5pm
 : **Project 3**{: .label .label-proj } Project 3 Release
   : Due Wed 3/27, 5pm
