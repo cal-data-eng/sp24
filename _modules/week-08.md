@@ -12,6 +12,7 @@ Wed 3/6
 : **Project 2**{: .label .label-proj-due } Due, 5pm (Extended)
 
 Thu 3/7
-: **Discussion**{: .label .label-disc } Window functions, OLAP, Spreadsheets
+: **Discussion**{: .label .label-disc } [Data Preparation and Pivoting](https://drive.google.com/file/d/1I5PEyhuHTJYCI8kGGkgZZWI0XwfLfTpw/view?usp=sharing){:target="\_blank"}
+	: [Solution](https://drive.google.com/file/d/1-X8fQrFkEa4xwNh-fjqYSV03BmVlNWTn/view?usp=sharing){:target="\_blank"}, [Code](https://data101.datahub.berkeley.edu/user/nataliechan/lab/workspaces/auto-z/tree/sp24-materials.git/disc/disc07/disc07.ipynb){:target="\_blank"}
 
 
