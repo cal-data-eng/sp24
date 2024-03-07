@@ -13,6 +13,6 @@ Wed 3/6
 
 Thu 3/7
 : **Discussion**{: .label .label-disc } [Data Preparation and Pivoting](https://drive.google.com/file/d/1I5PEyhuHTJYCI8kGGkgZZWI0XwfLfTpw/view?usp=sharing){:target="\_blank"}
-	: [Solution](https://drive.google.com/file/d/1-X8fQrFkEa4xwNh-fjqYSV03BmVlNWTn/view?usp=sharing){:target="\_blank"}, [Code](https://data101.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fcal-data-eng%2Fsp24-materials.git&urlpath=lab%2Ftree%2Fsp24-materials.git%2Fdisc%2Fdisc07%2Fdisc07.ipynb&branch=mainb){:target="\_blank"}
+	: [Solution](https://drive.google.com/file/d/1-X8fQrFkEa4xwNh-fjqYSV03BmVlNWTn/view?usp=sharing){:target="\_blank"}, [Code](https://data101.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fcal-data-eng%2Fsp24-materials.git&urlpath=lab%2Ftree%2Fsp24-materials.git%2Fdisc%2Fdisc07%2Fdisc07.ipynb&branch=main){:target="\_blank"}
 
 
