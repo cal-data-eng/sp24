@@ -8,5 +8,4 @@ Mon 4/29
 
 Wed 5/1
 : **RRR Week (no class)**
-: **Project 5**{: .label .label-proj-due } Due, 5pm
 
