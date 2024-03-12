@@ -1,9 +1,9 @@
 ---
 layout: page
-title: Project 5 Details
+title: Project 5
 nav_exclude: false
 nav_order: 5
-description: Project 5 
+description: Project 5 for Graduate Students
 markdown: kramdown
 ---
 
