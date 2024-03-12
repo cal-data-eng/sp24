@@ -8,6 +8,8 @@ Mon 3/11
 
 Wed 3/13
 : **Lecture 15**{: .label .label-lecture } Data Cleaning I
+: **Project 5**{: .label .label-proj } [Project 5 Release](https://www.data101.org/sp24/resources/project5/)
+  : Due Wed 4/17, 5pm
 
 Thu 3/14
 : **Discussion**{: .label .label-disc } Data Preparation and Cleaning
