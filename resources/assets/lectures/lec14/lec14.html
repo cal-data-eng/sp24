@@ -15436,7 +15436,7 @@ SET
 </div>
 </div>
 </div>
-</div><div id="cell-id=4e2bd0d6-d390-45c9-bb8f-198e9045903d" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div id="cell-id=4e2bd0d6-d390-45c9-bb8f-198e9045903d" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15454,6 +15454,27 @@ SET
      </div>
 </div>
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>There&#39;s a new jupysql version available (0.10.10), you&#39;re running 0.10.0. To upgrade: pip install jupysql --upgrade
+</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div><div id="cell-id=5e15b5e7-6f42-4d79-991a-8620d2f22bd4" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -15705,7 +15726,7 @@ SET
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<span style="color: green">11 rows affected.</span>
+<span style="color: green">12 rows affected.</span>
 </div>
 
 </div>
@@ -15724,37 +15745,40 @@ SET
     </thead>
     <tbody>
         <tr>
-            <td>Nested Loop  (cost=0.43..12974.01 rows=339929 width=13)</td>
+            <td>Merge Join  (cost=0.83..433476.50 rows=23893326 width=42)</td>
         </tr>
         <tr>
             <td>&nbsp;&nbsp;Output: p.playerid, (p.so - b.so)</td>
         </tr>
         <tr>
-            <td>&nbsp;&nbsp;->  Seq Scan on public.pitching p  (cost=0.00..1374.06 rows=45806 width=13)</td>
+            <td>&nbsp;&nbsp;Merge Cond: ((p.playerid)::text = (b.playerid)::text)</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;->  Index Scan using pitching_pkey on public.pitching p  (cost=0.41..5271.51 rows=45806 width=42)</td>
         </tr>
         <tr>
             <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Output: p.playerid, p.yearid, p.stint, p.teamid, p.lgid, p.w, p.l, p.g, p.gs, p.cg, p.sho, p.sv, p.ipouts, p.h, p.er, p.hr, p.bb, p.so, p.baopp, p.era, p.ibb, p.wp, p.hbp, p.bk, p.bfp, p.gf, p.r, p.sh, p.sf, p.gidp</td>
         </tr>
         <tr>
-            <td>&nbsp;&nbsp;->  Memoize  (cost=0.43..0.73 rows=7 width=13)</td>
+            <td>&nbsp;&nbsp;->  Materialize  (cost=0.42..10218.09 rows=104324 width=42)</td>
         </tr>
         <tr>
-            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Output: b.so, b.playerid</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Output: b.playerid, b.yearid, b.stint, b.teamid, b.lgid, b.g, b.ab, b.r, b.h, b.h2b, b.h3b, b.hr, b.rbi, b.sb, b.cs, b.bb, b.so, b.ibb, b.hbp, b.sh, b.sf, b.gidp</td>
         </tr>
         <tr>
-            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cache Key: p.playerid</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;->  Index Scan using batting_pkey on public.batting b  (cost=0.42..9957.28 rows=104324 width=42)</td>
         </tr>
         <tr>
-            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cache Mode: logical</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Output: b.playerid, b.yearid, b.stint, b.teamid, b.lgid, b.g, b.ab, b.r, b.h, b.h2b, b.h3b, b.hr, b.rbi, b.sb, b.cs, b.bb, b.so, b.ibb, b.hbp, b.sh, b.sf, b.gidp</td>
         </tr>
         <tr>
-            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;->  Index Scan using batting_pkey on public.batting b  (cost=0.42..0.72 rows=7 width=13)</td>
+            <td>JIT:</td>
         </tr>
         <tr>
-            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Output: b.so, b.playerid</td>
+            <td>&nbsp;&nbsp;Functions: 7</td>
         </tr>
         <tr>
-            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Index Cond: ((b.playerid)::text = (p.playerid)::text)</td>
+            <td>&nbsp;&nbsp;Options: Inlining false, Optimization false, Expressions true, Deforming true</td>
         </tr>
     </tbody>
 </table>
@@ -16340,12 +16364,12 @@ SET
 </div>
 </div>
 </div>
-</div><div id="cell-id=74712a9b-100a-401a-99e1-e95eb342892c" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div id="cell-id=74712a9b-100a-401a-99e1-e95eb342892c" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
@@ -16361,6 +16385,69 @@ SET
      </div>
 </div>
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<span style="None">Running query in &#x27;postgresql://localhost:5432/baseball&#x27;</span>
+</div>
+
+</div>
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<span style="color: green">1 rows affected.</span>
+</div>
+
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<table>
+    <thead>
+        <tr>
+            <th>hypothetical</th>
+            <th>rank</th>
+            <th>dense_rank</th>
+            <th>pct_rank</th>
+            <th>cume_dist</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>4</td>
+            <td>18420</td>
+            <td>63</td>
+            <td>17.655573022506807</td>
+            <td>0.823445962137551</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -16393,7 +16480,7 @@ SET
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>psql<span class="w"> </span>-h<span class="w"> </span>localhost<span class="w"> </span>-d<span class="w"> </span>gnis<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;SELECT pg_terminate_backend(pg_stat_activity.pid) FROM pg_stat_activity WHERE datname = current_database() AND pid &lt;&gt; pg_backend_pid();&#39;</span>
@@ -16461,7 +16548,7 @@ CREATE INDEX
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">reload_ext</span> sql
@@ -16517,7 +16604,7 @@ CREATE INDEX
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">sql</span> SELECT COUNT(*) FROM national;
@@ -16558,7 +16645,7 @@ CREATE INDEX
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[14]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[15]:</div>
 
 
 
@@ -16588,7 +16675,7 @@ CREATE INDEX
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">sql</span> SELECT * FROM national WHERE county_name = &#39;Alameda&#39;;
@@ -16629,7 +16716,7 @@ CREATE INDEX
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[15]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[16]:</div>
 
 
 
@@ -17006,7 +17093,7 @@ CREATE INDEX
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
@@ -17043,13 +17130,13 @@ CREATE INDEX
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<span style="color: green">1188 rows affected.</span>
+<span style="color: green">1172 rows affected.</span>
 </div>
 
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[16]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[17]:</div>
 
 
 
@@ -17081,333 +17168,333 @@ CREATE INDEX
     </thead>
     <tbody>
         <tr>
-            <td>2336</td>
-            <td>Cabeza Prieta Game Range</td>
-            <td>Park</td>
-            <td>AZ</td>
-            <td>4</td>
-            <td>Yuma</td>
-            <td>27.0</td>
-            <td>321500N</td>
-            <td>1132703W</td>
-            <td>32.250056</td>
-            <td>-113.45074</td>
-            <td>None</td>
-            <td>None</td>
-            <td>None</td>
-            <td>None</td>
-            <td>275.0</td>
-            <td>902.0</td>
-            <td>Bryan Mountains</td>
-            <td>02/08/1980</td>
-            <td>None</td>
-        </tr>
-        <tr>
-            <td>2750</td>
-            <td>Chandler Springs</td>
-            <td>Spring</td>
-            <td>AZ</td>
-            <td>4</td>
-            <td>Navajo</td>
-            <td>17.0</td>
-            <td>352236N</td>
-            <td>1102831W</td>
-            <td>35.3766788</td>
-            <td>-110.4754096</td>
-            <td>None</td>
-            <td>None</td>
-            <td>None</td>
-            <td>None</td>
-            <td>1685.0</td>
-            <td>5528.0</td>
-            <td>Shonto Butte</td>
-            <td>02/08/1980</td>
-            <td>None</td>
-        </tr>
-        <tr>
-            <td>4568</td>
-            <td>Fence Ridge</td>
-            <td>Ridge</td>
-            <td>AZ</td>
-            <td>4</td>
-            <td>Coconino</td>
-            <td>5.0</td>
-            <td>362432N</td>
-            <td>1121843W</td>
-            <td>36.408961</td>
-            <td>-112.3120056</td>
-            <td>None</td>
-            <td>None</td>
-            <td>None</td>
-            <td>None</td>
-            <td>2434.0</td>
-            <td>7985.0</td>
-            <td>Timp Point</td>
-            <td>02/08/1980</td>
-            <td>05/06/2017</td>
-        </tr>
-        <tr>
-            <td>7733</td>
-            <td>Martin Lateral</td>
-            <td>Canal</td>
-            <td>AZ</td>
-            <td>4</td>
-            <td>Yuma</td>
-            <td>27.0</td>
-            <td>323918N</td>
-            <td>1144003W</td>
-            <td>32.6550495</td>
-            <td>-114.6674537</td>
-            <td>None</td>
-            <td>None</td>
-            <td>None</td>
-            <td>None</td>
-            <td>36.0</td>
-            <td>118.0</td>
-            <td>Yuma West</td>
-            <td>02/08/1980</td>
-            <td>None</td>
-        </tr>
-        <tr>
-            <td>10399</td>
-            <td>Rock Gap</td>
-            <td>Gap</td>
-            <td>AZ</td>
-            <td>4</td>
-            <td>Navajo</td>
-            <td>17.0</td>
-            <td>363520N</td>
-            <td>1101319W</td>
-            <td>36.5888881</td>
-            <td>-110.2220747</td>
-            <td>None</td>
-            <td>None</td>
-            <td>None</td>
-            <td>None</td>
-            <td>2251.0</td>
-            <td>7385.0</td>
-            <td>Owl Spring</td>
-            <td>02/08/1980</td>
-            <td>None</td>
-        </tr>
-        <tr>
-            <td>10540</td>
-            <td>Round Rock Reservoir</td>
-            <td>Reservoir</td>
-            <td>AZ</td>
-            <td>4</td>
-            <td>Apache</td>
-            <td>1.0</td>
-            <td>362909N</td>
-            <td>1092659W</td>
-            <td>36.4858103</td>
-            <td>-109.4495897</td>
-            <td>None</td>
-            <td>None</td>
-            <td>None</td>
-            <td>None</td>
-            <td>1679.0</td>
-            <td>5508.0</td>
-            <td>Fire Dance Mesa</td>
-            <td>02/08/1980</td>
-            <td>02/13/2019</td>
-        </tr>
-        <tr>
-            <td>12390</td>
-            <td>Long Logs</td>
-            <td>Area</td>
-            <td>AZ</td>
-            <td>4</td>
-            <td>Apache</td>
-            <td>1.0</td>
-            <td>344838N</td>
-            <td>1095112W</td>
-            <td>34.8105857</td>
-            <td>-109.853447</td>
-            <td>None</td>
-            <td>None</td>
-            <td>None</td>
-            <td>None</td>
-            <td>1680.0</td>
-            <td>5512.0</td>
-            <td>Agate House</td>
-            <td>02/08/1980</td>
-            <td>None</td>
-        </tr>
-        <tr>
-            <td>21298</td>
-            <td>Jackass Basin</td>
-            <td>Basin</td>
-            <td>AZ</td>
-            <td>4</td>
-            <td>Yavapai</td>
-            <td>25.0</td>
-            <td>345414N</td>
-            <td>1131359W</td>
-            <td>34.9039033</td>
-            <td>-113.2329786</td>
-            <td>None</td>
-            <td>None</td>
-            <td>None</td>
-            <td>None</td>
-            <td>1653.0</td>
-            <td>5423.0</td>
-            <td>Sunrise Peak</td>
-            <td>06/27/1984</td>
-            <td>None</td>
-        </tr>
-        <tr>
-            <td>24170</td>
-            <td>Checker Tank</td>
+            <td>4590</td>
+            <td>Fiftysix Tank</td>
             <td>Reservoir</td>
             <td>AZ</td>
             <td>4</td>
             <td>Gila</td>
             <td>7.0</td>
-            <td>335532N</td>
-            <td>1103555W</td>
-            <td>33.9256045</td>
-            <td>-110.5987232</td>
+            <td>334124N</td>
+            <td>1102003W</td>
+            <td>33.6899872</td>
+            <td>-110.3340976</td>
             <td>None</td>
             <td>None</td>
             <td>None</td>
             <td>None</td>
-            <td>1594.0</td>
-            <td>5230.0</td>
-            <td>Blue House Mountain</td>
-            <td>06/27/1984</td>
-            <td>None</td>
-        </tr>
-        <tr>
-            <td>26578</td>
-            <td>Boggy Creek</td>
-            <td>Stream</td>
-            <td>AZ</td>
-            <td>4</td>
-            <td>Apache</td>
-            <td>1.0</td>
-            <td>334431N</td>
-            <td>1092623W</td>
-            <td>33.741996</td>
-            <td>-109.4398075</td>
-            <td>334921N</td>
-            <td>1092932W</td>
-            <td>33.8225501</td>
-            <td>-109.4923107</td>
-            <td>2303.0</td>
-            <td>7556.0</td>
-            <td>Hoodoo Knoll</td>
-            <td>02/08/1980</td>
-            <td>None</td>
-        </tr>
-        <tr>
-            <td>31803</td>
-            <td>Middle Cottonwood Tank</td>
-            <td>Reservoir</td>
-            <td>AZ</td>
-            <td>4</td>
-            <td>Navajo</td>
-            <td>17.0</td>
-            <td>341127N</td>
-            <td>1100920W</td>
-            <td>34.1909554</td>
-            <td>-110.1556588</td>
-            <td>None</td>
-            <td>None</td>
-            <td>None</td>
-            <td>None</td>
-            <td>1925.0</td>
-            <td>6316.0</td>
-            <td>Red Top Mountain</td>
+            <td>1728.0</td>
+            <td>5669.0</td>
+            <td>Popcorn Canyon</td>
             <td>02/08/1980</td>
             <td>03/19/2019</td>
         </tr>
         <tr>
-            <td>32665</td>
-            <td>Papago Spring</td>
-            <td>Spring</td>
+            <td>15418</td>
+            <td>Kinnison Wash</td>
+            <td>Arroyo</td>
             <td>AZ</td>
             <td>4</td>
             <td>Pima</td>
             <td>19.0</td>
-            <td>320458N</td>
-            <td>1103459W</td>
-            <td>32.0828572</td>
-            <td>-110.5831351</td>
-            <td>None</td>
-            <td>None</td>
-            <td>None</td>
-            <td>None</td>
-            <td>1192.0</td>
-            <td>3911.0</td>
-            <td>Rincon Peak</td>
-            <td>02/08/1980</td>
-            <td>None</td>
-        </tr>
-        <tr>
-            <td>34893</td>
-            <td>Strawberry Mountain</td>
-            <td>Summit</td>
-            <td>AZ</td>
-            <td>4</td>
-            <td>Gila</td>
-            <td>7.0</td>
-            <td>342256N</td>
-            <td>1112914W</td>
-            <td>34.382223</td>
-            <td>-111.4873448</td>
-            <td>None</td>
-            <td>None</td>
-            <td>None</td>
-            <td>None</td>
-            <td>2086.0</td>
-            <td>6844.0</td>
-            <td>Pine</td>
-            <td>02/08/1980</td>
-            <td>03/09/2021</td>
-        </tr>
-        <tr>
-            <td>39068</td>
-            <td>Lee Valley Dam</td>
-            <td>Dam</td>
-            <td>AZ</td>
-            <td>4</td>
-            <td>Apache</td>
-            <td>1.0</td>
-            <td>335630N</td>
-            <td>1092956W</td>
-            <td>33.9417151</td>
-            <td>-109.4989794</td>
-            <td>None</td>
-            <td>None</td>
-            <td>None</td>
-            <td>None</td>
-            <td>2870.0</td>
-            <td>9416.0</td>
-            <td>Big Lake North</td>
+            <td>321112N</td>
+            <td>1104908W</td>
+            <td>32.1867438</td>
+            <td>-110.818975</td>
+            <td>320757N</td>
+            <td>1104908W</td>
+            <td>32.1325</td>
+            <td>-110.8188889</td>
+            <td>822.0</td>
+            <td>2697.0</td>
+            <td>Tucson East</td>
             <td>06/27/1984</td>
             <td>None</td>
         </tr>
         <tr>
-            <td>40781</td>
-            <td>Hunter Creek Ranch</td>
+            <td>22982</td>
+            <td>Hells Canyon</td>
+            <td>Valley</td>
+            <td>AZ</td>
+            <td>4</td>
+            <td>Mohave</td>
+            <td>15.0</td>
+            <td>351542N</td>
+            <td>1132600W</td>
+            <td>35.26167</td>
+            <td>-113.433266</td>
+            <td>351842N</td>
+            <td>1132756W</td>
+            <td>35.3116667</td>
+            <td>-113.4655556</td>
+            <td>1540.0</td>
+            <td>5052.0</td>
+            <td>Tuckayou Spring</td>
+            <td>06/27/1984</td>
+            <td>None</td>
+        </tr>
+        <tr>
+            <td>24797</td>
+            <td>Contempo Tempe</td>
             <td>Populated Place</td>
+            <td>AZ</td>
+            <td>4</td>
+            <td>Maricopa</td>
+            <td>13.0</td>
+            <td>332325N</td>
+            <td>1115823W</td>
+            <td>33.3903237</td>
+            <td>-111.9729222</td>
+            <td>None</td>
+            <td>None</td>
+            <td>None</td>
+            <td>None</td>
+            <td>358.0</td>
+            <td>1175.0</td>
+            <td>Tempe</td>
+            <td>06/27/1984</td>
+            <td>None</td>
+        </tr>
+        <tr>
+            <td>28519</td>
+            <td>Dogie Tank</td>
+            <td>Reservoir</td>
+            <td>AZ</td>
+            <td>4</td>
+            <td>Yavapai</td>
+            <td>25.0</td>
+            <td>345544N</td>
+            <td>1120004W</td>
+            <td>34.929</td>
+            <td>-112.0009754</td>
+            <td>None</td>
+            <td>None</td>
+            <td>None</td>
+            <td>None</td>
+            <td>1417.0</td>
+            <td>4649.0</td>
+            <td>Sycamore Basin</td>
+            <td>02/08/1980</td>
+            <td>03/20/2019</td>
+        </tr>
+        <tr>
+            <td>30088</td>
+            <td>Honey Bee Tank</td>
+            <td>Reservoir</td>
+            <td>AZ</td>
+            <td>4</td>
+            <td>Yavapai</td>
+            <td>25.0</td>
+            <td>344839N</td>
+            <td>1121359W</td>
+            <td>34.8109492</td>
+            <td>-112.2331807</td>
+            <td>None</td>
+            <td>None</td>
+            <td>None</td>
+            <td>None</td>
+            <td>1485.0</td>
+            <td>4872.0</td>
+            <td>Munds Draw</td>
+            <td>02/08/1980</td>
+            <td>03/20/2019</td>
+        </tr>
+        <tr>
+            <td>32752</td>
+            <td>Peach Orchard Spring</td>
+            <td>Spring</td>
             <td>AZ</td>
             <td>4</td>
             <td>Gila</td>
             <td>7.0</td>
-            <td>341815N</td>
-            <td>1110040W</td>
-            <td>34.3042039</td>
-            <td>-111.0112406</td>
+            <td>341245N</td>
+            <td>1112137W</td>
+            <td>34.2124602</td>
+            <td>-111.360398</td>
             <td>None</td>
             <td>None</td>
             <td>None</td>
             <td>None</td>
-            <td>1786.0</td>
-            <td>5860.0</td>
-            <td>Promontory Butte</td>
-            <td>05/01/1991</td>
+            <td>1415.0</td>
+            <td>4642.0</td>
+            <td>Payson South</td>
+            <td>02/08/1980</td>
+            <td>04/18/2011</td>
+        </tr>
+        <tr>
+            <td>42907</td>
+            <td>Stowe Gulch</td>
+            <td>Valley</td>
+            <td>AZ</td>
+            <td>4</td>
+            <td>Graham</td>
+            <td>9.0</td>
+            <td>325211N</td>
+            <td>1102156W</td>
+            <td>32.8697793</td>
+            <td>-110.3656905</td>
+            <td>325705N</td>
+            <td>1101804W</td>
+            <td>32.9514099</td>
+            <td>-110.3011057</td>
+            <td>1015.0</td>
+            <td>3330.0</td>
+            <td>Klondyke</td>
+            <td>02/08/1980</td>
+            <td>08/19/2021</td>
+        </tr>
+        <tr>
+            <td>46375</td>
+            <td>Belmont Church</td>
+            <td>Church</td>
+            <td>AR</td>
+            <td>5</td>
+            <td>Jefferson</td>
+            <td>69.0</td>
+            <td>340724N</td>
+            <td>0914852W</td>
+            <td>34.1234323</td>
+            <td>-91.8145769</td>
+            <td>None</td>
+            <td>None</td>
+            <td>None</td>
+            <td>None</td>
+            <td>58.0</td>
+            <td>190.0</td>
+            <td>Tarry</td>
+            <td>04/30/1980</td>
+            <td>None</td>
+        </tr>
+        <tr>
+            <td>48317</td>
+            <td>Cypress Pocket</td>
+            <td>Swamp</td>
+            <td>AR</td>
+            <td>5</td>
+            <td>Pulaski</td>
+            <td>119.0</td>
+            <td>343036N</td>
+            <td>0920405W</td>
+            <td>34.5100652</td>
+            <td>-92.0681112</td>
+            <td>None</td>
+            <td>None</td>
+            <td>None</td>
+            <td>None</td>
+            <td>69.0</td>
+            <td>226.0</td>
+            <td>Keo</td>
+            <td>04/30/1980</td>
+            <td>07/23/2019</td>
+        </tr>
+        <tr>
+            <td>49578</td>
+            <td>Grassy Lake</td>
+            <td>Swamp</td>
+            <td>AR</td>
+            <td>5</td>
+            <td>Hempstead</td>
+            <td>57.0</td>
+            <td>334119N</td>
+            <td>0935209W</td>
+            <td>33.6887443</td>
+            <td>-93.8693011</td>
+            <td>None</td>
+            <td>None</td>
+            <td>None</td>
+            <td>None</td>
+            <td>78.0</td>
+            <td>256.0</td>
+            <td>McNab</td>
+            <td>04/30/1980</td>
+            <td>07/23/2019</td>
+        </tr>
+        <tr>
+            <td>53536</td>
+            <td>Pleasant Grove Church</td>
+            <td>Church</td>
+            <td>AR</td>
+            <td>5</td>
+            <td>Calhoun</td>
+            <td>13.0</td>
+            <td>333216N</td>
+            <td>0922147W</td>
+            <td>33.5378906</td>
+            <td>-92.3629271</td>
+            <td>None</td>
+            <td>None</td>
+            <td>None</td>
+            <td>None</td>
+            <td>57.0</td>
+            <td>187.0</td>
+            <td>Banks</td>
+            <td>04/30/1980</td>
+            <td>None</td>
+        </tr>
+        <tr>
+            <td>54087</td>
+            <td>Rock Church</td>
+            <td>Church</td>
+            <td>AR</td>
+            <td>5</td>
+            <td>Madison</td>
+            <td>87.0</td>
+            <td>361629N</td>
+            <td>0935219W</td>
+            <td>36.2747962</td>
+            <td>-93.8718629</td>
+            <td>None</td>
+            <td>None</td>
+            <td>None</td>
+            <td>None</td>
+            <td>455.0</td>
+            <td>1493.0</td>
+            <td>Sandstone Mountain</td>
+            <td>04/30/1980</td>
+            <td>None</td>
+        </tr>
+        <tr>
+            <td>55079</td>
+            <td>Spring Branch</td>
+            <td>Stream</td>
+            <td>AR</td>
+            <td>5</td>
+            <td>Miller</td>
+            <td>91.0</td>
+            <td>331657N</td>
+            <td>0935803W</td>
+            <td>33.2826281</td>
+            <td>-93.9674054</td>
+            <td>331833N</td>
+            <td>0935702W</td>
+            <td>33.3091667</td>
+            <td>-93.9505556</td>
+            <td>62.0</td>
+            <td>203.0</td>
+            <td>Fouke</td>
+            <td>04/30/1980</td>
+            <td>None</td>
+        </tr>
+        <tr>
+            <td>55132</td>
+            <td>Springfield Church</td>
+            <td>Church</td>
+            <td>AR</td>
+            <td>5</td>
+            <td>Pulaski</td>
+            <td>119.0</td>
+            <td>343630N</td>
+            <td>0920521W</td>
+            <td>34.6084264</td>
+            <td>-92.0890328</td>
+            <td>None</td>
+            <td>None</td>
+            <td>None</td>
+            <td>None</td>
+            <td>72.0</td>
+            <td>236.0</td>
+            <td>Keo</td>
+            <td>04/30/1980</td>
             <td>None</td>
         </tr>
     </tbody>
@@ -17437,7 +17524,7 @@ CREATE INDEX
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">sql</span> SELECT elev_in_m FROM National LIMIT 2;
@@ -17478,7 +17565,7 @@ CREATE INDEX
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[17]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
 
 
 
@@ -17506,12 +17593,25 @@ CREATE INDEX
 
 </div>
 
-</div><div id="cell-id=8e80edb1-1cf4-4992-b0d9-142291aa63df" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div>
+<div id="cell-id=3e836a0d-62a2-4acd-bfb3-1943cd6fb6e7" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>You can't round by simply keeping the top few digits, as we see in this example with decimals.</p>
+<p>The substring and concat version doesn't do what one wants, while dividing and then multiplying works. This is the effect we want to achieve with binary as well (bit shift left then right).</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=a47b2dea-c3e7-47e7-aa5d-b7f55732f90a" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
@@ -17559,7 +17659,7 @@ CREATE INDEX
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
 
 
 
@@ -17620,6 +17720,18 @@ CREATE INDEX
 
 </div>
 
+</div>
+<div id="cell-id=b935abbd-00f1-4b4c-b011-d9df4d347274" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Shift right then left to round to shave off a few bits from the end.</p>
+
+</div>
+</div>
+</div>
 </div><div id="cell-id=e87127ca" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -17631,8 +17743,9 @@ CREATE INDEX
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
 <span class="cm">/* does not run in jupysql b/c of &lt;&lt;. copy into psql  */</span>
 <span class="k">SELECT</span><span class="w"> </span><span class="n">elev_in_m</span><span class="p">,</span>
-<span class="w">    </span><span class="p">(</span><span class="mi">16</span><span class="p">::</span><span class="nb">INTEGER</span><span class="p">::</span><span class="nb">BIT</span><span class="p">(</span><span class="mi">12</span><span class="p">))</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">bit12</span><span class="p">,</span><span class="w"> </span>
-<span class="w">    </span><span class="p">(</span><span class="mi">16</span><span class="p">::</span><span class="nb">INTEGER</span><span class="p">::</span><span class="nb">BIT</span><span class="p">(</span><span class="mi">12</span><span class="p">))</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">3</span>
+<span class="w">    </span><span class="p">(</span><span class="n">elev_in_m</span><span class="p">::</span><span class="nb">INTEGER</span><span class="p">::</span><span class="nb">BIT</span><span class="p">(</span><span class="mi">12</span><span class="p">))</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">bit12</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="p">(</span><span class="n">elev_in_m</span><span class="p">::</span><span class="nb">INTEGER</span><span class="p">::</span><span class="nb">BIT</span><span class="p">(</span><span class="mi">12</span><span class="p">))</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">shiftright</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="p">((</span><span class="n">elev_in_m</span><span class="p">::</span><span class="nb">INTEGER</span><span class="p">::</span><span class="nb">BIT</span><span class="p">(</span><span class="mi">12</span><span class="p">))</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">shiftrightthenleft</span>
 <span class="k">FROM</span><span class="w"> </span><span class="k">national</span>
 <span class="k">LIMIT</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
 </pre></div>
@@ -17642,7 +17755,7 @@ CREATE INDEX
 </div>
 </div>
 
-</div><div id="cell-id=99908613-5a25-4c96-b5fe-8bc8e001cfe1" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div id="cell-id=6c65146b-0fae-401d-b285-448d7c3a03d3" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17651,17 +17764,17 @@ CREATE INDEX
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
-<span class="k">EXPLAIN</span><span class="w"> </span><span class="p">(</span><span class="k">verbose</span><span class="p">)</span>
+<span class="cm">/* does not run in jupysql b/c of &lt;&lt;. copy into psql  */</span>
 <span class="k">WITH</span><span class="w"> </span><span class="n">shifts</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="n">elev_in_m</span><span class="p">,</span><span class="w"> </span>
-<span class="w">       </span><span class="p">(</span><span class="n">elev_in_m</span><span class="p">::</span><span class="nb">integer</span><span class="p">::</span><span class="nb">bit</span><span class="p">(</span><span class="mi">12</span><span class="p">))</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">bit12</span><span class="p">,</span><span class="w"> </span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">elev_in_m</span><span class="p">::</span><span class="nb">integer</span><span class="p">,</span><span class="w"> </span>
+<span class="w">       </span><span class="p">(</span><span class="n">elev_in_m</span><span class="p">::</span><span class="nb">integer</span><span class="p">::</span><span class="nb">bit</span><span class="p">(</span><span class="mi">12</span><span class="p">))</span><span class="w">      </span><span class="k">AS</span><span class="w"> </span><span class="n">bit12</span><span class="p">,</span><span class="w"> </span>
 <span class="w">       </span><span class="p">(</span><span class="n">elev_in_m</span><span class="p">::</span><span class="nb">integer</span><span class="p">::</span><span class="nb">bit</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">rightshifted</span><span class="p">,</span><span class="w"> </span>
-<span class="w">       </span><span class="p">((</span><span class="n">elev_in_m</span><span class="p">::</span><span class="nb">integer</span><span class="p">::</span><span class="nb">bit</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">8</span><span class="p">)::</span><span class="nb">integer</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">round_to_256</span><span class="p">,</span>
-<span class="w">       </span><span class="p">((</span><span class="n">elev_in_m</span><span class="p">::</span><span class="nb">integer</span><span class="p">::</span><span class="nb">bit</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">8</span><span class="p">)::</span><span class="nb">integer</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">256</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">test</span>
+<span class="w">       </span><span class="p">((</span><span class="n">elev_in_m</span><span class="p">::</span><span class="nb">integer</span><span class="p">::</span><span class="nb">bit</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">8</span><span class="p">)::</span><span class="nb">integer</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">round_to_256</span>
 <span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="k">national</span>
+<span class="w">  </span><span class="k">WHERE</span><span class="w"> </span><span class="n">elev_in_m</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span>
 <span class="p">)</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">elev_in_m</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">elevation_meters_count</span><span class="p">,</span>
-<span class="w">       </span><span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">bit12</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">bit12_count</span><span class="p">,</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">elev_in_m</span><span class="p">::</span><span class="nb">integer</span><span class="p">)</span><span class="w">    </span><span class="k">AS</span><span class="w"> </span><span class="n">elevation_meters_count</span><span class="p">,</span>
+<span class="w">       </span><span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">bit12</span><span class="p">)</span><span class="w">        </span><span class="k">AS</span><span class="w"> </span><span class="n">bit12_count</span><span class="p">,</span>
 <span class="w">       </span><span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">rightshifted</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">rightshift_count</span><span class="p">,</span>
 <span class="w">       </span><span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">round_to_256</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">rounded_count</span>
 <span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">shifts</span><span class="p">;</span>
@@ -17700,7 +17813,7 @@ CREATE INDEX
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
@@ -17740,13 +17853,13 @@ CREATE INDEX
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<span style="color: green">888 rows affected.</span>
+<span style="color: green">858 rows affected.</span>
 </div>
 
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
 
 
 
@@ -17763,107 +17876,107 @@ CREATE INDEX
     </thead>
     <tbody>
         <tr>
-            <td>13</td>
-            <td>99.0</td>
-            <td>64.0</td>
+            <td>5</td>
+            <td>45.0</td>
+            <td>109.0</td>
             <td>None</td>
             <td>1</td>
         </tr>
         <tr>
-            <td>56</td>
-            <td>35.0</td>
-            <td>2117.0</td>
+            <td>41</td>
+            <td>43.0</td>
+            <td>79.0</td>
             <td>None</td>
             <td>1</td>
         </tr>
         <tr>
-            <td>1</td>
-            <td>33.0</td>
-            <td>132.0</td>
-            <td>None</td>
-            <td>1</td>
-        </tr>
-        <tr>
-            <td>34</td>
-            <td>39.0</td>
-            <td>123.0</td>
-            <td>None</td>
-            <td>1</td>
-        </tr>
-        <tr>
-            <td>53</td>
-            <td>37.0</td>
-            <td>1506.0</td>
-            <td>721.2489168102785</td>
-            <td>2</td>
-        </tr>
-        <tr>
-            <td>46</td>
-            <td>47.0</td>
-            <td>990.0</td>
-            <td>None</td>
-            <td>1</td>
-        </tr>
-        <tr>
-            <td>37</td>
-            <td>139.0</td>
+            <td>12</td>
             <td>1.0</td>
+            <td>43.0</td>
             <td>None</td>
             <td>1</td>
         </tr>
         <tr>
-            <td>36</td>
-            <td>65.0</td>
-            <td>202.0</td>
-            <td>25.45584412271571</td>
-            <td>2</td>
+            <td>41</td>
+            <td>51.0</td>
+            <td>63.0</td>
+            <td>46.64046883698033</td>
+            <td>4</td>
         </tr>
         <tr>
             <td>29</td>
-            <td>31.0</td>
-            <td>103.0</td>
+            <td>135.0</td>
+            <td>266.0</td>
             <td>None</td>
             <td>1</td>
         </tr>
         <tr>
-            <td>20</td>
-            <td>55.0</td>
-            <td>748.0</td>
+            <td>46</td>
+            <td>67.0</td>
+            <td>381.0</td>
+            <td>None</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>27</td>
+            <td>137.0</td>
+            <td>453.0</td>
+            <td>None</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>19</td>
+            <td>189.0</td>
+            <td>360.0</td>
+            <td>None</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>54</td>
+            <td>7.0</td>
+            <td>271.0</td>
             <td>None</td>
             <td>1</td>
         </tr>
         <tr>
             <td>45</td>
-            <td>45.0</td>
-            <td>258.0</td>
+            <td>51.0</td>
+            <td>8.0</td>
             <td>None</td>
             <td>1</td>
         </tr>
         <tr>
-            <td>13</td>
-            <td>153.0</td>
-            <td>135.0</td>
+            <td>20</td>
+            <td>59.0</td>
+            <td>269.0</td>
             <td>None</td>
             <td>1</td>
         </tr>
         <tr>
-            <td>28</td>
-            <td>47.0</td>
-            <td>5.5</td>
-            <td>1.9148542155126762</td>
-            <td>4</td>
+            <td>24</td>
+            <td>25.0</td>
+            <td>None</td>
+            <td>None</td>
+            <td>1</td>
         </tr>
         <tr>
-            <td>30</td>
-            <td>105.0</td>
-            <td>733.0</td>
-            <td>131.52186130069785</td>
+            <td>64</td>
+            <td>2.0</td>
+            <td>75.66666666666667</td>
+            <td>131.05851110604505</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>35</td>
+            <td>43.0</td>
+            <td>2424.0</td>
+            <td>26.870057685088806</td>
             <td>2</td>
         </tr>
         <tr>
-            <td>51</td>
-            <td>199.0</td>
-            <td>15.0</td>
+            <td>53</td>
+            <td>17.0</td>
+            <td>722.0</td>
             <td>None</td>
             <td>1</td>
         </tr>
@@ -17898,7 +18011,7 @@ CREATE INDEX
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
@@ -17937,7 +18050,7 @@ CREATE INDEX
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
 
 
 
@@ -17963,7 +18076,7 @@ CREATE INDEX
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">sql</span> SELECT * FROM state_elevations;
@@ -18004,7 +18117,7 @@ CREATE INDEX
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[22]:</div>
 
 
 
@@ -18137,7 +18250,7 @@ CREATE INDEX
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
@@ -18178,13 +18291,13 @@ CREATE INDEX
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<span style="color: green">557 rows affected.</span>
+<span style="color: green">552 rows affected.</span>
 </div>
 
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[22]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[23]:</div>
 
 
 
@@ -18201,108 +18314,108 @@ CREATE INDEX
     </thead>
     <tbody>
         <tr>
-            <td>1</td>
-            <td>Church</td>
-            <td>132.07692307692307</td>
-            <td>66.96947257079346</td>
-            <td>13</td>
-        </tr>
-        <tr>
-            <td>30</td>
-            <td>Well</td>
-            <td>960.25</td>
-            <td>234.06220035786137</td>
-            <td>12</td>
-        </tr>
-        <tr>
-            <td>13</td>
-            <td>Populated Place</td>
-            <td>202.45454545454547</td>
-            <td>96.78673838534247</td>
+            <td>17</td>
+            <td>School</td>
+            <td>188.63636363636363</td>
+            <td>16.144799331504416</td>
             <td>11</td>
         </tr>
         <tr>
             <td>6</td>
-            <td>Church</td>
-            <td>63.18181818181818</td>
-            <td>66.54144299880817</td>
-            <td>11</td>
+            <td>School</td>
+            <td>184.9</td>
+            <td>231.5025557814283</td>
+            <td>10</td>
         </tr>
         <tr>
-            <td>41</td>
-            <td>Stream</td>
-            <td>422.22222222222223</td>
-            <td>416.49092960644947</td>
-            <td>9</td>
-        </tr>
-        <tr>
-            <td>36</td>
-            <td>Church</td>
-            <td>118.11111111111111</td>
-            <td>104.81465122353416</td>
-            <td>9</td>
-        </tr>
-        <tr>
-            <td>36</td>
-            <td>Populated Place</td>
-            <td>296.3333333333333</td>
-            <td>239.13385373049965</td>
+            <td>6</td>
+            <td>Valley</td>
+            <td>405.8888888888889</td>
+            <td>276.0278266970762</td>
             <td>9</td>
         </tr>
         <tr>
             <td>48</td>
-            <td>Building</td>
-            <td>281.375</td>
-            <td>359.5425416911249</td>
-            <td>8</td>
+            <td>Stream</td>
+            <td>282.0</td>
+            <td>275.331164236815</td>
+            <td>9</td>
         </tr>
         <tr>
-            <td>17</td>
-            <td>School</td>
-            <td>203.125</td>
-            <td>17.971703949741183</td>
-            <td>8</td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>Cemetery</td>
-            <td>154.0</td>
-            <td>86.4175908018732</td>
-            <td>8</td>
-        </tr>
-        <tr>
-            <td>29</td>
+            <td>48</td>
             <td>Church</td>
-            <td>172.25</td>
-            <td>73.96113844445608</td>
+            <td>176.125</td>
+            <td>121.4912548293086</td>
             <td>8</td>
         </tr>
         <tr>
-            <td>6</td>
-            <td>School</td>
-            <td>76.14285714285714</td>
-            <td>93.44593547684595</td>
-            <td>7</td>
+            <td>42</td>
+            <td>Populated Place</td>
+            <td>224.125</td>
+            <td>131.23200556919903</td>
+            <td>8</td>
         </tr>
         <tr>
-            <td>1</td>
-            <td>Populated Place</td>
-            <td>129.0</td>
-            <td>75.53586344688638</td>
-            <td>7</td>
+            <td>36</td>
+            <td>Building</td>
+            <td>166.25</td>
+            <td>159.79696939733066</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>30</td>
+            <td>Well</td>
+            <td>1298.875</td>
+            <td>275.6905291393646</td>
+            <td>8</td>
         </tr>
         <tr>
             <td>13</td>
-            <td>Stream</td>
-            <td>275.85714285714283</td>
-            <td>236.06314732251099</td>
+            <td>Church</td>
+            <td>176.71428571428572</td>
+            <td>145.6476504968003</td>
             <td>7</td>
         </tr>
         <tr>
-            <td>29</td>
+            <td>51</td>
+            <td>Church</td>
+            <td>141.28571428571428</td>
+            <td>97.23804859846837</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>21</td>
             <td>Stream</td>
-            <td>225.42857142857142</td>
-            <td>85.69491844688953</td>
+            <td>257.0</td>
+            <td>62.27358990776106</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>41</td>
+            <td>Locale</td>
+            <td>507.14285714285717</td>
+            <td>696.2888357981499</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>48</td>
+            <td>School</td>
+            <td>339.8</td>
+            <td>432.5369348390956</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>48</td>
+            <td>Building</td>
+            <td>282.7142857142857</td>
+            <td>401.2770091784952</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Locale</td>
+            <td>862.5714285714286</td>
+            <td>839.1779424219985</td>
             <td>7</td>
         </tr>
     </tbody>
@@ -18343,7 +18456,7 @@ CREATE INDEX
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
@@ -18385,13 +18498,13 @@ CREATE INDEX
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<span style="color: green">4 rows affected.</span>
+<span style="color: green">10 rows affected.</span>
 </div>
 
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[23]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[24]:</div>
 
 
 
@@ -18409,36 +18522,84 @@ CREATE INDEX
     </thead>
     <tbody>
         <tr>
-            <td>35</td>
-            <td>1282.0</td>
+            <td>4</td>
+            <td>367.0</td>
             <td>None</td>
             <td>1</td>
-            <td>4</td>
-            <td>0.25000000000000000000</td>
+            <td>12</td>
+            <td>0.08333333333333333333</td>
         </tr>
         <tr>
-            <td>39</td>
-            <td>224.0</td>
+            <td>6</td>
+            <td>885.0</td>
             <td>None</td>
             <td>1</td>
-            <td>4</td>
-            <td>0.25000000000000000000</td>
+            <td>12</td>
+            <td>0.08333333333333333333</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>13.0</td>
+            <td>None</td>
+            <td>1</td>
+            <td>12</td>
+            <td>0.08333333333333333333</td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <td>114.0</td>
+            <td>None</td>
+            <td>1</td>
+            <td>12</td>
+            <td>0.08333333333333333333</td>
+        </tr>
+        <tr>
+            <td>18</td>
+            <td>238.0</td>
+            <td>96.16652224137046</td>
+            <td>2</td>
+            <td>12</td>
+            <td>0.16666666666666666667</td>
+        </tr>
+        <tr>
+            <td>21</td>
+            <td>279.0</td>
+            <td>None</td>
+            <td>1</td>
+            <td>12</td>
+            <td>0.08333333333333333333</td>
+        </tr>
+        <tr>
+            <td>28</td>
+            <td>144.0</td>
+            <td>None</td>
+            <td>1</td>
+            <td>12</td>
+            <td>0.08333333333333333333</td>
         </tr>
         <tr>
             <td>41</td>
-            <td>1388.0</td>
-            <td>None</td>
-            <td>1</td>
-            <td>4</td>
-            <td>0.25000000000000000000</td>
+            <td>182.5</td>
+            <td>136.47160876900367</td>
+            <td>2</td>
+            <td>12</td>
+            <td>0.16666666666666666667</td>
         </tr>
         <tr>
             <td>42</td>
-            <td>369.0</td>
+            <td>391.0</td>
             <td>None</td>
             <td>1</td>
-            <td>4</td>
-            <td>0.25000000000000000000</td>
+            <td>12</td>
+            <td>0.08333333333333333333</td>
+        </tr>
+        <tr>
+            <td>51</td>
+            <td>0.0</td>
+            <td>None</td>
+            <td>1</td>
+            <td>12</td>
+            <td>0.08333333333333333333</td>
         </tr>
     </tbody>
 </table>
@@ -18455,7 +18616,7 @@ CREATE INDEX
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
@@ -18497,7 +18658,7 @@ CREATE INDEX
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[24]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[25]:</div>
 
 
 
@@ -18550,7 +18711,7 @@ CREATE INDEX
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">sql</span> SELECT * FROM state_elevations;
@@ -18591,7 +18752,7 @@ CREATE INDEX
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[25]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[28]:</div>
 
 
 
@@ -18993,7 +19154,7 @@ CREATE INDEX
             <td>146.37888198757764</td>
             <td>102.92185851771194</td>
             <td>339</td>
-            <td>98.5190355853754</td>
+            <td>86.38931448068088</td>
             <td>True</td>
         </tr>
         <tr>
@@ -19002,7 +19163,7 @@ CREATE INDEX
             <td>146.37888198757764</td>
             <td>102.92185851771194</td>
             <td>339</td>
-            <td>176.78141173238936</td>
+            <td>241.10131080357328</td>
             <td>True</td>
         </tr>
         <tr>
@@ -19011,7 +19172,7 @@ CREATE INDEX
             <td>146.37888198757764</td>
             <td>102.92185851771194</td>
             <td>339</td>
-            <td>173.08800652498465</td>
+            <td>232.5231081945127</td>
             <td>True</td>
         </tr>
         <tr>
@@ -19020,7 +19181,7 @@ CREATE INDEX
             <td>146.37888198757764</td>
             <td>102.92185851771194</td>
             <td>339</td>
-            <td>131.55886568344636</td>
+            <td>46.359022968780025</td>
             <td>True</td>
         </tr>
         <tr>
@@ -19029,7 +19190,7 @@ CREATE INDEX
             <td>146.37888198757764</td>
             <td>102.92185851771194</td>
             <td>339</td>
-            <td>199.05220856686694</td>
+            <td>135.80239287281742</td>
             <td>True</td>
         </tr>
         <tr>
@@ -19038,7 +19199,7 @@ CREATE INDEX
             <td>146.37888198757764</td>
             <td>102.92185851771194</td>
             <td>339</td>
-            <td>57.421414206652955</td>
+            <td>97.00680510236256</td>
             <td>True</td>
         </tr>
         <tr>
@@ -19047,7 +19208,7 @@ CREATE INDEX
             <td>146.37888198757764</td>
             <td>102.92185851771194</td>
             <td>339</td>
-            <td>150.15944286078695</td>
+            <td>107.08312694186878</td>
             <td>True</td>
         </tr>
         <tr>
@@ -19056,7 +19217,7 @@ CREATE INDEX
             <td>146.37888198757764</td>
             <td>102.92185851771194</td>
             <td>339</td>
-            <td>172.26643973504179</td>
+            <td>204.88908230500292</td>
             <td>True</td>
         </tr>
         <tr>
@@ -19065,7 +19226,7 @@ CREATE INDEX
             <td>146.37888198757764</td>
             <td>102.92185851771194</td>
             <td>339</td>
-            <td>68.1099349179242</td>
+            <td>202.72662605310643</td>
             <td>True</td>
         </tr>
         <tr>
@@ -19074,7 +19235,7 @@ CREATE INDEX
             <td>146.37888198757764</td>
             <td>102.92185851771194</td>
             <td>339</td>
-            <td>221.40240407776193</td>
+            <td>119.32389233384822</td>
             <td>True</td>
         </tr>
     </tbody>
