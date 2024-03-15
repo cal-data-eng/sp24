@@ -18,4 +18,4 @@ Thu 3/14
 
 Fri 3/15
 : **Project 3**{: .label .label-proj } [Project 3 Release](https://data101.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fcal-data-eng%2Fsp24-materials.git&urlpath=lab%2Ftree%2Fsp24-materials.git%2Fproj%2Fproj3&branch=main){:target="\_blank"}
-  : Due Wed 3/27, 5pm
+  : Due Wed 4/3, 5pm
