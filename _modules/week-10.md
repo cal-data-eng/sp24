@@ -5,7 +5,7 @@ date: 2024-03-18
 
 Mon 3/18
 : **Lecture 16**{: .label .label-lecture } [Data Cleaning II](https://docs.google.com/presentation/d/1pFk_gvQjScyWzXObvr6SEFBSHZ9n7QiYZxtlkG02bKQ/edit?usp=sharing)
-	: [Data Cleaning II Demo: Imputation and ER](https://data101.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fcal-data-eng%2Fsp24-materials&urlpath=lab%2Ftree%2Fsp24-materials%2Flecture%2Flec16%2Flec16-Imputation-ER.ipynb&branch=main) [+HTML]()
+	: [Data Cleaning II Demo: Imputation and ER](https://data101.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fcal-data-eng%2Fsp24-materials&urlpath=lab%2Ftree%2Fsp24-materials%2Flecture%2Flec16%2Flec16-Imputation-ER.ipynb&branch=main) [+HTML](https://www.data101.org/sp24/resources/assets/lectures/lec16/lec16-Imputation-ER.html)
 
 Wed 3/20
 : **Lecture 17**{: .label .label-lecture } Normalization and ER
