@@ -4,7 +4,8 @@ date: 2024-03-18
 ---
 
 Mon 3/18
-: **Lecture 16**{: .label .label-lecture } Data Cleaning II
+: **Lecture 16**{: .label .label-lecture } [Data Cleaning II](https://docs.google.com/presentation/d/1pFk_gvQjScyWzXObvr6SEFBSHZ9n7QiYZxtlkG02bKQ/edit?usp=sharing)
+	: [Data Cleaning II Demo: Imputation and ER]() [+HTML]()
 
 Wed 3/20
 : **Lecture 17**{: .label .label-lecture } Normalization and ER

@@ -10,6 +10,7 @@ Mon 3/11
   
 Wed 3/13
 : **Lecture 15**{: .label .label-lecture } [Data Cleaning I](https://docs.google.com/presentation/d/1TrOuWwyFrGE5NAXCl87fkQUoibaSAilL7mzqvWx8a9k/edit?usp=sharing)
+	: [Data cleaning with outliers]() [+HTML](https://www.data101.org/sp24/resources/assets/lectures/lec15/lec15-outliers.html)
 : **Project 5**{: .label .label-proj } [Project 5 Release](https://www.data101.org/sp24/resources/project5/){:target="\_blank"}
   : Due Wed 4/17, 5pm
 
