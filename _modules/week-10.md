@@ -12,7 +12,8 @@ Wed 3/20
 
 
 Thu 3/21
-: **Discussion**{: .label .label-disc } Normalization and ER
+: **Discussion**{: .label .label-disc } [Hampel x84 and Entity Resolution]()https://drive.google.com/file/d/1pfryQjXczHiugPajOF4rjkBJSPgjCkl3/view?usp=sharing
+  : [Solution](https://drive.google.com/file/d/16SDWq4lLVemLjDe2NQztyWSA4W8dRQKl/view?usp=sharing){:target="\_blank"}, [Code](https://data101.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fcal-data-eng%2Fsp24-materials.git&urlpath=lab%2Ftree%2Fsp24-materials.git%2Fdisc%2Fdisc09&branch=main){:target="\_blank"}
 : **Multivitamin 4**{: .label .label-hw } Multivitamin 4 Release
   : Due Wed 4/3, 5pm
   
