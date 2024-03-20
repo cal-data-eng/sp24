@@ -13,13 +13,7 @@ Wed 2/7
 	: [DML/DDL Code](https://data101.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fcal-data-eng%2Fsp24-materials.git&urlpath=lab%2Ftree%2Fsp24-materials.git%2Flecture%2Flec06%2Flec06.ipynb&branch=main) [+HTML](https://www.data101.org/sp24/resources/assets/lectures/lec06/lec06.html){:target="\_blank"}
 
 Thu 2/8 
-<<<<<<< HEAD
 : **Discussion**{: .label .label-disc } [Subqueries, DDL, DML, and String Manipulation](https://drive.google.com/file/d/1AU7AwuZy_pzOLIghAhzlptQml8T8U4_w/view?usp=sharing){:target="_blank"}
   : [Solution](https://drive.google.com/file/d/1j0c2JDOHMo8ZJ0vGTIQyhlMYU9EXep8Z/view?usp=sharing){:target="_blank"}
 : **MultiVitamin 1**{: .label .label-hw } [Multivitamin 1](https://www.gradescope.com/courses/707300/assignments/4056782){:target="_blank"}
   : Due Wed 2/21, 5pm
-=======
-: **Discussion**{: .label .label-disc } DDL, Constraints
-: **MultiVitamin 1**{: .label .label-hw } Multivitamin 1
-  : Due Thu 2/21, 5pm
->>>>>>> parent of 3473d1a (Discussion 3 Release)
