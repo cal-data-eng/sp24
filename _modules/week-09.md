@@ -17,6 +17,5 @@ Wed 3/13
 Thu 3/14
 : **Discussion**{: .label .label-disc } [MDL & Data Preparation](https://drive.google.com/file/d/1p7yVRGphe1M1w6YOq-y2UkzzCDSmB2RL/view?usp=sharing){:target="\_blank"}
   : [Solution](https://drive.google.com/file/d/1Y99dNvI7mBIk6O_8DKlEO06JHpMYUIY0/view?usp=sharing){:target="\_blank"}
-Fri 3/15
 : **Project 3**{: .label .label-proj } [Project 3 Release](https://data101.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fcal-data-eng%2Fsp24-materials.git&urlpath=lab%2Ftree%2Fsp24-materials.git%2Fproj%2Fproj3&branch=main){:target="\_blank"}
   : Due Wed 4/3, 5pm
