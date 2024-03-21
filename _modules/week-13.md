@@ -8,7 +8,7 @@ Mon 4/8
 
 Wed 4/10
 : **Lecture 21**{: .label .label-lecture } SQL Modifications, Transactions, and Recovery
-: **Multivitamin 5**{: .label .label-hw-due }  Due, 5pm
+: **Multivitamin 4**{: .label .label-hw-due }  Due, 5pm
 
 Thu 4/11
 : **Discussion**{: .label .label-disc } Transactions

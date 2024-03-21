@@ -8,10 +8,9 @@ Mon 4/1
 
 Wed 4/3
 : **Lecture 19**{: .label .label-lecture } MongoDB I
-: **Multivitamin 4**{: .label .label-hw-due } Due, 5pm
 : **Project 3**{: .label .label-proj-due } Due, 5pm
 
 
 Thu 4/4
-: **Discussion**{: .label .label-disc } MongoDB
+: **Discussion**{: .label .label-disc } Normalization & MongoDB
 
