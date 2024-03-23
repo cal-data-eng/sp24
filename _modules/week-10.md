@@ -4,10 +4,10 @@ date: 2024-03-18
 ---
 
 Mon 3/18
-: **Lecture 16**{: .label .label-lecture } Data Cleaning II
+: **Lecture 16**{: .label .label-lecture } [Data Cleaning II](https://docs.google.com/presentation/d/1pFk_gvQjScyWzXObvr6SEFBSHZ9n7QiYZxtlkG02bKQ/edit?usp=drive_link){:target="\_blank"}
 
 Wed 3/20
-: **Lecture 17**{: .label .label-lecture } Normalization and ER
+: **Lecture 17**{: .label .label-lecture } [Normalization and ER](https://docs.google.com/presentation/d/1yLg0RqnspQ3oSp0kr-9KOfZ25jN9F3trTwX8mBLLS8o/edit?usp=drive_link){:target="\_blank"}
 
 
 Thu 3/21
