@@ -15,3 +15,5 @@ Wed 4/3
 Thu 4/4
 : **Discussion**{: .label .label-disc } [ERD, Normalization, & Semistructured Data](https://drive.google.com/file/d/1sTsVvRGp40-g4RTrZ7sYzrf5ryZXDq2t/view?usp=drive_link){:target="\_blank"}
   : [Solution](https://drive.google.com/file/d/1Fvie88FpAM2O49F19a5yCLCsX4q6E6_N/view?usp=drive_link){:target="\_blank"}
+: **Project 4**{: .label .label-proj } Project 4 Release
+  : Due Wed 4/24, 5pm
