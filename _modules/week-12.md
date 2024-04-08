@@ -15,5 +15,5 @@ Wed 4/3
 Thu 4/4
 : **Discussion**{: .label .label-disc } [ERD, Normalization, & Semistructured Data](https://drive.google.com/file/d/1sTsVvRGp40-g4RTrZ7sYzrf5ryZXDq2t/view?usp=drive_link){:target="\_blank"}
   : [Solution](https://drive.google.com/file/d/1Fvie88FpAM2O49F19a5yCLCsX4q6E6_N/view?usp=drive_link){:target="\_blank"}
-: **Project 4**{: .label .label-proj } [Project 4](https://data101.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fcal-data-eng%2Fsp24-materials.git&urlpath=lab%2Ftree%2Fsp24-materials.git%2Fproj%2Fproj4&branch=main):target="\_blank"} Release
+: **Project 4**{: .label .label-proj } [Project 4](https://data101.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fcal-data-eng%2Fsp24-materials.git&urlpath=lab%2Ftree%2Fsp24-materials.git%2Fproj%2Fproj4&branch=main){:target="\_blank"} Released
   : Due Wed 4/24, 5pm
