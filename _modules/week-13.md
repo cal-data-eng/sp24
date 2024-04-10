@@ -12,5 +12,5 @@ Wed 4/10
 : **Multivitamin 4**{: .label .label-hw-due }  Due, 5pm
 
 Thu 4/11
-: **Discussion**{: .label .label-disc } Transactions
-
+: **Discussion**{: .label .label-disc } [MongoDB Operations; ERD Review](https://drive.google.com/file/d/1108x6ALSIGSZ16Ds8NMTJq9HFSzMHfq1/view?usp=sharing){:target="\_blank"}
+  : [Solution](https://drive.google.com/file/d/1HK5fxuJHgj1He1jkKsusBVn9rc6Fb8xV/view?usp=sharing){:target="\_blank"}
