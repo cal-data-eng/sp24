@@ -8,7 +8,7 @@ Mon 4/8
 	: Mongo I Demo (Contd.); [MongoDB II Demo](https://data101.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fcal-data-eng%2Fsp24-materials&urlpath=lab%2Ftree%2Fsp24-materials%2Flecture%2Flec20%2Flec20.ipynb&branch=main)[+HTML](https://www.data101.org/sp24/resources/assets/lectures/lec20/lec20.html)
 
 Wed 4/10
-: **Lecture 21**{: .label .label-lecture } SQL Modifications, Transactions, and Recovery
+: **Lecture 21**{: .label .label-lecture } MongoDB II (Contd.); [Transactions](https://docs.google.com/presentation/d/1MB-wTSvj5Y1qQPGvFqOhDzr0JKUOushKi5YDl8iRaDs/edit?usp=sharing)
 : **Multivitamin 4**{: .label .label-hw-due }  Due, 5pm
 
 Thu 4/11
