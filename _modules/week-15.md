@@ -4,7 +4,7 @@ date: 2024-04-22
 ---
 
 Mon 4/22
-: **Lecture 24**{: .label .label-lecture } Sampling and Sketching
+: **Lecture 24**{: .label .label-lecture } Cloud Data Warehouses, Streaming, Sampling and Sketching
 
 Wed 4/24
 : **Lecture 25**{: .label .label-lecture } Security and Privacy
