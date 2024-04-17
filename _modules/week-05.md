@@ -13,6 +13,6 @@ Wed 2/14
 : **Project 1**{: .label .label-proj-due } Due, 5pm
 
 Thu 2/15
-: **Discussion**{: .label .label-disc } Indexes
+: **Discussion**{: .label .label-disc } No Discussion
 : **Project 2**{: .label .label-proj } [Query Performance](https://data101.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2Fcal-data-eng%2Fsp24-materials.git&urlpath=lab%2Ftree%2Fsp24-materials.git%2Fproj%2Fproj2&branch=main){:target="\_blank"}
   : Due Wed 2/28, 5pm
