@@ -10,7 +10,7 @@ Mon 4/15
 Wed 4/17
 : **Lecture 23**{: .label .label-lecture } Data Pipelines, Streaming, Cloud Data Warehouses
 : **Project 5**{: .label .label-proj-due } Due, 5pm
-: **Multivitamin 5**{: .label .label-hw-due } Due, 5pm
+: **Multivitamin 5**{: .label .label-hw-due } Extended to 4/22 5pm
 
 Thu 4/18
 : **Discussion**{: .label .label-disc } Parallelization
