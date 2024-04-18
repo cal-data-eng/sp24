@@ -13,5 +13,6 @@ Wed 4/17
 : **Multivitamin 5**{: .label .label-hw-due } Extended to 4/22 5pm
 
 Thu 4/18
-: **Discussion**{: .label .label-disc } Parallelization
+: **Discussion**{: .label .label-disc } [Transactions](https://drive.google.com/file/d/1oN767zFu6KUBSPs9jfnh13_rcQ4nbf5m/view?usp=drive_link), [Parallelization](https://drive.google.com/file/d/1shOjnjNiJik_qe1LZM4--7sNuTZG_8gS/view?usp=sharing)
+  : [Transactions Solution](https://drive.google.com/file/d/16c1IizmBfHmn1-ult9Glr-veizD64bc2/view?usp=sharing), [Parallelization Solution](https://drive.google.com/file/d/1m87WQzw-QGCOyTCsEY2gL9v7oAGRfJcH/view?usp=drive_link)
 
