@@ -12,5 +12,6 @@ Wed 4/24
 
 
 Thu 4/25
-: **Discussion**{: .label .label-disc } Pipelines, Sampling, Sketching
+: **Discussion**{: .label .label-disc } [MapReduce, Data Cubes, and OLAP Review](https://drive.google.com/file/d/1Erza_jMWl371ltoTv1eXqDl6E_ascUVs/view?usp=sharing)
+  : [Solution](https://drive.google.com/file/d/1T4MQTuGF9jHnmDuh4PLJxcMLgiYE1X_l/view?usp=sharing)
 
