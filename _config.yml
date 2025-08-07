@@ -27,7 +27,7 @@ search_enabled: true
 permalink: pretty
 
 course:
-    faq: https://data101.org/sp24faq
+    faq: https://data101.org/faqs/sp24
     datahub: http://data101.datahub.berkeley.edu/
     edstem: https://edstem.org/us/courses/53274/discussion/
     gradescope: https://www.gradescope.com/courses/707300/
@@ -48,7 +48,7 @@ course:
 # External navigation links
 nav_external_links:
   - title: Course FAQ
-    url: https://data101.org/sp24faq
+    url: https://data101.org/faqs/sp24
     hide_icon: true
 
 footer: >-
