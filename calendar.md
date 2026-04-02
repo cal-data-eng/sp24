@@ -5,6 +5,9 @@ nav_order: 4
 description: Calendars with times for all course events.
 ---
 
+{: .warning }
+⚠️ This content is archived as of March 2026 and is retained exclusively for reference. [Find current offerings.](https://data101.org/)
+
 # Calendar
 
 _Note_: If you are having trouble viewing the calendars below and are using Safari, we suggest switching to an alternate browser (like Chrome). Alternatively, you can go to Safari settings and switch "Prevent cross-site tracking" off, or you can see the calendar [here](https://calendar.google.com/calendar/embed?src=data101%40berkeley.edu&ctz=America%2FLos_Angeles){:target="\_blank"}.
