@@ -83,3 +83,6 @@ defaults:
 callouts:
   highlight:
     color: yellow
+  warning:
+    color: red
+
